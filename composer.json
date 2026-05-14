@@ -1,0 +1,20 @@
+{
+    "name": "pauloracunha/omie-lib",
+    "description": "Biblioteca de integração PHP para o ERP Omie.",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Paulo Cunha",
+            "email": "paulo.racunha@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "OmieLib\\": "src/"
+        }
+    }
+}

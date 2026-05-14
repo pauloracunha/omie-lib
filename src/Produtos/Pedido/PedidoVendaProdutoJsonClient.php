@@ -1,0 +1,167 @@
+<?php
+
+namespace OmieLib\Produtos\Pedido;
+
+use OmieLib\Common\AbstractOmieJsonClient;
+use OmieLib\Common\OmieFail;
+use OmieLib\Produtos\Pedido\Request\PvpAlterarPedFatRequest;
+use OmieLib\Produtos\Pedido\Request\PvpConsultarRequest;
+use OmieLib\Produtos\Pedido\Request\PvpDevolverRequest;
+use OmieLib\Produtos\Pedido\Request\PvpExcluirRequest;
+use OmieLib\Produtos\Pedido\Request\PvpListarRequest;
+use OmieLib\Produtos\Pedido\Request\PvpSimularImpRequest;
+use OmieLib\Produtos\Pedido\Request\PvpStatusRequest;
+use OmieLib\Produtos\Pedido\Request\PvpTrocarEtapaRequest;
+use OmieLib\Produtos\Pedido\Response\PvpAlterarPedFatResponse;
+use OmieLib\Produtos\Pedido\Response\PvpConsultarResponse;
+use OmieLib\Produtos\Pedido\Response\PvpDevolverResponse;
+use OmieLib\Produtos\Pedido\Response\PvpExcluirResponse;
+use OmieLib\Produtos\Pedido\Response\PvpListarResponse;
+use OmieLib\Produtos\Pedido\Response\PvpSimularImpResponse;
+use OmieLib\Produtos\Pedido\Response\PvpStatusResponse;
+use OmieLib\Produtos\Pedido\Response\PvpTrocarEtapaResponse;
+
+/**
+ * @service PedidoVendaProdutoJsonClient
+ * @author omie
+ */
+class PedidoVendaProdutoJsonClient extends AbstractOmieJsonClient {
+	/**
+	 * The WSDL URI
+	 *
+	 * @var string
+	 */
+	
+	/**
+	 * The PHP SoapClient object
+	 *
+	 * @var object
+	 */
+	public static $_Server=null;
+	/**
+	 * The endpoint URI
+	 *
+	 * @var string
+	 */
+	public static $_EndPoint='produtos/pedido/';
+
+	/**
+	 * Inclui um pedido de venda de produto
+	 *
+	 * @param Pedido_venda_produto $pedido_venda_produto Estrutura do Pedido de Vendas de Produtos.<BR>Preenchimento Obrigatório.
+	 * @return Pedido_venda_produto_response Resposta da Inclusão de Pedido de Venda de Produtos.&nbsp;
+	 */
+	public function IncluirPedido(Pedido_venda_produto $pedido_venda_produto): Pedido_venda_produto_response{
+		return $this->_Call('IncluirPedido',Array(
+			$pedido_venda_produto
+		));
+	}
+
+	/**
+	 * Alteração do Pedido de Venda
+	 *
+	 * @param Pedido_venda_produto $pedido_venda_produto Estrutura do Pedido de Vendas de Produtos.<BR>Preenchimento Obrigatório.
+	 * @return Pedido_venda_produto_response Resposta da Inclusão de Pedido de Venda de Produtos.&nbsp;
+	 */
+	public function AlterarPedidoVenda(Pedido_venda_produto $pedido_venda_produto): Pedido_venda_produto_response{
+		return $this->_Call('AlterarPedidoVenda',Array(
+			$pedido_venda_produto
+		));
+	}
+
+	/**
+	 * Consulta de Pedido de Venda de Produto
+	 *
+	 * @param PvpConsultarRequest $pvpConsultarRequest Solicitação de consulta de pedido de venda.
+	 * @return PvpConsultarResponse Resposta da solicitação de consulta de pedido de venda.
+	 */
+	public function ConsultarPedido(PvpConsultarRequest $pvpConsultarRequest): PvpConsultarResponse{
+		return $this->_Call('ConsultarPedido',Array(
+			$pvpConsultarRequest
+		));
+	}
+
+	/**
+	 * Listar os pedidos de venda de produto
+	 *
+	 * @param PvpListarRequest $pvpListarRequest Solicitação de listagem de pedidos de venda.
+	 * @return PvpListarResponse Resposta da solicitação de listagem de pedidos de venda.
+	 */
+	public function ListarPedidos(PvpListarRequest $pvpListarRequest): PvpListarResponse{
+		return $this->_Call('ListarPedidos',Array(
+			$pvpListarRequest
+		));
+	}
+
+	/**
+	 * Excluir pedido de venda de produto
+	 *
+	 * @param PvpExcluirRequest $pvpExcluirRequest Solicitação de exclusão do Pedido de Venda.
+	 * @return PvpExcluirResponse Resposta da solicitação de exclusão do Pedido de Venda.
+	 */
+	public function ExcluirPedido(PvpExcluirRequest $pvpExcluirRequest): PvpExcluirResponse{
+		return $this->_Call('ExcluirPedido',Array(
+			$pvpExcluirRequest
+		));
+	}
+
+	/**
+	 * Consulta do Status do Pedido
+	 *
+	 * @param PvpStatusRequest $pvpStatusRequest Solicitação de consulta do Status do Pedido de Venda.
+	 * @return PvpStatusResponse Resposta da solicitação de consulta do Status do Pedido de Venda.
+	 */
+	public function StatusPedido(PvpStatusRequest $pvpStatusRequest): PvpStatusResponse{
+		return $this->_Call('StatusPedido',Array(
+			$pvpStatusRequest
+		));
+	}
+
+	/**
+	 * Troca etapa do pedido.
+	 *
+	 * @param PvpTrocarEtapaRequest $pvpTrocarEtapaRequest Solicitação de troca de etapa do Pedido de Venda.
+	 * @return PvpTrocarEtapaResponse Resposta da solicitação de troca de etapa do Pedido de Venda.
+	 */
+	public function TrocarEtapaPedido(PvpTrocarEtapaRequest $pvpTrocarEtapaRequest): PvpTrocarEtapaResponse{
+		return $this->_Call('TrocarEtapaPedido',Array(
+			$pvpTrocarEtapaRequest
+		));
+	}
+
+	/**
+	 * Alteração dos dados de um pedido faturado.
+	 *
+	 * @param PvpAlterarPedFatRequest $pvpAlterarPedFatRequest Solicitação de alteração do Pedido de Venda Faturado.
+	 * @return PvpAlterarPedFatResponse Resposta da solicitação de alteração de Pedido de Venda Faturado.
+	 */
+	public function AlterarPedFaturado(PvpAlterarPedFatRequest $pvpAlterarPedFatRequest): PvpAlterarPedFatResponse{
+		return $this->_Call('AlterarPedFaturado',Array(
+			$pvpAlterarPedFatRequest
+		));
+	}
+
+	/**
+	 * Simula os impostos de um pedido de venda.
+	 *
+	 * @param PvpSimularImpRequest $pvpSimularImpRequest Informações da requisição para simulação dos impostos de um pedido de venda.
+	 * @return PvpSimularImpResponse Resposta da solicitação de simulação de impostos de um pedido de venda
+	 */
+	public function SimularImpostos(PvpSimularImpRequest $pvpSimularImpRequest): PvpSimularImpResponse{
+		return $this->_Call('SimularImpostos',Array(
+			$pvpSimularImpRequest
+		));
+	}
+
+	/**
+	 * Método para efetuar a devolução de um pedido.
+	 *
+	 * @param PvpDevolverRequest $pvpDevolverRequest Solicitação de devolução de pedido de venda.
+	 * @return PvpDevolverResponse Resposta da solicitação de devolução de pedido de venda.
+	 */
+	public function DevolverPedido(PvpDevolverRequest $pvpDevolverRequest): PvpDevolverResponse{
+		return $this->_Call('DevolverPedido',Array(
+			$pvpDevolverRequest
+		));
+	}
+}

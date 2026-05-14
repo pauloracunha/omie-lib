@@ -1,0 +1,143 @@
+<?php
+
+namespace OmieLib\Produtos\Recebimentonfe;
+
+use OmieLib\Common\AbstractOmieJsonClient;
+use OmieLib\Common\OmieFail;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoAlterarEtapaRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoAlterarRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoConcAlterarRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoConcluirRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoConsultarRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoExcluirRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoListarRequest;
+use OmieLib\Produtos\Recebimentonfe\Request\RcbtoReverterRequest;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoAlterarEtapaResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoAlterarResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoConcAlterarResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoConcluirResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoConsultarResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoExcluirResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoListarResponse;
+use OmieLib\Produtos\Recebimentonfe\Response\RcbtoReverterResponse;
+
+/**
+ * @service RecebimentoNFeJsonClient
+ * @author omie
+ */
+class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
+	/**
+	 * The WSDL URI
+	 *
+	 * @var string
+	 */
+	
+	/**
+	 * The PHP SoapClient object
+	 *
+	 * @var object
+	 */
+	public static $_Server=null;
+	/**
+	 * The endpoint URI
+	 *
+	 * @var string
+	 */
+	public static $_EndPoint='produtos/recebimentonfe/';
+
+	/**
+	 * Concluir recebimento de NFe
+	 *
+	 * @param RcbtoConcluirRequest $rcbtoConcluirRequest Solicitação de conclusão de recebimento de NFe
+	 * @return RcbtoConcluirResponse Resposta da conclusão do recebimento da NFe
+	 */
+	public function ConcluirRecebimento(RcbtoConcluirRequest $rcbtoConcluirRequest): RcbtoConcluirResponse{
+		return $this->_Call('ConcluirRecebimento',Array(
+			$rcbtoConcluirRequest
+		));
+	}
+
+	/**
+	 * Alterar etapa recebimento NFe
+	 *
+	 * @param RcbtoAlterarEtapaRequest $rcbtoAlterarEtapaRequest Solicitação da alteração de etapa do recebimento da NFe
+	 * @return RcbtoAlterarEtapaResponse Resposta da alteração de etapa do recebimento da NFe
+	 */
+	public function AlterarEtapaRecebimento(RcbtoAlterarEtapaRequest $rcbtoAlterarEtapaRequest): RcbtoAlterarEtapaResponse{
+		return $this->_Call('AlterarEtapaRecebimento',Array(
+			$rcbtoAlterarEtapaRequest
+		));
+	}
+
+	/**
+	 * Consultar recebimento de NFe
+	 *
+	 * @param RcbtoConsultarRequest $rcbtoConsultarRequest Solicitação de consulta de recebimento de NFe
+	 * @return RcbtoConsultarResponse Resposta de consulta de recebimento de NFe
+	 */
+	public function ConsultarRecebimento(RcbtoConsultarRequest $rcbtoConsultarRequest): RcbtoConsultarResponse{
+		return $this->_Call('ConsultarRecebimento',Array(
+			$rcbtoConsultarRequest
+		));
+	}
+
+	/**
+	 * Listar recebimento de NFe
+	 *
+	 * @param RcbtoListarRequest $rcbtoListarRequest Solicitação de listagem da nota de recebimento
+	 * @return RcbtoListarResponse Resposta da solicitação de listagem de nota de recebimento
+	 */
+	public function ListarRecebimentos(RcbtoListarRequest $rcbtoListarRequest): RcbtoListarResponse{
+		return $this->_Call('ListarRecebimentos',Array(
+			$rcbtoListarRequest
+		));
+	}
+
+	/**
+	 * Reverter recebimento NFe
+	 *
+	 * @param RcbtoReverterRequest $rcbtoReverterRequest Solicitação de reversão de recebimento de NFe
+	 * @return RcbtoReverterResponse Resposta da reversão do recebimento da NFe
+	 */
+	public function ReverterRecebimento(RcbtoReverterRequest $rcbtoReverterRequest): RcbtoReverterResponse{
+		return $this->_Call('ReverterRecebimento',Array(
+			$rcbtoReverterRequest
+		));
+	}
+
+	/**
+	 * Alterar recebimento de NFe
+	 *
+	 * @param RcbtoAlterarRequest $rcbtoAlterarRequest Solicitação da alteração do recebimento da NFe
+	 * @return RcbtoAlterarResponse Resposta da alteração do recebimento da NFe
+	 */
+	public function AlterarRecebimento(RcbtoAlterarRequest $rcbtoAlterarRequest): RcbtoAlterarResponse{
+		return $this->_Call('AlterarRecebimento',Array(
+			$rcbtoAlterarRequest
+		));
+	}
+
+	/**
+	 * Excluir recebimento NFe.
+	 *
+	 * @param RcbtoExcluirRequest $rcbtoExcluirRequest Solicitação da exclusão do recebimento da NFe
+	 * @return RcbtoExcluirResponse Resposta da exclusão do recebimento da NFe.
+	 */
+	public function ExcluirRecebimento(RcbtoExcluirRequest $rcbtoExcluirRequest): RcbtoExcluirResponse{
+		return $this->_Call('ExcluirRecebimento',Array(
+			$rcbtoExcluirRequest
+		));
+	}
+
+	/**
+	 * Alterar recebimento de NFe concluídos.
+	 *
+	 * @param RcbtoConcAlterarRequest $rcbtoConcAlterarRequest Solicitação da alteração do recebimento da NFe
+	 * @return RcbtoConcAlterarResponse Resposta da alteração do recebimento da NFe
+	 */
+	public function AlterarRecebimentoConcluido(RcbtoConcAlterarRequest $rcbtoConcAlterarRequest): RcbtoConcAlterarResponse{
+		return $this->_Call('AlterarRecebimentoConcluido',Array(
+			$rcbtoConcAlterarRequest
+		));
+	}
+}
