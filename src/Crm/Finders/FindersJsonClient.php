@@ -37,9 +37,10 @@ class FindersJsonClient extends AbstractOmieJsonClient {
 	 * @param FinderListarRequest $finderListarRequest Solicitação da listagem de finders da oportunidade.
 	 * @return FinderListarResponse Resposta da solicitação da listagem de finders da oportunidade.
 	 */
-	public function ListarFinders(FinderListarRequest $finderListarRequest): FinderListarResponse{
-		return $this->_Call('ListarFinders',Array(
+	public function ListarFinders(FinderListarRequest $finderListarRequest): ?FinderListarResponse {
+		$res = $this->_Call('ListarFinders',Array(
 			$finderListarRequest
 		));
+		return $this->_Cast($res, FinderListarResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class IcmsOrigemJsonClient extends AbstractOmieJsonClient {
 	 * @param OrigMercListarRequest $origMercListarRequest Solicitação da listagem da Origem da Mercadoria do ICMS.
 	 * @return OrigMercListarResponse Resposta da solicitação da listagem da Origem da Mercadoria do ICMS.
 	 */
-	public function ListarOrigMerc(OrigMercListarRequest $origMercListarRequest): OrigMercListarResponse{
-		return $this->_Call('ListarOrigMerc',Array(
+	public function ListarOrigMerc(OrigMercListarRequest $origMercListarRequest): ?OrigMercListarResponse {
+		$res = $this->_Call('ListarOrigMerc',Array(
 			$origMercListarRequest
 		));
+		return $this->_Cast($res, OrigMercListarResponse::class);
 	}
 }

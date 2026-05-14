@@ -43,10 +43,11 @@ class NotaEntradaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param NefatDuplicarRequest $nefatDuplicarRequest Solicitação de duplicação de nota de entrada
 	 * @return NefatDuplicarResponse Resposta da duplicação da nota de entrada
 	 */
-	public function DuplicarNotaEnt(NefatDuplicarRequest $nefatDuplicarRequest): NefatDuplicarResponse{
-		return $this->_Call('DuplicarNotaEnt',Array(
+	public function DuplicarNotaEnt(NefatDuplicarRequest $nefatDuplicarRequest): ?NefatDuplicarResponse {
+		$res = $this->_Call('DuplicarNotaEnt',Array(
 			$nefatDuplicarRequest
 		));
+		return $this->_Cast($res, NefatDuplicarResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class NotaEntradaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param NefatConcluirRequest $nefatConcluirRequest Solicitação de conclusão de nota de entrada
 	 * @return NefatConcluirResponse Resposta da conclusão da nota de entrada
 	 */
-	public function ConcluirNotaEnt(NefatConcluirRequest $nefatConcluirRequest): NefatConcluirResponse{
-		return $this->_Call('ConcluirNotaEnt',Array(
+	public function ConcluirNotaEnt(NefatConcluirRequest $nefatConcluirRequest): ?NefatConcluirResponse {
+		$res = $this->_Call('ConcluirNotaEnt',Array(
 			$nefatConcluirRequest
 		));
+		return $this->_Cast($res, NefatConcluirResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class NotaEntradaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param NefatCancelarRequest $nefatCancelarRequest Solicitação de cancelamento de nota de entrada
 	 * @return NefatCancelarResponse Resposta de cancelamento da nota de entrada
 	 */
-	public function CancelarNotaEnt(NefatCancelarRequest $nefatCancelarRequest): NefatCancelarResponse{
-		return $this->_Call('CancelarNotaEnt',Array(
+	public function CancelarNotaEnt(NefatCancelarRequest $nefatCancelarRequest): ?NefatCancelarResponse {
+		$res = $this->_Call('CancelarNotaEnt',Array(
 			$nefatCancelarRequest
 		));
+		return $this->_Cast($res, NefatCancelarResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class NotaEntradaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param NefatConferirRequest $nefatConferirRequest Solicitação de conferência de nota de entrada
 	 * @return NefatConferirResponse Resposta da conferência da nota de entrada
 	 */
-	public function ConferirNotaEnt(NefatConferirRequest $nefatConferirRequest): NefatConferirResponse{
-		return $this->_Call('ConferirNotaEnt',Array(
+	public function ConferirNotaEnt(NefatConferirRequest $nefatConferirRequest): ?NefatConferirResponse {
+		$res = $this->_Call('ConferirNotaEnt',Array(
 			$nefatConferirRequest
 		));
+		return $this->_Cast($res, NefatConferirResponse::class);
 	}
 }

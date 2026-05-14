@@ -47,10 +47,11 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpIncluirRequest $opIncluirRequest Solicitação de Inclusão de oportunidades
 	 * @return OpIncluirResponse Resposta da inclusão de oportunidades.
 	 */
-	public function IncluirOportunidade(OpIncluirRequest $opIncluirRequest): OpIncluirResponse{
-		return $this->_Call('IncluirOportunidade',Array(
+	public function IncluirOportunidade(OpIncluirRequest $opIncluirRequest): ?OpIncluirResponse {
+		$res = $this->_Call('IncluirOportunidade',Array(
 			$opIncluirRequest
 		));
+		return $this->_Cast($res, OpIncluirResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpAlterarRequest $opAlterarRequest Solicitação de alteração de oportunidades
 	 * @return OpAlterarResponse Resposta da alteração de oportunidades.
 	 */
-	public function AlterarOportunidade(OpAlterarRequest $opAlterarRequest): OpAlterarResponse{
-		return $this->_Call('AlterarOportunidade',Array(
+	public function AlterarOportunidade(OpAlterarRequest $opAlterarRequest): ?OpAlterarResponse {
+		$res = $this->_Call('AlterarOportunidade',Array(
 			$opAlterarRequest
 		));
+		return $this->_Cast($res, OpAlterarResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpUpsertRequest $opUpsertRequest Solicitação de Upsert de oportunidades
 	 * @return OpUpsertResponse Resposta da upsert de oportunidades.
 	 */
-	public function UpsertOportunidade(OpUpsertRequest $opUpsertRequest): OpUpsertResponse{
-		return $this->_Call('UpsertOportunidade',Array(
+	public function UpsertOportunidade(OpUpsertRequest $opUpsertRequest): ?OpUpsertResponse {
+		$res = $this->_Call('UpsertOportunidade',Array(
 			$opUpsertRequest
 		));
+		return $this->_Cast($res, OpUpsertResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpExcluirRequest $opExcluirRequest Solicitação de exclusão de oportunidades.
 	 * @return OpExcluirResponse Resposta da exclusão de oportunidades.
 	 */
-	public function ExcluirOportunidade(OpExcluirRequest $opExcluirRequest): OpExcluirResponse{
-		return $this->_Call('ExcluirOportunidade',Array(
+	public function ExcluirOportunidade(OpExcluirRequest $opExcluirRequest): ?OpExcluirResponse {
+		$res = $this->_Call('ExcluirOportunidade',Array(
 			$opExcluirRequest
 		));
+		return $this->_Cast($res, OpExcluirResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpConsultarRequest $opConsultarRequest Solicitação de consulta de oportunidades.
 	 * @return OpConsultarResponse Resposta da consulta de oportunidades.
 	 */
-	public function ConsultarOportunidade(OpConsultarRequest $opConsultarRequest): OpConsultarResponse{
-		return $this->_Call('ConsultarOportunidade',Array(
+	public function ConsultarOportunidade(OpConsultarRequest $opConsultarRequest): ?OpConsultarResponse {
+		$res = $this->_Call('ConsultarOportunidade',Array(
 			$opConsultarRequest
 		));
+		return $this->_Cast($res, OpConsultarResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class OportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param OpListarRequest $opListarRequest Solicitação da listagem de oportunidades.
 	 * @return OpListarResponse Resposta da solicitação da listagem de oportunidades.
 	 */
-	public function ListarOportunidades(OpListarRequest $opListarRequest): OpListarResponse{
-		return $this->_Call('ListarOportunidades',Array(
+	public function ListarOportunidades(OpListarRequest $opListarRequest): ?OpListarResponse {
+		$res = $this->_Call('ListarOportunidades',Array(
 			$opListarRequest
 		));
+		return $this->_Cast($res, OpListarResponse::class);
 	}
 }

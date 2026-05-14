@@ -37,10 +37,11 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RequisicaoCadastro $requisicaoCadastro Cadastro de Requisição de Compras&nbsp;
 	 * @return RcStatus Status da Requisição de Compras
 	 */
-	public function IncluirReq(RequisicaoCadastro $requisicaoCadastro): RcStatus{
-		return $this->_Call('IncluirReq',Array(
+	public function IncluirReq(RequisicaoCadastro $requisicaoCadastro): ?RcStatus {
+		$res = $this->_Call('IncluirReq',Array(
 			$requisicaoCadastro
 		));
+		return $this->_Cast($res, RcStatus::class);
 	}
 
 	/**
@@ -49,10 +50,11 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RequisicaoCadastro $requisicaoCadastro Cadastro de Requisição de Compras&nbsp;
 	 * @return RcStatus Status da Requisição de Compras
 	 */
-	public function AlterarReq(RequisicaoCadastro $requisicaoCadastro): RcStatus{
-		return $this->_Call('AlterarReq',Array(
+	public function AlterarReq(RequisicaoCadastro $requisicaoCadastro): ?RcStatus {
+		$res = $this->_Call('AlterarReq',Array(
 			$requisicaoCadastro
 		));
+		return $this->_Cast($res, RcStatus::class);
 	}
 
 	/**
@@ -61,10 +63,11 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RcChave $rcChave Dados para pesquisa da Requisição de Compras&nbsp;
 	 * @return RcStatus Status da Requisição de Compras
 	 */
-	public function ExcluirReq(RcChave $rcChave): RcStatus{
-		return $this->_Call('ExcluirReq',Array(
+	public function ExcluirReq(RcChave $rcChave): ?RcStatus {
+		$res = $this->_Call('ExcluirReq',Array(
 			$rcChave
 		));
+		return $this->_Cast($res, RcStatus::class);
 	}
 
 	/**
@@ -73,10 +76,11 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RequisicaoCadastro $requisicaoCadastro Cadastro de Requisição de Compras&nbsp;
 	 * @return RcStatus Status da Requisição de Compras
 	 */
-	public function UpsertReq(RequisicaoCadastro $requisicaoCadastro): RcStatus{
-		return $this->_Call('UpsertReq',Array(
+	public function UpsertReq(RequisicaoCadastro $requisicaoCadastro): ?RcStatus {
+		$res = $this->_Call('UpsertReq',Array(
 			$requisicaoCadastro
 		));
+		return $this->_Cast($res, RcStatus::class);
 	}
 
 	/**
@@ -85,10 +89,11 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RcChave $rcChave Dados para pesquisa da Requisição de Compras&nbsp;
 	 * @return RequisicaoCadastro Cadastro de Requisição de Compras&nbsp;
 	 */
-	public function ConsultarReq(RcChave $rcChave): RequisicaoCadastro{
-		return $this->_Call('ConsultarReq',Array(
+	public function ConsultarReq(RcChave $rcChave): ?RequisicaoCadastro {
+		$res = $this->_Call('ConsultarReq',Array(
 			$rcChave
 		));
+		return $this->_Cast($res, RequisicaoCadastro::class);
 	}
 
 	/**
@@ -97,9 +102,10 @@ class RequisicaoCompraJsonClient extends AbstractOmieJsonClient {
 	 * @param RcListarRequest $rcListarRequest Solicitação de Listagem de Requisição de Compras
 	 * @return RcListarResponse Resposta da listagem de Requisição de Compras
 	 */
-	public function PesquisarReq(RcListarRequest $rcListarRequest): RcListarResponse{
-		return $this->_Call('PesquisarReq',Array(
+	public function PesquisarReq(RcListarRequest $rcListarRequest): ?RcListarResponse {
+		$res = $this->_Call('PesquisarReq',Array(
 			$rcListarRequest
 		));
+		return $this->_Cast($res, RcListarResponse::class);
 	}
 }

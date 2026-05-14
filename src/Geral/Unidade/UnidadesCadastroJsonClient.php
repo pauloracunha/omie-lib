@@ -35,9 +35,10 @@ class UnidadesCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Unidade_pesquisar $unidade_pesquisar Tabela de Unidades de Medidas
 	 * @return Unidade_cadastro_lista Lista de Cadastro de Unidades
 	 */
-	public function ListarUnidades(Unidade_pesquisar $unidade_pesquisar): Unidade_cadastro_lista{
-		return $this->_Call('ListarUnidades',Array(
+	public function ListarUnidades(Unidade_pesquisar $unidade_pesquisar): ?Unidade_cadastro_lista {
+		$res = $this->_Call('ListarUnidades',Array(
 			$unidade_pesquisar
 		));
+		return $this->_Cast($res, Unidade_cadastro_lista::class);
 	}
 }

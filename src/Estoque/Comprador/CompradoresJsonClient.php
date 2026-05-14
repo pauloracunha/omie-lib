@@ -37,9 +37,10 @@ class CompradoresJsonClient extends AbstractOmieJsonClient {
 	 * @param CompradorListarRequest $CompradorListarRequest Solicitação da listagem de compradores.
 	 * @return CompradorListarResponse Resposta da solicitação da listagem de compradores.
 	 */
-	public function ListarCompradores(CompradorListarRequest $CompradorListarRequest): CompradorListarResponse{
-		return $this->_Call('ListarCompradores',Array(
+	public function ListarCompradores(CompradorListarRequest $CompradorListarRequest): ?CompradorListarResponse {
+		$res = $this->_Call('ListarCompradores',Array(
 			$CompradorListarRequest
 		));
+		return $this->_Cast($res, CompradorListarResponse::class);
 	}
 }

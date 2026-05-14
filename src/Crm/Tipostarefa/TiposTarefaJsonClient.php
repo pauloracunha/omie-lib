@@ -45,10 +45,11 @@ class TiposTarefaJsonClient extends AbstractOmieJsonClient {
 	 * @param TipostarefaAlterarRequest $tipostarefaAlterarRequest Cadastro do tipo de tarefa
 	 * @return TipostarefaAlterarResponse Resposta da inclusão do tipo de tarefa
 	 */
-	public function AlterarTipoTarefa(TipostarefaAlterarRequest $tipostarefaAlterarRequest): TipostarefaAlterarResponse{
-		return $this->_Call('AlterarTipoTarefa',Array(
+	public function AlterarTipoTarefa(TipostarefaAlterarRequest $tipostarefaAlterarRequest): ?TipostarefaAlterarResponse {
+		$res = $this->_Call('AlterarTipoTarefa',Array(
 			$tipostarefaAlterarRequest
 		));
+		return $this->_Cast($res, TipostarefaAlterarResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class TiposTarefaJsonClient extends AbstractOmieJsonClient {
 	 * @param TipostarefaConsultarRequest $tipostarefaConsultarRequest Solicitação da consulta de tipo de tarefa
 	 * @return TipostarefaConsultarResponse Cadastro do tipo de tarefa
 	 */
-	public function ConsultarTipoTarefa(TipostarefaConsultarRequest $tipostarefaConsultarRequest): TipostarefaConsultarResponse{
-		return $this->_Call('ConsultarTipoTarefa',Array(
+	public function ConsultarTipoTarefa(TipostarefaConsultarRequest $tipostarefaConsultarRequest): ?TipostarefaConsultarResponse {
+		$res = $this->_Call('ConsultarTipoTarefa',Array(
 			$tipostarefaConsultarRequest
 		));
+		return $this->_Cast($res, TipostarefaConsultarResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class TiposTarefaJsonClient extends AbstractOmieJsonClient {
 	 * @param TipostarefaExcluirRequest $tipostarefaExcluirRequest Solicitação da exclusão do tipo de tarefa
 	 * @return TipostarefaExcluirResponse Resposta da exclusão do tipo de tarefa
 	 */
-	public function ExcluirTipoTarefa(TipostarefaExcluirRequest $tipostarefaExcluirRequest): TipostarefaExcluirResponse{
-		return $this->_Call('ExcluirTipoTarefa',Array(
+	public function ExcluirTipoTarefa(TipostarefaExcluirRequest $tipostarefaExcluirRequest): ?TipostarefaExcluirResponse {
+		$res = $this->_Call('ExcluirTipoTarefa',Array(
 			$tipostarefaExcluirRequest
 		));
+		return $this->_Cast($res, TipostarefaExcluirResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class TiposTarefaJsonClient extends AbstractOmieJsonClient {
 	 * @param TipostarefaListarRequest $tipostarefaListarRequest Solicitação da listagem de tipos de tarefa
 	 * @return TipostarefaListarResponse Resposta da solicitação da listagem de tipos de tarefas.
 	 */
-	public function ListarTiposTarefa(TipostarefaListarRequest $tipostarefaListarRequest): TipostarefaListarResponse{
-		return $this->_Call('ListarTiposTarefa',Array(
+	public function ListarTiposTarefa(TipostarefaListarRequest $tipostarefaListarRequest): ?TipostarefaListarResponse {
+		$res = $this->_Call('ListarTiposTarefa',Array(
 			$tipostarefaListarRequest
 		));
+		return $this->_Cast($res, TipostarefaListarResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class TiposTarefaJsonClient extends AbstractOmieJsonClient {
 	 * @param TipostarefaIncluirRequest $tipostarefaIncluirRequest Cadastro do tipo de tarefa
 	 * @return TipostarefaIncluirResponse Resposta da inclusão do tipo de tarefa
 	 */
-	public function IncluirTipoTarefa(TipostarefaIncluirRequest $tipostarefaIncluirRequest): TipostarefaIncluirResponse{
-		return $this->_Call('IncluirTipoTarefa',Array(
+	public function IncluirTipoTarefa(TipostarefaIncluirRequest $tipostarefaIncluirRequest): ?TipostarefaIncluirResponse {
+		$res = $this->_Call('IncluirTipoTarefa',Array(
 			$tipostarefaIncluirRequest
 		));
+		return $this->_Cast($res, TipostarefaIncluirResponse::class);
 	}
 }

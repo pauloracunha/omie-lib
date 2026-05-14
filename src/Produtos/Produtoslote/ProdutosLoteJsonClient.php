@@ -39,10 +39,11 @@ class ProdutosLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param LoteProdutoConsultarRequest $loteProdutoConsultarRequest Solicitação da consulta de lote.
 	 * @return LoteProdutoConsultarResponse Solicitação da consulta de lote do produto.
 	 */
-	public function ConsultarLote(LoteProdutoConsultarRequest $loteProdutoConsultarRequest): LoteProdutoConsultarResponse{
-		return $this->_Call('ConsultarLote',Array(
+	public function ConsultarLote(LoteProdutoConsultarRequest $loteProdutoConsultarRequest): ?LoteProdutoConsultarResponse {
+		$res = $this->_Call('ConsultarLote',Array(
 			$loteProdutoConsultarRequest
 		));
+		return $this->_Cast($res, LoteProdutoConsultarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class ProdutosLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param LoteProdutoListarRequest $loteProdutoListarRequest Requisição da consulta de lote.
 	 * @return LoteProdutoListarResponse Retorno da lista de lote.
 	 */
-	public function ListarLotes(LoteProdutoListarRequest $loteProdutoListarRequest): LoteProdutoListarResponse{
-		return $this->_Call('ListarLotes',Array(
+	public function ListarLotes(LoteProdutoListarRequest $loteProdutoListarRequest): ?LoteProdutoListarResponse {
+		$res = $this->_Call('ListarLotes',Array(
 			$loteProdutoListarRequest
 		));
+		return $this->_Cast($res, LoteProdutoListarResponse::class);
 	}
 }

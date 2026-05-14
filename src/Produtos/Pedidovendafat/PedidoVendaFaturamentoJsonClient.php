@@ -47,10 +47,11 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpFaturarRequest $pvpFaturarRequest Solicitação de faturamento da Pedido de Venda de Produto.
 	 * @return PvpFaturarResponse Resposta da solicitação de faturamento do Pedido de Venda de Produto.
 	 */
-	public function FaturarPedidoVenda(PvpFaturarRequest $pvpFaturarRequest): PvpFaturarResponse{
-		return $this->_Call('FaturarPedidoVenda',Array(
+	public function FaturarPedidoVenda(PvpFaturarRequest $pvpFaturarRequest): ?PvpFaturarResponse {
+		$res = $this->_Call('FaturarPedidoVenda',Array(
 			$pvpFaturarRequest
 		));
+		return $this->_Cast($res, PvpFaturarResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpValidarRequest $pvpValidarRequest Solicitação de validação da Pedido de Venda de Produto.
 	 * @return PvpValidarResponse Resposta da solicitação de validação do Pedido de Venda de Produto.
 	 */
-	public function ValidarPedidoVenda(PvpValidarRequest $pvpValidarRequest): PvpValidarResponse{
-		return $this->_Call('ValidarPedidoVenda',Array(
+	public function ValidarPedidoVenda(PvpValidarRequest $pvpValidarRequest): ?PvpValidarResponse {
+		$res = $this->_Call('ValidarPedidoVenda',Array(
 			$pvpValidarRequest
 		));
+		return $this->_Cast($res, PvpValidarResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpCancelarRequest $pvpCancelarRequest Solicitação de cancelamento da Pedido de Venda de Produto.
 	 * @return PvpCancelarResponse Resposta da solicitação de cancelamento do Pedido de Venda de Produto.
 	 */
-	public function CancelarPedidoVenda(PvpCancelarRequest $pvpCancelarRequest): PvpCancelarResponse{
-		return $this->_Call('CancelarPedidoVenda',Array(
+	public function CancelarPedidoVenda(PvpCancelarRequest $pvpCancelarRequest): ?PvpCancelarResponse {
+		$res = $this->_Call('CancelarPedidoVenda',Array(
 			$pvpCancelarRequest
 		));
+		return $this->_Cast($res, PvpCancelarResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpDuplicarRequest $pvpDuplicarRequest Solicitação de cópia do Pedido de Venda de Produto.
 	 * @return PvpDuplicarResponse Resposta da solicitação de cópia do Pedido de Venda de Produto.
 	 */
-	public function DuplicarPedidoVenda(PvpDuplicarRequest $pvpDuplicarRequest): PvpDuplicarResponse{
-		return $this->_Call('DuplicarPedidoVenda',Array(
+	public function DuplicarPedidoVenda(PvpDuplicarRequest $pvpDuplicarRequest): ?PvpDuplicarResponse {
+		$res = $this->_Call('DuplicarPedidoVenda',Array(
 			$pvpDuplicarRequest
 		));
+		return $this->_Cast($res, PvpDuplicarResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpAssociarCodIntRequest $pvpAssociarCodIntRequest Solicitação de alteração do código de integração do Pedido de Venda de Produto.
 	 * @return PvpAssociarCodIntResponse Resposta da solicitação de alteração do código de integração do Pedido de Venda de Produto.
 	 */
-	public function AssociarCodIntPedidoVenda(PvpAssociarCodIntRequest $pvpAssociarCodIntRequest): PvpAssociarCodIntResponse{
-		return $this->_Call('AssociarCodIntPedidoVenda',Array(
+	public function AssociarCodIntPedidoVenda(PvpAssociarCodIntRequest $pvpAssociarCodIntRequest): ?PvpAssociarCodIntResponse {
+		$res = $this->_Call('AssociarCodIntPedidoVenda',Array(
 			$pvpAssociarCodIntRequest
 		));
+		return $this->_Cast($res, PvpAssociarCodIntResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class PedidoVendaFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param PvpObterRequest $pvpObterRequest Solicitação da obtenção de Pedidos de Venda em etapa a Faturar
 	 * @return PvpObterResponse Resposta da solicitação da listagem de Pedidos de Venda em etapa a Faturar
 	 */
-	public function ObterPedidosVenda(PvpObterRequest $pvpObterRequest): PvpObterResponse{
-		return $this->_Call('ObterPedidosVenda',Array(
+	public function ObterPedidosVenda(PvpObterRequest $pvpObterRequest): ?PvpObterResponse {
+		$res = $this->_Call('ObterPedidosVenda',Array(
 			$pvpObterRequest
 		));
+		return $this->_Cast($res, PvpObterResponse::class);
 	}
 }

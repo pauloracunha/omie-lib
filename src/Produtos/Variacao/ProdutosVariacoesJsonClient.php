@@ -41,10 +41,11 @@ class ProdutosVariacoesJsonClient extends AbstractOmieJsonClient {
 	 * @param VariacaoConsultarRequest $variacaoConsultarRequest Solicitação da consulta de variação.
 	 * @return VariacaoConsultarResponse Resposta da consulta de variação.
 	 */
-	public function ConsultarVariacoes(VariacaoConsultarRequest $variacaoConsultarRequest): VariacaoConsultarResponse{
-		return $this->_Call('ConsultarVariacoes',Array(
+	public function ConsultarVariacoes(VariacaoConsultarRequest $variacaoConsultarRequest): ?VariacaoConsultarResponse {
+		$res = $this->_Call('ConsultarVariacoes',Array(
 			$variacaoConsultarRequest
 		));
+		return $this->_Cast($res, VariacaoConsultarResponse::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class ProdutosVariacoesJsonClient extends AbstractOmieJsonClient {
 	 * @param VariacaoListarRequest $variacaoListarRequest Solicitação para listar as variações.
 	 * @return VariacaoListarResponse Retorno da lista de variações.
 	 */
-	public function ListarVariacoes(VariacaoListarRequest $variacaoListarRequest): VariacaoListarResponse{
-		return $this->_Call('ListarVariacoes',Array(
+	public function ListarVariacoes(VariacaoListarRequest $variacaoListarRequest): ?VariacaoListarResponse {
+		$res = $this->_Call('ListarVariacoes',Array(
 			$variacaoListarRequest
 		));
+		return $this->_Cast($res, VariacaoListarResponse::class);
 	}
 
 	/**
@@ -65,9 +67,10 @@ class ProdutosVariacoesJsonClient extends AbstractOmieJsonClient {
 	 * @param VariacaoIncluirRequest $variacaoIncluirRequest Solicitação da inclusão de variação para o produto.
 	 * @return VariacaoIncluirResponse Resposta da solicitação da inclusão de variação para o produto.
 	 */
-	public function IncluirVariacoes(VariacaoIncluirRequest $variacaoIncluirRequest): VariacaoIncluirResponse{
-		return $this->_Call('IncluirVariacoes',Array(
+	public function IncluirVariacoes(VariacaoIncluirRequest $variacaoIncluirRequest): ?VariacaoIncluirResponse {
+		$res = $this->_Call('IncluirVariacoes',Array(
 			$variacaoIncluirRequest
 		));
+		return $this->_Cast($res, VariacaoIncluirResponse::class);
 	}
 }

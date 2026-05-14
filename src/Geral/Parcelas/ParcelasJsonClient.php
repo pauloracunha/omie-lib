@@ -39,10 +39,11 @@ class ParcelasJsonClient extends AbstractOmieJsonClient {
 	 * @param ParcelaListarRequest $parcelaListarRequest Solicitação da listagem de parcelas disponíveis.
 	 * @return ParcelaListarResponse Resposta da solicitação da listagem de Parcelas.
 	 */
-	public function ListarParcelas(ParcelaListarRequest $parcelaListarRequest): ParcelaListarResponse{
-		return $this->_Call('ListarParcelas',Array(
+	public function ListarParcelas(ParcelaListarRequest $parcelaListarRequest): ?ParcelaListarResponse {
+		$res = $this->_Call('ListarParcelas',Array(
 			$parcelaListarRequest
 		));
+		return $this->_Cast($res, ParcelaListarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class ParcelasJsonClient extends AbstractOmieJsonClient {
 	 * @param ParcelaIncluirRequest $parcelaIncluirRequest Solicitação da inclusão de uma parcela.
 	 * @return ParcelaIncluirResponse Resposta da solicitação da inclusão de parcela.
 	 */
-	public function IncluirParcela(ParcelaIncluirRequest $parcelaIncluirRequest): ParcelaIncluirResponse{
-		return $this->_Call('IncluirParcela',Array(
+	public function IncluirParcela(ParcelaIncluirRequest $parcelaIncluirRequest): ?ParcelaIncluirResponse {
+		$res = $this->_Call('IncluirParcela',Array(
 			$parcelaIncluirRequest
 		));
+		return $this->_Cast($res, ParcelaIncluirResponse::class);
 	}
 }

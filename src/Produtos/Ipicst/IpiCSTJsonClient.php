@@ -37,9 +37,10 @@ class IpiCSTJsonClient extends AbstractOmieJsonClient {
 	 * @param IpiCstListarRequest $ipiCstListarRequest Solicitação da listagem de CST do IPI.
 	 * @return IpiCstListarResponse Resposta da solicitação da listagem de CST do IPI.
 	 */
-	public function ListarCstIpi(IpiCstListarRequest $ipiCstListarRequest): IpiCstListarResponse{
-		return $this->_Call('ListarCstIpi',Array(
+	public function ListarCstIpi(IpiCstListarRequest $ipiCstListarRequest): ?IpiCstListarResponse {
+		$res = $this->_Call('ListarCstIpi',Array(
 			$ipiCstListarRequest
 		));
+		return $this->_Cast($res, IpiCstListarResponse::class);
 	}
 }

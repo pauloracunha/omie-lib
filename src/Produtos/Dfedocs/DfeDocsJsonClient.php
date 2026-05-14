@@ -45,30 +45,33 @@ class DfeDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterCupomRequest $ObterCupomRequest Solicita as informações de um Cupom Fiscal.
 	 * @return ObterCupomResponse Retorna as informações do Cupom Fiscal.
 	 */
-	public function ObterCupom(ObterCupomRequest $ObterCupomRequest): ObterCupomResponse{
-		return $this->_Call('ObterCupom',Array(
+	public function ObterCupom(ObterCupomRequest $ObterCupomRequest): ?ObterCupomResponse {
+		$res = $this->_Call('ObterCupom',Array(
 			$ObterCupomRequest
 		));
+		return $this->_Cast($res, ObterCupomResponse::class);
 	}
 
 	/**
 	 * @param ObterCTeRequest $ObterCTeRequest Solicita as informações de um CTe.
 	 * @return ObterCTeResponse Retorna informações de um CTe.
 	 */
-	public function ObterCTe(ObterCTeRequest $ObterCTeRequest): ObterCTeResponse{
-		return $this->_Call('ObterCTe',Array(
+	public function ObterCTe(ObterCTeRequest $ObterCTeRequest): ?ObterCTeResponse {
+		$res = $this->_Call('ObterCTe',Array(
 			$ObterCTeRequest
 		));
+		return $this->_Cast($res, ObterCTeResponse::class);
 	}
 
 	/**
 	 * @param ObterNFeRequest $ObterNFeRequest Solicita as informações de uma Nota Fiscal.
 	 * @return ObterNFeResponse Retorna informações da uma Nota Fiscal.
 	 */
-	public function ObterNfe(ObterNFeRequest $ObterNFeRequest): ObterNFeResponse{
-		return $this->_Call('ObterNfe',Array(
+	public function ObterNfe(ObterNFeRequest $ObterNFeRequest): ?ObterNFeResponse {
+		$res = $this->_Call('ObterNfe',Array(
 			$ObterNFeRequest
 		));
+		return $this->_Cast($res, ObterNFeResponse::class);
 	}
 
 	/**
@@ -77,10 +80,11 @@ class DfeDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterPedVendaRequest $ObterPedVendaRequest Solicita as informações de um Pedido de Venda.
 	 * @return ObterPedVendaResponse Retorna a solicitação das informações de um Pedido de Venda.
 	 */
-	public function ObterPedVenda(ObterPedVendaRequest $ObterPedVendaRequest): ObterPedVendaResponse{
-		return $this->_Call('ObterPedVenda',Array(
+	public function ObterPedVenda(ObterPedVendaRequest $ObterPedVendaRequest): ?ObterPedVendaResponse {
+		$res = $this->_Call('ObterPedVenda',Array(
 			$ObterPedVendaRequest
 		));
+		return $this->_Cast($res, ObterPedVendaResponse::class);
 	}
 
 	/**
@@ -89,9 +93,10 @@ class DfeDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterDanfeSimpRequest $ObterDanfeSimpRequest Solicita as informações de uma nota fiscal.
 	 * @return ObterDanfeSimpResponse Retorna informações da uma Nota Fiscal com Danfe simplificado.
 	 */
-	public function ObterDanfeSimp(ObterDanfeSimpRequest $ObterDanfeSimpRequest): ObterDanfeSimpResponse{
-		return $this->_Call('ObterDanfeSimp',Array(
+	public function ObterDanfeSimp(ObterDanfeSimpRequest $ObterDanfeSimpRequest): ?ObterDanfeSimpResponse {
+		$res = $this->_Call('ObterDanfeSimp',Array(
 			$ObterDanfeSimpRequest
 		));
+		return $this->_Cast($res, ObterDanfeSimpResponse::class);
 	}
 }

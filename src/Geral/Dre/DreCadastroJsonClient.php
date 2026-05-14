@@ -37,9 +37,10 @@ class DreCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param DreCadastroListRequest $dreCadastroListRequest Lista os DREs cadastrados.
 	 * @return DreCadastroListResponse Retorna a lista de Contas do DRE.
 	 */
-	public function ListarCadastroDRE(DreCadastroListRequest $dreCadastroListRequest): DreCadastroListResponse{
-		return $this->_Call('ListarCadastroDRE',Array(
+	public function ListarCadastroDRE(DreCadastroListRequest $dreCadastroListRequest): ?DreCadastroListResponse {
+		$res = $this->_Call('ListarCadastroDRE',Array(
 			$dreCadastroListRequest
 		));
+		return $this->_Cast($res, DreCadastroListResponse::class);
 	}
 }

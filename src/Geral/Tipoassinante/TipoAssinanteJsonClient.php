@@ -37,9 +37,10 @@ class TipoAssinanteJsonClient extends AbstractOmieJsonClient {
 	 * @param TipoAssinanteRequest $tipoAssinanteRequest Solicitação da listagem de tipo de assinante (NF modelo 21 e 22).
 	 * @return TipoAssinanteResponse Resposta da solicitação de tipo de assinante (NF modelo 21 e 22).
 	 */
-	public function ListarTipoAssinante(TipoAssinanteRequest $tipoAssinanteRequest): TipoAssinanteResponse{
-		return $this->_Call('ListarTipoAssinante',Array(
+	public function ListarTipoAssinante(TipoAssinanteRequest $tipoAssinanteRequest): ?TipoAssinanteResponse {
+		$res = $this->_Call('ListarTipoAssinante',Array(
 			$tipoAssinanteRequest
 		));
+		return $this->_Cast($res, TipoAssinanteResponse::class);
 	}
 }

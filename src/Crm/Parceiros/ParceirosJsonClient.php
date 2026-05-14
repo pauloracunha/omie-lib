@@ -37,9 +37,10 @@ class ParceirosJsonClient extends AbstractOmieJsonClient {
 	 * @param ParceiroListarRequest $parceiroListarRequest Solicitação da listagem de parceiros e equipes da oportunidade.
 	 * @return ParceiroListarResponse Resposta da solicitação da listagem de parceiros e equipes da oportunidade.
 	 */
-	public function ListarParceiros(ParceiroListarRequest $parceiroListarRequest): ParceiroListarResponse{
-		return $this->_Call('ListarParceiros',Array(
+	public function ListarParceiros(ParceiroListarRequest $parceiroListarRequest): ?ParceiroListarResponse {
+		$res = $this->_Call('ListarParceiros',Array(
 			$parceiroListarRequest
 		));
+		return $this->_Cast($res, ParceiroListarResponse::class);
 	}
 }

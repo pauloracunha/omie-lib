@@ -47,10 +47,11 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfIncluirEcfRequest $cfIncluirEcfRequest Incluir um cupom fiscal emitido em via Impressora Fiscal (ECF).
 	 * @return CfIncluirEcfResponse Resposta da inclusão de cupom fiscal emitido via Impressora Fiscal (ECF).
 	 */
-	public function IncluirCupom(CfIncluirEcfRequest $cfIncluirEcfRequest): CfIncluirEcfResponse{
-		return $this->_Call('IncluirCupom',Array(
+	public function IncluirCupom(CfIncluirEcfRequest $cfIncluirEcfRequest): ?CfIncluirEcfResponse {
+		$res = $this->_Call('IncluirCupom',Array(
 			$cfIncluirEcfRequest
 		));
+		return $this->_Cast($res, CfIncluirEcfResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfIncluirSatRequest $cfIncluirSatRequest Incluir Cupom Fiscal Eletrônico gerado com SAT Fiscal.
 	 * @return CfIncluirSatResponse Resposta da inclusão de Cupom Fiscal Eletrônico gerado com SAT Fiscal.
 	 */
-	public function IncluirCfeSat(CfIncluirSatRequest $cfIncluirSatRequest): CfIncluirSatResponse{
-		return $this->_Call('IncluirCfeSat',Array(
+	public function IncluirCfeSat(CfIncluirSatRequest $cfIncluirSatRequest): ?CfIncluirSatResponse {
+		$res = $this->_Call('IncluirCfeSat',Array(
 			$cfIncluirSatRequest
 		));
+		return $this->_Cast($res, CfIncluirSatResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfIncluirNfceRequest $cfIncluirNfceRequest Incluir Nota Fiscal Consumidor Eletrônica (NFC-e).
 	 * @return CfIncluirNfceResponse Resposta da inclusão de Nota Fiscal Consumidor Eletrônica (NFC-e)
 	 */
-	public function IncluirNfce(CfIncluirNfceRequest $cfIncluirNfceRequest): CfIncluirNfceResponse{
-		return $this->_Call('IncluirNfce',Array(
+	public function IncluirNfce(CfIncluirNfceRequest $cfIncluirNfceRequest): ?CfIncluirNfceResponse {
+		$res = $this->_Call('IncluirNfce',Array(
 			$cfIncluirNfceRequest
 		));
+		return $this->_Cast($res, CfIncluirNfceResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfInutilizarNfceRequest $cfInutilizarNfceRequest Solicitação da Inutilização da Nota Fiscal Consumidor Eletrônica (NFC-e).
 	 * @return CfInutilizarNfceResponse Resposta da solicitação de Inutilização de Nota Fiscal Consumidor Eletrônica (NFC-e)
 	 */
-	public function InutilizarNfce(CfInutilizarNfceRequest $cfInutilizarNfceRequest): CfInutilizarNfceResponse{
-		return $this->_Call('InutilizarNfce',Array(
+	public function InutilizarNfce(CfInutilizarNfceRequest $cfInutilizarNfceRequest): ?CfInutilizarNfceResponse {
+		$res = $this->_Call('InutilizarNfce',Array(
 			$cfInutilizarNfceRequest
 		));
+		return $this->_Cast($res, CfInutilizarNfceResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfFecharCaixaRequest $cfFecharCaixaRequest Efetua a rotina de fechamento do caixa.
 	 * @return CfFecharCaixaResponse Resposta da rotina de fechamento do caixa.
 	 */
-	public function FecharCaixa(CfFecharCaixaRequest $cfFecharCaixaRequest): CfFecharCaixaResponse{
-		return $this->_Call('FecharCaixa',Array(
+	public function FecharCaixa(CfFecharCaixaRequest $cfFecharCaixaRequest): ?CfFecharCaixaResponse {
+		$res = $this->_Call('FecharCaixa',Array(
 			$cfFecharCaixaRequest
 		));
+		return $this->_Cast($res, CfFecharCaixaResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class CupomFiscalIncluirJsonClient extends AbstractOmieJsonClient {
 	 * @param CfIncluirRpsRequest $cfIncluirRpsRequest Incluir Cupom RPS.
 	 * @return CfIncluirRpsResponse Resposta da inclusão do Cupom RPS.
 	 */
-	public function IncluirRps(CfIncluirRpsRequest $cfIncluirRpsRequest): CfIncluirRpsResponse{
-		return $this->_Call('IncluirRps',Array(
+	public function IncluirRps(CfIncluirRpsRequest $cfIncluirRpsRequest): ?CfIncluirRpsResponse {
+		$res = $this->_Call('IncluirRps',Array(
 			$cfIncluirRpsRequest
 		));
+		return $this->_Cast($res, CfIncluirRpsResponse::class);
 	}
 }

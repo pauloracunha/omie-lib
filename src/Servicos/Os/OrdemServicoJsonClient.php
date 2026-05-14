@@ -43,10 +43,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsCadastro $osCadastro Cadastro de Ordem de Serviços
 	 * @return OsStatus Retorno do cadastro da Ordem de Serviço
 	 */
-	public function IncluirOS(OsCadastro $osCadastro): OsStatus{
-		return $this->_Call('IncluirOS',Array(
+	public function IncluirOS(OsCadastro $osCadastro): ?OsStatus {
+		$res = $this->_Call('IncluirOS',Array(
 			$osCadastro
 		));
+		return $this->_Cast($res, OsStatus::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsCadastro $osCadastro Cadastro de Ordem de Serviços
 	 * @return OsStatus Retorno do cadastro da Ordem de Serviço
 	 */
-	public function AlterarOS(OsCadastro $osCadastro): OsStatus{
-		return $this->_Call('AlterarOS',Array(
+	public function AlterarOS(OsCadastro $osCadastro): ?OsStatus {
+		$res = $this->_Call('AlterarOS',Array(
 			$osCadastro
 		));
+		return $this->_Cast($res, OsStatus::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsChave $osChave Chave de Pesquisa da Ordem de Serviço
 	 * @return OsStatus Retorno do cadastro da Ordem de Serviço
 	 */
-	public function ExcluirOS(OsChave $osChave): OsStatus{
-		return $this->_Call('ExcluirOS',Array(
+	public function ExcluirOS(OsChave $osChave): ?OsStatus {
+		$res = $this->_Call('ExcluirOS',Array(
 			$osChave
 		));
+		return $this->_Cast($res, OsStatus::class);
 	}
 
 	/**
@@ -79,10 +82,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsChave $osChave Chave de Pesquisa da Ordem de Serviço
 	 * @return OsCadastro Cadastro de Ordem de Serviços
 	 */
-	public function ConsultarOS(OsChave $osChave): OsCadastro{
-		return $this->_Call('ConsultarOS',Array(
+	public function ConsultarOS(OsChave $osChave): ?OsCadastro {
+		$res = $this->_Call('ConsultarOS',Array(
 			$osChave
 		));
+		return $this->_Cast($res, OsCadastro::class);
 	}
 
 	/**
@@ -91,10 +95,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsListarRequest $osListarRequest Solicitação de Listagem de Ordens de Serviço
 	 * @return OsListarResponse Resposta da listagem de Ordens de Serviço
 	 */
-	public function ListarOS(OsListarRequest $osListarRequest): OsListarResponse{
-		return $this->_Call('ListarOS',Array(
+	public function ListarOS(OsListarRequest $osListarRequest): ?OsListarResponse {
+		$res = $this->_Call('ListarOS',Array(
 			$osListarRequest
 		));
+		return $this->_Cast($res, OsListarResponse::class);
 	}
 
 	/**
@@ -103,10 +108,11 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsStatusRequest $osStatusRequest Solicitação de Status da Ordem de Serviço
 	 * @return OsStatusResponse Resposta da solicitação do Status da Ordem de Serviço
 	 */
-	public function StatusOS(OsStatusRequest $osStatusRequest): OsStatusResponse{
-		return $this->_Call('StatusOS',Array(
+	public function StatusOS(OsStatusRequest $osStatusRequest): ?OsStatusResponse {
+		$res = $this->_Call('StatusOS',Array(
 			$osStatusRequest
 		));
+		return $this->_Cast($res, OsStatusResponse::class);
 	}
 
 	/**
@@ -115,9 +121,10 @@ class OrdemServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsTrocarEtapaRequest $osTrocarEtapaRequest Solicitação de troca de etapa da Ordem de Serviço.
 	 * @return OsTrocarEtapaResponse Resposta da solicitação de troca de etapa da Ordem de Serviço.
 	 */
-	public function TrocarEtapaOS(OsTrocarEtapaRequest $osTrocarEtapaRequest): OsTrocarEtapaResponse{
-		return $this->_Call('TrocarEtapaOS',Array(
+	public function TrocarEtapaOS(OsTrocarEtapaRequest $osTrocarEtapaRequest): ?OsTrocarEtapaResponse {
+		$res = $this->_Call('TrocarEtapaOS',Array(
 			$osTrocarEtapaRequest
 		));
+		return $this->_Cast($res, OsTrocarEtapaResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class SolucoesJsonClient extends AbstractOmieJsonClient {
 	 * @param SolucaoListarRequest $solucaoListarRequest Solicitação da listagem de soluções da oportunidade.
 	 * @return SolucaoListarResponse Resposta da solicitação da listagem de soluções da oportunidade.
 	 */
-	public function ListarSolucoes(SolucaoListarRequest $solucaoListarRequest): SolucaoListarResponse{
-		return $this->_Call('ListarSolucoes',Array(
+	public function ListarSolucoes(SolucaoListarRequest $solucaoListarRequest): ?SolucaoListarResponse {
+		$res = $this->_Call('ListarSolucoes',Array(
 			$solucaoListarRequest
 		));
+		return $this->_Cast($res, SolucaoListarResponse::class);
 	}
 }

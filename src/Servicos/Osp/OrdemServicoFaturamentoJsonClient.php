@@ -49,10 +49,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsValidarRequest $osValidarRequest Solicitação de validação da Ordem de Serviço.
 	 * @return OsValidarResponse Resposta da solicitação de validação da Ordem de Serviço.
 	 */
-	public function ValidarOS(OsValidarRequest $osValidarRequest): OsValidarResponse{
-		return $this->_Call('ValidarOS',Array(
+	public function ValidarOS(OsValidarRequest $osValidarRequest): ?OsValidarResponse {
+		$res = $this->_Call('ValidarOS',Array(
 			$osValidarRequest
 		));
+		return $this->_Cast($res, OsValidarResponse::class);
 	}
 
 	/**
@@ -61,10 +62,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsFaturarRequest $osFaturarRequest Solicitação de validação da Ordem de Serviço.
 	 * @return OsFaturarResponse Resposta da solicitação de faturamento da Ordem de Serviço.
 	 */
-	public function FaturarOS(OsFaturarRequest $osFaturarRequest): OsFaturarResponse{
-		return $this->_Call('FaturarOS',Array(
+	public function FaturarOS(OsFaturarRequest $osFaturarRequest): ?OsFaturarResponse {
+		$res = $this->_Call('FaturarOS',Array(
 			$osFaturarRequest
 		));
+		return $this->_Cast($res, OsFaturarResponse::class);
 	}
 
 	/**
@@ -73,10 +75,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsCancelarRequest $osCancelarRequest Solicitação de cancelamento da Ordem de Serviço.
 	 * @return OsCancelarResponse Resposta da solicitação de cancelamento da Ordem de Serviço.
 	 */
-	public function CancelarOS(OsCancelarRequest $osCancelarRequest): OsCancelarResponse{
-		return $this->_Call('CancelarOS',Array(
+	public function CancelarOS(OsCancelarRequest $osCancelarRequest): ?OsCancelarResponse {
+		$res = $this->_Call('CancelarOS',Array(
 			$osCancelarRequest
 		));
+		return $this->_Cast($res, OsCancelarResponse::class);
 	}
 
 	/**
@@ -85,10 +88,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsDuplicarRequest $osDuplicarRequest Solicitação de duplicação da Ordem de Serviço.
 	 * @return OsDuplicarResponse Resposta da solicitação de duplicação da Ordem de Serviço.
 	 */
-	public function DuplicarOS(OsDuplicarRequest $osDuplicarRequest): OsDuplicarResponse{
-		return $this->_Call('DuplicarOS',Array(
+	public function DuplicarOS(OsDuplicarRequest $osDuplicarRequest): ?OsDuplicarResponse {
+		$res = $this->_Call('DuplicarOS',Array(
 			$osDuplicarRequest
 		));
+		return $this->_Cast($res, OsDuplicarResponse::class);
 	}
 
 	/**
@@ -97,10 +101,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsAssociarCodIntRequest $osAssociarCodIntRequest Solicitação de alteração do código de integração da Ordem de Serviço.
 	 * @return OsAssociarCodIntResponse Resposta da solicitação de alteração do código de integração da Ordem de Serviço.
 	 */
-	public function AssociarCodIntOS(OsAssociarCodIntRequest $osAssociarCodIntRequest): OsAssociarCodIntResponse{
-		return $this->_Call('AssociarCodIntOS',Array(
+	public function AssociarCodIntOS(OsAssociarCodIntRequest $osAssociarCodIntRequest): ?OsAssociarCodIntResponse {
+		$res = $this->_Call('AssociarCodIntOS',Array(
 			$osAssociarCodIntRequest
 		));
+		return $this->_Cast($res, OsAssociarCodIntResponse::class);
 	}
 
 	/**
@@ -109,10 +114,11 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsReenviarRequest $osReenviarRequest Solicitação de Reenvio da Ordem de Serviço.
 	 * @return OsReenviarResponse Resposta da solicitação de reenvio da Ordem de Serviço.
 	 */
-	public function ReenviarOS(OsReenviarRequest $osReenviarRequest): OsReenviarResponse{
-		return $this->_Call('ReenviarOS',Array(
+	public function ReenviarOS(OsReenviarRequest $osReenviarRequest): ?OsReenviarResponse {
+		$res = $this->_Call('ReenviarOS',Array(
 			$osReenviarRequest
 		));
+		return $this->_Cast($res, OsReenviarResponse::class);
 	}
 
 	/**
@@ -121,9 +127,10 @@ class OrdemServicoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param OsObterRequest $osObterRequest Lista as Ordens de Serviço que se encontram em uma etapa do processo de faturamento de ordens de serviço.
 	 * @return OsObterResponse Resposta da solicitação da lista de Ordens de Serviço de uma etapa.
 	 */
-	public function ObterOS(OsObterRequest $osObterRequest): OsObterResponse{
-		return $this->_Call('ObterOS',Array(
+	public function ObterOS(OsObterRequest $osObterRequest): ?OsObterResponse {
+		$res = $this->_Call('ObterOS',Array(
 			$osObterRequest
 		));
+		return $this->_Cast($res, OsObterResponse::class);
 	}
 }

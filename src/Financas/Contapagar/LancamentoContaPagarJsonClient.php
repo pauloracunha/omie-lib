@@ -37,10 +37,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cadastro $conta_pagar_cadastro Cadastro de contas a pagar.
 	 * @return Conta_pagar_cadastro_response Resposta do Cadastro de Contas a Pagar
 	 */
-	public function IncluirContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): Conta_pagar_cadastro_response{
-		return $this->_Call('IncluirContaPagar',Array(
+	public function IncluirContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): ?Conta_pagar_cadastro_response {
+		$res = $this->_Call('IncluirContaPagar',Array(
 			$conta_pagar_cadastro
 		));
+		return $this->_Cast($res, Conta_pagar_cadastro_response::class);
 	}
 
 	/**
@@ -49,10 +50,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cadastro $conta_pagar_cadastro Cadastro de contas a pagar.
 	 * @return Conta_pagar_cadastro_response Resposta do Cadastro de Contas a Pagar
 	 */
-	public function AlterarContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): Conta_pagar_cadastro_response{
-		return $this->_Call('AlterarContaPagar',Array(
+	public function AlterarContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): ?Conta_pagar_cadastro_response {
+		$res = $this->_Call('AlterarContaPagar',Array(
 			$conta_pagar_cadastro
 		));
+		return $this->_Cast($res, Conta_pagar_cadastro_response::class);
 	}
 
 	/**
@@ -61,10 +63,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave Chave da conta a pagar
 	 * @return Conta_pagar_cadastro_response Resposta do Cadastro de Contas a Pagar
 	 */
-	public function ExcluirContaPagar(Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave): Conta_pagar_cadastro_response{
-		return $this->_Call('ExcluirContaPagar',Array(
+	public function ExcluirContaPagar(Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave): ?Conta_pagar_cadastro_response {
+		$res = $this->_Call('ExcluirContaPagar',Array(
 			$conta_pagar_cadastro_chave
 		));
+		return $this->_Cast($res, Conta_pagar_cadastro_response::class);
 	}
 
 	/**
@@ -73,10 +76,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave Chave da conta a pagar
 	 * @return Conta_pagar_cadastro Cadastro de contas a pagar.
 	 */
-	public function ConsultarContaPagar(Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave): Conta_pagar_cadastro{
-		return $this->_Call('ConsultarContaPagar',Array(
+	public function ConsultarContaPagar(Conta_pagar_cadastro_chave $conta_pagar_cadastro_chave): ?Conta_pagar_cadastro {
+		$res = $this->_Call('ConsultarContaPagar',Array(
 			$conta_pagar_cadastro_chave
 		));
+		return $this->_Cast($res, Conta_pagar_cadastro::class);
 	}
 
 	/**
@@ -85,10 +89,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_lancar_pagamento $conta_pagar_lancar_pagamento Informações para realizar a Baixa do Contas a Pagar.
 	 * @return Conta_pagar_lancar_pagamento_resposta Resultado da baixa realizada para um lançamento do conta a pagar.
 	 */
-	public function LancarPagamento(Conta_pagar_lancar_pagamento $conta_pagar_lancar_pagamento): Conta_pagar_lancar_pagamento_resposta{
-		return $this->_Call('LancarPagamento',Array(
+	public function LancarPagamento(Conta_pagar_lancar_pagamento $conta_pagar_lancar_pagamento): ?Conta_pagar_lancar_pagamento_resposta {
+		$res = $this->_Call('LancarPagamento',Array(
 			$conta_pagar_lancar_pagamento
 		));
+		return $this->_Cast($res, Conta_pagar_lancar_pagamento_resposta::class);
 	}
 
 	/**
@@ -97,10 +102,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cancelar_pagamento $conta_pagar_cancelar_pagamento Cancela um pagamento realizado para um título do Contas a Pagar.
 	 * @return Conta_pagar_cancelar_pagamento_resposta Resposta do Cancelamento de um pagamento realizado para um título do Contas a Pagar.
 	 */
-	public function CancelarPagamento(Conta_pagar_cancelar_pagamento $conta_pagar_cancelar_pagamento): Conta_pagar_cancelar_pagamento_resposta{
-		return $this->_Call('CancelarPagamento',Array(
+	public function CancelarPagamento(Conta_pagar_cancelar_pagamento $conta_pagar_cancelar_pagamento): ?Conta_pagar_cancelar_pagamento_resposta {
+		$res = $this->_Call('CancelarPagamento',Array(
 			$conta_pagar_cancelar_pagamento
 		));
+		return $this->_Cast($res, Conta_pagar_cancelar_pagamento_resposta::class);
 	}
 
 	/**
@@ -109,10 +115,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_lote $conta_pagar_lote Inclusão em Lote de contas a pagar&nbsp;
 	 * @return Conta_pagar_lote_response Resposta do Lançamento de contas a pagar por lote&nbsp;
 	 */
-	public function IncluirContaPagarPorLote(Conta_pagar_lote $conta_pagar_lote): Conta_pagar_lote_response{
-		return $this->_Call('IncluirContaPagarPorLote',Array(
+	public function IncluirContaPagarPorLote(Conta_pagar_lote $conta_pagar_lote): ?Conta_pagar_lote_response {
+		$res = $this->_Call('IncluirContaPagarPorLote',Array(
 			$conta_pagar_lote
 		));
+		return $this->_Cast($res, Conta_pagar_lote_response::class);
 	}
 
 	/**
@@ -121,10 +128,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_cadastro $conta_pagar_cadastro Cadastro de contas a pagar.
 	 * @return Conta_pagar_cadastro_response Resposta do Cadastro de Contas a Pagar
 	 */
-	public function UpsertContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): Conta_pagar_cadastro_response{
-		return $this->_Call('UpsertContaPagar',Array(
+	public function UpsertContaPagar(Conta_pagar_cadastro $conta_pagar_cadastro): ?Conta_pagar_cadastro_response {
+		$res = $this->_Call('UpsertContaPagar',Array(
 			$conta_pagar_cadastro
 		));
+		return $this->_Cast($res, Conta_pagar_cadastro_response::class);
 	}
 
 	/**
@@ -133,10 +141,11 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_pagar_lote $conta_pagar_lote Inclusão em Lote de contas a pagar&nbsp;
 	 * @return Conta_pagar_lote_response Resposta do Lançamento de contas a pagar por lote&nbsp;
 	 */
-	public function UpsertContaPagarPorLote(Conta_pagar_lote $conta_pagar_lote): Conta_pagar_lote_response{
-		return $this->_Call('UpsertContaPagarPorLote',Array(
+	public function UpsertContaPagarPorLote(Conta_pagar_lote $conta_pagar_lote): ?Conta_pagar_lote_response {
+		$res = $this->_Call('UpsertContaPagarPorLote',Array(
 			$conta_pagar_lote
 		));
+		return $this->_Cast($res, Conta_pagar_lote_response::class);
 	}
 
 	/**
@@ -145,9 +154,10 @@ class LancamentoContaPagarJsonClient extends AbstractOmieJsonClient {
 	 * @param LcpListarRequest $lcpListarRequest Solicitação de Listagem de Contas a Pagar
 	 * @return LcpListarResponse Resposta da listagem de Contas a Pagar
 	 */
-	public function ListarContasPagar(LcpListarRequest $lcpListarRequest): LcpListarResponse{
-		return $this->_Call('ListarContasPagar',Array(
+	public function ListarContasPagar(LcpListarRequest $lcpListarRequest): ?LcpListarResponse {
+		$res = $this->_Call('ListarContasPagar',Array(
 			$lcpListarRequest
 		));
+		return $this->_Cast($res, LcpListarResponse::class);
 	}
 }

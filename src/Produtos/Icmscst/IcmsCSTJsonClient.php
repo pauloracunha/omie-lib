@@ -37,9 +37,10 @@ class IcmsCSTJsonClient extends AbstractOmieJsonClient {
 	 * @param CstListarRequest $cstListarRequest Solicitação da listagem de CST do ICMS.
 	 * @return CstListarResponse Resposta da solicitação da listagem de CST do ICMS.
 	 */
-	public function ListarCST(CstListarRequest $cstListarRequest): CstListarResponse{
-		return $this->_Call('ListarCST',Array(
+	public function ListarCST(CstListarRequest $cstListarRequest): ?CstListarResponse {
+		$res = $this->_Call('ListarCST',Array(
 			$cstListarRequest
 		));
+		return $this->_Cast($res, CstListarResponse::class);
 	}
 }

@@ -41,10 +41,11 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param Remessas $remessas Cadastro de Remessa&nbsp;
 	 * @return RemessaStatus Status da Remessa no Omie
 	 */
-	public function IncluirRemessa(Remessas $remessas): RemessaStatus{
-		return $this->_Call('IncluirRemessa',Array(
+	public function IncluirRemessa(Remessas $remessas): ?RemessaStatus {
+		$res = $this->_Call('IncluirRemessa',Array(
 			$remessas
 		));
+		return $this->_Cast($res, RemessaStatus::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param Remessas $remessas Cadastro de Remessa&nbsp;
 	 * @return RemessaStatus Status da Remessa no Omie
 	 */
-	public function AlterarRemessa(Remessas $remessas): RemessaStatus{
-		return $this->_Call('AlterarRemessa',Array(
+	public function AlterarRemessa(Remessas $remessas): ?RemessaStatus {
+		$res = $this->_Call('AlterarRemessa',Array(
 			$remessas
 		));
+		return $this->_Cast($res, RemessaStatus::class);
 	}
 
 	/**
@@ -65,10 +67,11 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaChave $remessaChave Chave para Consulta / Exclusão
 	 * @return Remessas Cadastro de Remessa&nbsp;
 	 */
-	public function ConsultarRemessa(RemessaChave $remessaChave): Remessas{
-		return $this->_Call('ConsultarRemessa',Array(
+	public function ConsultarRemessa(RemessaChave $remessaChave): ?Remessas {
+		$res = $this->_Call('ConsultarRemessa',Array(
 			$remessaChave
 		));
+		return $this->_Cast($res, Remessas::class);
 	}
 
 	/**
@@ -77,10 +80,11 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaListarRequest $remessaListarRequest Solicitação de listagem de remessa.
 	 * @return RemessaListarResponse Resposta da solicitação de listagem de remessa.
 	 */
-	public function ListarRemessas(RemessaListarRequest $remessaListarRequest): RemessaListarResponse{
-		return $this->_Call('ListarRemessas',Array(
+	public function ListarRemessas(RemessaListarRequest $remessaListarRequest): ?RemessaListarResponse {
+		$res = $this->_Call('ListarRemessas',Array(
 			$remessaListarRequest
 		));
+		return $this->_Cast($res, RemessaListarResponse::class);
 	}
 
 	/**
@@ -89,10 +93,11 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaStatusRequest $remessaStatusRequest Solicitação de consulta do Status da Remessa.
 	 * @return RemessaStatusResponse Resposta da solicitação de consulta do Status da Remessa.
 	 */
-	public function StatusRemessa(RemessaStatusRequest $remessaStatusRequest): RemessaStatusResponse{
-		return $this->_Call('StatusRemessa',Array(
+	public function StatusRemessa(RemessaStatusRequest $remessaStatusRequest): ?RemessaStatusResponse {
+		$res = $this->_Call('StatusRemessa',Array(
 			$remessaStatusRequest
 		));
+		return $this->_Cast($res, RemessaStatusResponse::class);
 	}
 
 	/**
@@ -101,9 +106,10 @@ class RemessaProdutoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaDevolverRequest $remessaDevolverRequest Solicitação de devolução de uma remessa.
 	 * @return RemessaDevolverResponse Resposta da solicitação de devolução de uma remessa.
 	 */
-	public function DevolverRemessa(RemessaDevolverRequest $remessaDevolverRequest): RemessaDevolverResponse{
-		return $this->_Call('DevolverRemessa',Array(
+	public function DevolverRemessa(RemessaDevolverRequest $remessaDevolverRequest): ?RemessaDevolverResponse {
+		$res = $this->_Call('DevolverRemessa',Array(
 			$remessaDevolverRequest
 		));
+		return $this->_Cast($res, RemessaDevolverResponse::class);
 	}
 }

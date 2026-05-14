@@ -37,9 +37,10 @@ class EtapasFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param EtaproListarRequest $etaproListarRequest Solicitação da listagem de etapas do processo de faturamento.
 	 * @return EtaproListarResponse Resposta da solicitação de etapas do processo de faturamento.
 	 */
-	public function ListarEtapasFaturamento(EtaproListarRequest $etaproListarRequest): EtaproListarResponse{
-		return $this->_Call('ListarEtapasFaturamento',Array(
+	public function ListarEtapasFaturamento(EtaproListarRequest $etaproListarRequest): ?EtaproListarResponse {
+		$res = $this->_Call('ListarEtapasFaturamento',Array(
 			$etaproListarRequest
 		));
+		return $this->_Cast($res, EtaproListarResponse::class);
 	}
 }

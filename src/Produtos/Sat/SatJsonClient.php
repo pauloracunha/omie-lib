@@ -37,9 +37,10 @@ class SatJsonClient extends AbstractOmieJsonClient {
 	 * @param ImportarSatRequest $ImportarSatRequest Importar CF-e SAT.
 	 * @return ImportarSatResponse Resposta da importação de CF-e SAT.
 	 */
-	public function ImportarCfeSat(ImportarSatRequest $ImportarSatRequest): ImportarSatResponse{
-		return $this->_Call('ImportarCfeSat',Array(
+	public function ImportarCfeSat(ImportarSatRequest $ImportarSatRequest): ?ImportarSatResponse {
+		$res = $this->_Call('ImportarCfeSat',Array(
 			$ImportarSatRequest
 		));
+		return $this->_Cast($res, ImportarSatResponse::class);
 	}
 }

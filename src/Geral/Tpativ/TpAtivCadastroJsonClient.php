@@ -37,9 +37,10 @@ class TpAtivCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param TpAtivListarRequest $tpAtivListarRequest Solicitação de Listagem de Tipos de Atividade da Empresa.
 	 * @return TpAtivListarResponse Resposta da listagem deTipos de Atividade da Empresa.
 	 */
-	public function ListarTipoAtiv(TpAtivListarRequest $tpAtivListarRequest): TpAtivListarResponse{
-		return $this->_Call('ListarTipoAtiv',Array(
+	public function ListarTipoAtiv(TpAtivListarRequest $tpAtivListarRequest): ?TpAtivListarResponse {
+		$res = $this->_Call('ListarTipoAtiv',Array(
 			$tpAtivListarRequest
 		));
+		return $this->_Cast($res, TpAtivListarResponse::class);
 	}
 }

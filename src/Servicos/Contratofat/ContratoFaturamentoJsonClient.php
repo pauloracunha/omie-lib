@@ -49,10 +49,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrFaturarRequest $ctrFaturarRequest Solicitação de validação do Contrato de Serviço.
 	 * @return CtrFaturarResponse Resposta da solicitação de faturamento do Contrato de Serviço.
 	 */
-	public function FaturarContrato(CtrFaturarRequest $ctrFaturarRequest): CtrFaturarResponse{
-		return $this->_Call('FaturarContrato',Array(
+	public function FaturarContrato(CtrFaturarRequest $ctrFaturarRequest): ?CtrFaturarResponse {
+		$res = $this->_Call('FaturarContrato',Array(
 			$ctrFaturarRequest
 		));
+		return $this->_Cast($res, CtrFaturarResponse::class);
 	}
 
 	/**
@@ -61,10 +62,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrValidarRequest $ctrValidarRequest Solicitação de validação do Contrato de Serviço.
 	 * @return CtrValidarResponse Resposta da solicitação de validação do Contrato de Serviço.
 	 */
-	public function ValidarContrato(CtrValidarRequest $ctrValidarRequest): CtrValidarResponse{
-		return $this->_Call('ValidarContrato',Array(
+	public function ValidarContrato(CtrValidarRequest $ctrValidarRequest): ?CtrValidarResponse {
+		$res = $this->_Call('ValidarContrato',Array(
 			$ctrValidarRequest
 		));
+		return $this->_Cast($res, CtrValidarResponse::class);
 	}
 
 	/**
@@ -73,10 +75,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrObterRequest $ctrObterRequest Lista os Contratos que se encontram em um etapa do processo de faturamento de contratos.
 	 * @return CtrObterResponse Resposta da solicitação da lista de contratos de uma etapa.
 	 */
-	public function ObterContratos(CtrObterRequest $ctrObterRequest): CtrObterResponse{
-		return $this->_Call('ObterContratos',Array(
+	public function ObterContratos(CtrObterRequest $ctrObterRequest): ?CtrObterResponse {
+		$res = $this->_Call('ObterContratos',Array(
 			$ctrObterRequest
 		));
+		return $this->_Cast($res, CtrObterResponse::class);
 	}
 
 	/**
@@ -85,10 +88,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrSuspenderRequest $ctrSuspenderRequest Solicitação de suspensão do Contrato de Serviço.
 	 * @return CtrSuspenderResponse Resposta da suspensão do Contrato de Serviço.
 	 */
-	public function SuspenderContrato(CtrSuspenderRequest $ctrSuspenderRequest): CtrSuspenderResponse{
-		return $this->_Call('SuspenderContrato',Array(
+	public function SuspenderContrato(CtrSuspenderRequest $ctrSuspenderRequest): ?CtrSuspenderResponse {
+		$res = $this->_Call('SuspenderContrato',Array(
 			$ctrSuspenderRequest
 		));
+		return $this->_Cast($res, CtrSuspenderResponse::class);
 	}
 
 	/**
@@ -97,10 +101,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrAtivarRequest $ctrAtivarRequest Solicitação de ativação do Contrato de Serviço.
 	 * @return CtrAtivarResponse Resposta da solicitação de ativação do Contrato de Serviço.
 	 */
-	public function AtivarContrato(CtrAtivarRequest $ctrAtivarRequest): CtrAtivarResponse{
-		return $this->_Call('AtivarContrato',Array(
+	public function AtivarContrato(CtrAtivarRequest $ctrAtivarRequest): ?CtrAtivarResponse {
+		$res = $this->_Call('AtivarContrato',Array(
 			$ctrAtivarRequest
 		));
+		return $this->_Cast($res, CtrAtivarResponse::class);
 	}
 
 	/**
@@ -109,10 +114,11 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrCancelarRequest $ctrCancelarRequest Solicitação de cancelamento do Contrato de Serviço.
 	 * @return CtrCancelarResponse Resposta da solicitação de cancelamento do Contrato de Serviço.
 	 */
-	public function CancelarContrato(CtrCancelarRequest $ctrCancelarRequest): CtrCancelarResponse{
-		return $this->_Call('CancelarContrato',Array(
+	public function CancelarContrato(CtrCancelarRequest $ctrCancelarRequest): ?CtrCancelarResponse {
+		$res = $this->_Call('CancelarContrato',Array(
 			$ctrCancelarRequest
 		));
+		return $this->_Cast($res, CtrCancelarResponse::class);
 	}
 
 	/**
@@ -121,9 +127,10 @@ class ContratoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param CtrReativarRequest $ctrReativarRequest Solicitação de reativação do Contrato de Serviço.
 	 * @return CtrReativarResponse Resposta da solicitação de reativação do Contrato de Serviço.
 	 */
-	public function ReativarContrato(CtrReativarRequest $ctrReativarRequest): CtrReativarResponse{
-		return $this->_Call('ReativarContrato',Array(
+	public function ReativarContrato(CtrReativarRequest $ctrReativarRequest): ?CtrReativarResponse {
+		$res = $this->_Call('ReativarContrato',Array(
 			$ctrReativarRequest
 		));
+		return $this->_Cast($res, CtrReativarResponse::class);
 	}
 }

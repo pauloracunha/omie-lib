@@ -37,9 +37,10 @@ class CofinsCSTJsonClient extends AbstractOmieJsonClient {
 	 * @param CofinsCstListarRequest $cofinsCstListarRequest Solicitação da listagem de CST do COFINS.
 	 * @return CofinsCstListarResponse Resposta da solicitação da listagem de CST do COFINS.
 	 */
-	public function ListarCstCofins(CofinsCstListarRequest $cofinsCstListarRequest): CofinsCstListarResponse{
-		return $this->_Call('ListarCstCofins',Array(
+	public function ListarCstCofins(CofinsCstListarRequest $cofinsCstListarRequest): ?CofinsCstListarResponse {
+		$res = $this->_Call('ListarCstCofins',Array(
 			$cofinsCstListarRequest
 		));
+		return $this->_Cast($res, CofinsCstListarResponse::class);
 	}
 }

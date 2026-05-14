@@ -47,10 +47,11 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeIncluirRequest $neIncluirRequest Solicitação de inclusão da nota de entrada
 	 * @return NeIncluirResponse Resposta da solicitação de inclusão de nota de entrada<BR>
 	 */
-	public function IncluirNotaEnt(NeIncluirRequest $neIncluirRequest): NeIncluirResponse{
-		return $this->_Call('IncluirNotaEnt',Array(
+	public function IncluirNotaEnt(NeIncluirRequest $neIncluirRequest): ?NeIncluirResponse {
+		$res = $this->_Call('IncluirNotaEnt',Array(
 			$neIncluirRequest
 		));
+		return $this->_Cast($res, NeIncluirResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeAlterarRequest $neAlterarRequest Solicitação de alteração da nota de entrada
 	 * @return NeAlterarResponse Resposta da solicitação de alteração de nota de entrada
 	 */
-	public function AlterarNotaEnt(NeAlterarRequest $neAlterarRequest): NeAlterarResponse{
-		return $this->_Call('AlterarNotaEnt',Array(
+	public function AlterarNotaEnt(NeAlterarRequest $neAlterarRequest): ?NeAlterarResponse {
+		$res = $this->_Call('AlterarNotaEnt',Array(
 			$neAlterarRequest
 		));
+		return $this->_Cast($res, NeAlterarResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeConsultarRequest $neConsultarRequest Solicitação de consulta da nota de entrada
 	 * @return NeConsultarResponse Resposta da solicitação de consulta de nota de entrada<BR>
 	 */
-	public function ConsultarNotaEnt(NeConsultarRequest $neConsultarRequest): NeConsultarResponse{
-		return $this->_Call('ConsultarNotaEnt',Array(
+	public function ConsultarNotaEnt(NeConsultarRequest $neConsultarRequest): ?NeConsultarResponse {
+		$res = $this->_Call('ConsultarNotaEnt',Array(
 			$neConsultarRequest
 		));
+		return $this->_Cast($res, NeConsultarResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeListarRequest $neListarRequest Solicitação de listagem da nota de entrada
 	 * @return NeListarResponse Resposta da solicitação de listagem de nota de entrada
 	 */
-	public function ListarNotaEnt(NeListarRequest $neListarRequest): NeListarResponse{
-		return $this->_Call('ListarNotaEnt',Array(
+	public function ListarNotaEnt(NeListarRequest $neListarRequest): ?NeListarResponse {
+		$res = $this->_Call('ListarNotaEnt',Array(
 			$neListarRequest
 		));
+		return $this->_Cast($res, NeListarResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeStatusRequest $neStatusRequest Solicitação de consulta do status da nota de entrada
 	 * @return NeStatusResponse Resposta da solicitação de consulta do status da nota de entrada
 	 */
-	public function StatusNotaEnt(NeStatusRequest $neStatusRequest): NeStatusResponse{
-		return $this->_Call('StatusNotaEnt',Array(
+	public function StatusNotaEnt(NeStatusRequest $neStatusRequest): ?NeStatusResponse {
+		$res = $this->_Call('StatusNotaEnt',Array(
 			$neStatusRequest
 		));
+		return $this->_Cast($res, NeStatusResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class NotaEntradaJsonClient extends AbstractOmieJsonClient {
 	 * @param NeExcluirRequest $neExcluirRequest Solicitação de exclusão da nota de entrada
 	 * @return NeExcluirResponse Resposta da exclusão da nota de entrada
 	 */
-	public function ExcluirNotaEnt(NeExcluirRequest $neExcluirRequest): NeExcluirResponse{
-		return $this->_Call('ExcluirNotaEnt',Array(
+	public function ExcluirNotaEnt(NeExcluirRequest $neExcluirRequest): ?NeExcluirResponse {
+		$res = $this->_Call('ExcluirNotaEnt',Array(
 			$neExcluirRequest
 		));
+		return $this->_Cast($res, NeExcluirResponse::class);
 	}
 }

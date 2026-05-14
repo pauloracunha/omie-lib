@@ -37,9 +37,10 @@ class FormasPagComprasJsonClient extends AbstractOmieJsonClient {
 	 * @param ComparListarRequest $comparListarRequest Solicitação da listagem de formas de pagamento de compras.
 	 * @return ComparListarResponse Resposta da solicitação de formas de pagamento de compras.
 	 */
-	public function ListarFormasPagCompras(ComparListarRequest $comparListarRequest): ComparListarResponse{
-		return $this->_Call('ListarFormasPagCompras',Array(
+	public function ListarFormasPagCompras(ComparListarRequest $comparListarRequest): ?ComparListarResponse {
+		$res = $this->_Call('ListarFormasPagCompras',Array(
 			$comparListarRequest
 		));
+		return $this->_Cast($res, ComparListarResponse::class);
 	}
 }

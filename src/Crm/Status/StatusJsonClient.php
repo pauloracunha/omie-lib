@@ -37,9 +37,10 @@ class StatusJsonClient extends AbstractOmieJsonClient {
 	 * @param StatusListarRequest $statusListarRequest Solicitação da listagem de status da oportunidade.
 	 * @return StatusListarResponse Resposta da solicitação da listagem de status da oportunidade.
 	 */
-	public function ListarStatus(StatusListarRequest $statusListarRequest): StatusListarResponse{
-		return $this->_Call('ListarStatus',Array(
+	public function ListarStatus(StatusListarRequest $statusListarRequest): ?StatusListarResponse {
+		$res = $this->_Call('ListarStatus',Array(
 			$statusListarRequest
 		));
+		return $this->_Cast($res, StatusListarResponse::class);
 	}
 }

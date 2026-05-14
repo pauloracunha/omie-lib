@@ -39,10 +39,11 @@ class NCMJsonClient extends AbstractOmieJsonClient {
 	 * @param NcmConsultarRequest $ncmConsultarRequest Consulta um NCM.
 	 * @return NcmConsultarResponse Resposta da solicitação de consulta de um NCM.
 	 */
-	public function ConsultarNCM(NcmConsultarRequest $ncmConsultarRequest): NcmConsultarResponse{
-		return $this->_Call('ConsultarNCM',Array(
+	public function ConsultarNCM(NcmConsultarRequest $ncmConsultarRequest): ?NcmConsultarResponse {
+		$res = $this->_Call('ConsultarNCM',Array(
 			$ncmConsultarRequest
 		));
+		return $this->_Cast($res, NcmConsultarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class NCMJsonClient extends AbstractOmieJsonClient {
 	 * @param NcmListarRequest $ncmListarRequest Listagem de NCM.
 	 * @return NcmListarResponse Resposta da solicitação de listagem de NCM.
 	 */
-	public function ListarNCM(NcmListarRequest $ncmListarRequest): NcmListarResponse{
-		return $this->_Call('ListarNCM',Array(
+	public function ListarNCM(NcmListarRequest $ncmListarRequest): ?NcmListarResponse {
+		$res = $this->_Call('ListarNCM',Array(
 			$ncmListarRequest
 		));
+		return $this->_Cast($res, NcmListarResponse::class);
 	}
 }

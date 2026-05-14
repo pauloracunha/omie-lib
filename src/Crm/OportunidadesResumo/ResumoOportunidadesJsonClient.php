@@ -39,10 +39,11 @@ class ResumoOportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoOpRequest $obterResumoOpRequest Solicitação do resumo do CRM.
 	 * @return ObterResumoOpResponse Resposta da solicitação do resumo do CRM.
 	 */
-	public function ObterResumoOp(ObterResumoOpRequest $obterResumoOpRequest): ObterResumoOpResponse{
-		return $this->_Call('ObterResumoOp',Array(
+	public function ObterResumoOp(ObterResumoOpRequest $obterResumoOpRequest): ?ObterResumoOpResponse {
+		$res = $this->_Call('ObterResumoOp',Array(
 			$obterResumoOpRequest
 		));
+		return $this->_Cast($res, ObterResumoOpResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class ResumoOportunidadesJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterListaOpRequest $ObterListaOpRequest Solicitação da listagem de Oportunidades.
 	 * @return ObterListaOpResponse Resposta da solicitação da listagem de Oportunidades.
 	 */
-	public function ObterListaOp(ObterListaOpRequest $ObterListaOpRequest): ObterListaOpResponse{
-		return $this->_Call('ObterListaOp',Array(
+	public function ObterListaOp(ObterListaOpRequest $ObterListaOpRequest): ?ObterListaOpResponse {
+		$res = $this->_Call('ObterListaOp',Array(
 			$ObterListaOpRequest
 		));
+		return $this->_Cast($res, ObterListaOpResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class ResumoProdutosVendasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoVendasRequest $ObterResumoVendasRequest Solicitação do resumo de vendas de produtos.
 	 * @return ObterResumoVendasResponse Resposta da solicitação do resumo de vendas de produtos.
 	 */
-	public function ObterResumoProdutos(ObterResumoVendasRequest $ObterResumoVendasRequest): ObterResumoVendasResponse{
-		return $this->_Call('ObterResumoProdutos',Array(
+	public function ObterResumoProdutos(ObterResumoVendasRequest $ObterResumoVendasRequest): ?ObterResumoVendasResponse {
+		$res = $this->_Call('ObterResumoProdutos',Array(
 			$ObterResumoVendasRequest
 		));
+		return $this->_Cast($res, ObterResumoVendasResponse::class);
 	}
 }

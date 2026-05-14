@@ -41,10 +41,11 @@ class CupomFiscalConsultarJsonClient extends AbstractOmieJsonClient {
 	 * @param CfcPagamentosRequest $cfcPagamentosRequest Solicitação de Listagem dos pagamentos de cupom fiscal.
 	 * @return CfcPagamentosResponse Resultado da solicitação de Listagem de pagamentos de cupom fiscal.
 	 */
-	public function CuponsPagamentos(CfcPagamentosRequest $cfcPagamentosRequest): CfcPagamentosResponse{
-		return $this->_Call('CuponsPagamentos',Array(
+	public function CuponsPagamentos(CfcPagamentosRequest $cfcPagamentosRequest): ?CfcPagamentosResponse {
+		$res = $this->_Call('CuponsPagamentos',Array(
 			$cfcPagamentosRequest
 		));
+		return $this->_Cast($res, CfcPagamentosResponse::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class CupomFiscalConsultarJsonClient extends AbstractOmieJsonClient {
 	 * @param CfcItensRequest $cfcItensRequest Solicitação de Listagem dos itens de cupom fiscal.
 	 * @return CfcItensResponse Resultado da solicitação de Listagem de itens de cupom fiscal.
 	 */
-	public function CuponsItens(CfcItensRequest $cfcItensRequest): CfcItensResponse{
-		return $this->_Call('CuponsItens',Array(
+	public function CuponsItens(CfcItensRequest $cfcItensRequest): ?CfcItensResponse {
+		$res = $this->_Call('CuponsItens',Array(
 			$cfcItensRequest
 		));
+		return $this->_Cast($res, CfcItensResponse::class);
 	}
 
 	/**
@@ -65,9 +67,10 @@ class CupomFiscalConsultarJsonClient extends AbstractOmieJsonClient {
 	 * @param CfcListarRequest $cfcListarRequest Solicitação de Listagem dos Cupons Fiscais.
 	 * @return CfcListarResponse Resultado da solicitação de Listagem de cupons fiscais.
 	 */
-	public function CuponsFiscais(CfcListarRequest $cfcListarRequest): CfcListarResponse{
-		return $this->_Call('CuponsFiscais',Array(
+	public function CuponsFiscais(CfcListarRequest $cfcListarRequest): ?CfcListarResponse {
+		$res = $this->_Call('CuponsFiscais',Array(
 			$cfcListarRequest
 		));
+		return $this->_Cast($res, CfcListarResponse::class);
 	}
 }

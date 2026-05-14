@@ -45,10 +45,11 @@ class ProdutosCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param PrcIncluirCaractRequest $prcIncluirCaractRequest Inclui uma característica para um produto.
 	 * @return PrcIncluirCaractResponse Resposta da solicitação de inclusão de uma característica para um produto.
 	 */
-	public function IncluirCaractProduto(PrcIncluirCaractRequest $prcIncluirCaractRequest): PrcIncluirCaractResponse{
-		return $this->_Call('IncluirCaractProduto',Array(
+	public function IncluirCaractProduto(PrcIncluirCaractRequest $prcIncluirCaractRequest): ?PrcIncluirCaractResponse {
+		$res = $this->_Call('IncluirCaractProduto',Array(
 			$prcIncluirCaractRequest
 		));
+		return $this->_Cast($res, PrcIncluirCaractResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class ProdutosCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param PrcAlterarCaractRequest $prcAlterarCaractRequest Altera uma característica para um produto.
 	 * @return PrcAlterarCaractResponse Resposta da solicitação de alteração de uma característica para um produto.
 	 */
-	public function AlterarCaractProduto(PrcAlterarCaractRequest $prcAlterarCaractRequest): PrcAlterarCaractResponse{
-		return $this->_Call('AlterarCaractProduto',Array(
+	public function AlterarCaractProduto(PrcAlterarCaractRequest $prcAlterarCaractRequest): ?PrcAlterarCaractResponse {
+		$res = $this->_Call('AlterarCaractProduto',Array(
 			$prcAlterarCaractRequest
 		));
+		return $this->_Cast($res, PrcAlterarCaractResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class ProdutosCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param PrcExcluirCaractRequest $prcExcluirCaractRequest Exclui uma característica de um produto.
 	 * @return PrcExcluirCaractResponse Resposta da solicitação de exclusão da característica de um produto.
 	 */
-	public function ExcluirCaractProduto(PrcExcluirCaractRequest $prcExcluirCaractRequest): PrcExcluirCaractResponse{
-		return $this->_Call('ExcluirCaractProduto',Array(
+	public function ExcluirCaractProduto(PrcExcluirCaractRequest $prcExcluirCaractRequest): ?PrcExcluirCaractResponse {
+		$res = $this->_Call('ExcluirCaractProduto',Array(
 			$prcExcluirCaractRequest
 		));
+		return $this->_Cast($res, PrcExcluirCaractResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class ProdutosCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param PrcConsultarCaractRequest $prcConsultarCaractRequest Consulta uma característica de um produto.
 	 * @return PrcConsultarCaractResponse Resposta da solicitação de consulta da característica de um produto.
 	 */
-	public function ConsultarCaractProduto(PrcConsultarCaractRequest $prcConsultarCaractRequest): PrcConsultarCaractResponse{
-		return $this->_Call('ConsultarCaractProduto',Array(
+	public function ConsultarCaractProduto(PrcConsultarCaractRequest $prcConsultarCaractRequest): ?PrcConsultarCaractResponse {
+		$res = $this->_Call('ConsultarCaractProduto',Array(
 			$prcConsultarCaractRequest
 		));
+		return $this->_Cast($res, PrcConsultarCaractResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class ProdutosCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param PrcListarCaractRequest $prcListarCaractRequest Listagem de características de um produto.
 	 * @return PrcListarCaractResponse Resposta da solicitação de listagem das características de um produto.
 	 */
-	public function ListarCaractProduto(PrcListarCaractRequest $prcListarCaractRequest): PrcListarCaractResponse{
-		return $this->_Call('ListarCaractProduto',Array(
+	public function ListarCaractProduto(PrcListarCaractRequest $prcListarCaractRequest): ?PrcListarCaractResponse {
+		$res = $this->_Call('ListarCaractProduto',Array(
 			$prcListarCaractRequest
 		));
+		return $this->_Cast($res, PrcListarCaractResponse::class);
 	}
 }

@@ -35,10 +35,11 @@ class TiposDocumentoCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Tipo_documento_consultar $tipo_documento_consultar Pesquisa um tipo de documento por código
 	 * @return Tipo_documento_cadastro Cadastro de tipos de documentos
 	 */
-	public function ConsultarTipoDocumento(Tipo_documento_consultar $tipo_documento_consultar): Tipo_documento_cadastro{
-		return $this->_Call('ConsultarTipoDocumento',Array(
+	public function ConsultarTipoDocumento(Tipo_documento_consultar $tipo_documento_consultar): ?Tipo_documento_cadastro {
+		$res = $this->_Call('ConsultarTipoDocumento',Array(
 			$tipo_documento_consultar
 		));
+		return $this->_Cast($res, Tipo_documento_cadastro::class);
 	}
 
 	/**
@@ -47,9 +48,10 @@ class TiposDocumentoCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Tipo_documento_pesquisa_request $tipo_documento_pesquisa_request Pesquisa do tipo de documento
 	 * @return Tipo_documento_pesquisa_response Resposta da pesquisa,
 	 */
-	public function PesquisarTipoDocumento(Tipo_documento_pesquisa_request $tipo_documento_pesquisa_request): Tipo_documento_pesquisa_response{
-		return $this->_Call('PesquisarTipoDocumento',Array(
+	public function PesquisarTipoDocumento(Tipo_documento_pesquisa_request $tipo_documento_pesquisa_request): ?Tipo_documento_pesquisa_response {
+		$res = $this->_Call('PesquisarTipoDocumento',Array(
 			$tipo_documento_pesquisa_request
 		));
+		return $this->_Cast($res, Tipo_documento_pesquisa_response::class);
 	}
 }

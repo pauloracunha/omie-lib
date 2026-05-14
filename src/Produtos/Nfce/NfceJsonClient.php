@@ -37,9 +37,10 @@ class NfceJsonClient extends AbstractOmieJsonClient {
 	 * @param ImportarNfceRequest $ImportarNfceRequest Importar Nota Fiscal Consumidor Eletrônica (NFC-e).
 	 * @return ImportarNfceResponse Resposta da importação de Nota Fiscal Consumidor Eletrônica (NFC-e)
 	 */
-	public function ImportarNFCe(ImportarNfceRequest $ImportarNfceRequest): ImportarNfceResponse{
-		return $this->_Call('ImportarNFCe',Array(
+	public function ImportarNFCe(ImportarNfceRequest $ImportarNfceRequest): ?ImportarNfceResponse {
+		$res = $this->_Call('ImportarNFCe',Array(
 			$ImportarNfceRequest
 		));
+		return $this->_Cast($res, ImportarNfceResponse::class);
 	}
 }

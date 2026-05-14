@@ -47,10 +47,11 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param IncluirItemPedidoRequest $incluirItemPedidoRequest Solicitação da inclusão de um Item no Pedido de Venda.
 	 * @return IncluirItemPedidoResponse Resposta da solicitação de inclusão um Item no Pedido de Venda.
 	 */
-	public function IncluirItemPedido(IncluirItemPedidoRequest $incluirItemPedidoRequest): IncluirItemPedidoResponse{
-		return $this->_Call('IncluirItemPedido',Array(
+	public function IncluirItemPedido(IncluirItemPedidoRequest $incluirItemPedidoRequest): ?IncluirItemPedidoResponse {
+		$res = $this->_Call('IncluirItemPedido',Array(
 			$incluirItemPedidoRequest
 		));
+		return $this->_Cast($res, IncluirItemPedidoResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarItemPedidoRequest $alterarItemPedidoRequest Solicitação de Alteração de um item no Pedido de Venda
 	 * @return AlterarItemPedidoResponse Resposta da solicitação de alteração de um Item no Pedido de Venda.
 	 */
-	public function AlterarItemPedido(AlterarItemPedidoRequest $alterarItemPedidoRequest): AlterarItemPedidoResponse{
-		return $this->_Call('AlterarItemPedido',Array(
+	public function AlterarItemPedido(AlterarItemPedidoRequest $alterarItemPedidoRequest): ?AlterarItemPedidoResponse {
+		$res = $this->_Call('AlterarItemPedido',Array(
 			$alterarItemPedidoRequest
 		));
+		return $this->_Cast($res, AlterarItemPedidoResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirItemPedidoRequest $excluirItemPedidoRequest Solicitação de Exclusão de um item no Pedido de Venda.
 	 * @return ExcluirItemPedidoResponse Resposta da solicitação de exclusão no Pedido de Venda.
 	 */
-	public function ExcluirItemPedido(ExcluirItemPedidoRequest $excluirItemPedidoRequest): ExcluirItemPedidoResponse{
-		return $this->_Call('ExcluirItemPedido',Array(
+	public function ExcluirItemPedido(ExcluirItemPedidoRequest $excluirItemPedidoRequest): ?ExcluirItemPedidoResponse {
+		$res = $this->_Call('ExcluirItemPedido',Array(
 			$excluirItemPedidoRequest
 		));
+		return $this->_Cast($res, ExcluirItemPedidoResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirItensPedidoRequest $excluirItensPedidoRequest Solicitação de Exclusão de todos os itens no Pedido de Venda.
 	 * @return ExcluirItensPedidoResponse Resposta da solicitação de exclusão de todos os itens no Pedido de Venda.
 	 */
-	public function ExcluirItensPedido(ExcluirItensPedidoRequest $excluirItensPedidoRequest): ExcluirItensPedidoResponse{
-		return $this->_Call('ExcluirItensPedido',Array(
+	public function ExcluirItensPedido(ExcluirItensPedidoRequest $excluirItensPedidoRequest): ?ExcluirItensPedidoResponse {
+		$res = $this->_Call('ExcluirItensPedido',Array(
 			$excluirItensPedidoRequest
 		));
+		return $this->_Cast($res, ExcluirItensPedidoResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param TotalizarPedidoRequest $totalizarPedidoRequest Realiza a totalização do pedido de venda.
 	 * @return TotalizarPedidoResponse Resposta da totalização do pedido de venda.
 	 */
-	public function TotalizarPedido(TotalizarPedidoRequest $totalizarPedidoRequest): TotalizarPedidoResponse{
-		return $this->_Call('TotalizarPedido',Array(
+	public function TotalizarPedido(TotalizarPedidoRequest $totalizarPedidoRequest): ?TotalizarPedidoResponse {
+		$res = $this->_Call('TotalizarPedido',Array(
 			$totalizarPedidoRequest
 		));
+		return $this->_Cast($res, TotalizarPedidoResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class PedidoVendaJsonClient extends AbstractOmieJsonClient {
 	 * @param AdicionarPedidoRequest $AdicionarPedidoRequest Estrutura para Inclusão de Pedido de Venda
 	 * @return AdicionarPedidoResponse Resposta da solicitação de inclusão do Pedido de Venda.
 	 */
-	public function AdicionarPedido(AdicionarPedidoRequest $AdicionarPedidoRequest): AdicionarPedidoResponse{
-		return $this->_Call('AdicionarPedido',Array(
+	public function AdicionarPedido(AdicionarPedidoRequest $AdicionarPedidoRequest): ?AdicionarPedidoResponse {
+		$res = $this->_Call('AdicionarPedido',Array(
 			$AdicionarPedidoRequest
 		));
+		return $this->_Cast($res, AdicionarPedidoResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class TipoCalculoJsonClient extends AbstractOmieJsonClient {
 	 * @param TpCalcListarRequest $tpCalcListarRequest Solicitação da listagem de Tipo de Cálculo.
 	 * @return TpCalcListarResponse Resposta da solicitação da listagem de Tipo de Cálculo.
 	 */
-	public function ListarTpCalc(TpCalcListarRequest $tpCalcListarRequest): TpCalcListarResponse{
-		return $this->_Call('ListarTpCalc',Array(
+	public function ListarTpCalc(TpCalcListarRequest $tpCalcListarRequest): ?TpCalcListarResponse {
+		$res = $this->_Call('ListarTpCalc',Array(
 			$tpCalcListarRequest
 		));
+		return $this->_Cast($res, TpCalcListarResponse::class);
 	}
 }

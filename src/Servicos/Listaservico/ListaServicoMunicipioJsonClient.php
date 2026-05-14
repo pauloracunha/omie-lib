@@ -37,9 +37,10 @@ class ListaServicoMunicipioJsonClient extends AbstractOmieJsonClient {
 	 * @param SermListarRequest $sermListarRequest Solicitação da Lista de Serviço no Município.
 	 * @return SermListarResponse Resposta da solicitação da Lista de Serviço no Município.
 	 */
-	public function ListarServMunic(SermListarRequest $sermListarRequest): SermListarResponse{
-		return $this->_Call('ListarServMunic',Array(
+	public function ListarServMunic(SermListarRequest $sermListarRequest): ?SermListarResponse {
+		$res = $this->_Call('ListarServMunic',Array(
 			$sermListarRequest
 		));
+		return $this->_Cast($res, SermListarResponse::class);
 	}
 }

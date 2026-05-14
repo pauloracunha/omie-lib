@@ -37,9 +37,10 @@ class TiposJsonClient extends AbstractOmieJsonClient {
 	 * @param TipoListarRequest $tipoListarRequest Solicitação da listagem de tipos da oportunidade.
 	 * @return TipoListarResponse Resposta da solicitação da listagem de tipos da oportunidade.
 	 */
-	public function ListarTipos(TipoListarRequest $tipoListarRequest): TipoListarResponse{
-		return $this->_Call('ListarTipos',Array(
+	public function ListarTipos(TipoListarRequest $tipoListarRequest): ?TipoListarResponse {
+		$res = $this->_Call('ListarTipos',Array(
 			$tipoListarRequest
 		));
+		return $this->_Cast($res, TipoListarResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class NBSJsonClient extends AbstractOmieJsonClient {
 	 * @param NbsListarRequest $nbsListarRequest Solicitação da listagem de NBS.
 	 * @return NbsListarResponse Resposta da solicitação da listagem de NBS.
 	 */
-	public function ListarNBS(NbsListarRequest $nbsListarRequest): NbsListarResponse{
-		return $this->_Call('ListarNBS',Array(
+	public function ListarNBS(NbsListarRequest $nbsListarRequest): ?NbsListarResponse {
+		$res = $this->_Call('ListarNBS',Array(
 			$nbsListarRequest
 		));
+		return $this->_Cast($res, NbsListarResponse::class);
 	}
 }

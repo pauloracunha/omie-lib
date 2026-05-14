@@ -45,10 +45,11 @@ class TiposEntregaJsonClient extends AbstractOmieJsonClient {
 	 * @param TeIncluirRequest $teIncluirRequest Requisição de inclusão de tipo de entrega
 	 * @return TeIncluirResponse Resposta da solicitação de inclusão de tipo de entrega
 	 */
-	public function IncluirTipoEntrega(TeIncluirRequest $teIncluirRequest): TeIncluirResponse{
-		return $this->_Call('IncluirTipoEntrega',Array(
+	public function IncluirTipoEntrega(TeIncluirRequest $teIncluirRequest): ?TeIncluirResponse {
+		$res = $this->_Call('IncluirTipoEntrega',Array(
 			$teIncluirRequest
 		));
+		return $this->_Cast($res, TeIncluirResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class TiposEntregaJsonClient extends AbstractOmieJsonClient {
 	 * @param TeAlterarRequest $teAlterarRequest Requisição de alteração de tipo de entrega
 	 * @return TeAlterarResponse Resposta da solicitação de alteração de tipo de entrega
 	 */
-	public function AlterarTipoEntrega(TeAlterarRequest $teAlterarRequest): TeAlterarResponse{
-		return $this->_Call('AlterarTipoEntrega',Array(
+	public function AlterarTipoEntrega(TeAlterarRequest $teAlterarRequest): ?TeAlterarResponse {
+		$res = $this->_Call('AlterarTipoEntrega',Array(
 			$teAlterarRequest
 		));
+		return $this->_Cast($res, TeAlterarResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class TiposEntregaJsonClient extends AbstractOmieJsonClient {
 	 * @param TeExcluirRequest $teExcluirRequest Requisição de exclusão de tipo de entrega
 	 * @return TeExcluirResponse Resposta da solicitação de exclusão de tipo de entrega
 	 */
-	public function ExcluirTipoEntrega(TeExcluirRequest $teExcluirRequest): TeExcluirResponse{
-		return $this->_Call('ExcluirTipoEntrega',Array(
+	public function ExcluirTipoEntrega(TeExcluirRequest $teExcluirRequest): ?TeExcluirResponse {
+		$res = $this->_Call('ExcluirTipoEntrega',Array(
 			$teExcluirRequest
 		));
+		return $this->_Cast($res, TeExcluirResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class TiposEntregaJsonClient extends AbstractOmieJsonClient {
 	 * @param TeConsultarRequest $teConsultarRequest Requisição de consulta de tipo de entrega
 	 * @return TeConsultarResponse Resposta da consulta de tipo de entrega
 	 */
-	public function ConsultarTipoEntrega(TeConsultarRequest $teConsultarRequest): TeConsultarResponse{
-		return $this->_Call('ConsultarTipoEntrega',Array(
+	public function ConsultarTipoEntrega(TeConsultarRequest $teConsultarRequest): ?TeConsultarResponse {
+		$res = $this->_Call('ConsultarTipoEntrega',Array(
 			$teConsultarRequest
 		));
+		return $this->_Cast($res, TeConsultarResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class TiposEntregaJsonClient extends AbstractOmieJsonClient {
 	 * @param TeListarRequest $teListarRequest Requisição de listagem de tipos de entrega
 	 * @return TeListarResponse Resposta da solicitação de listagem de tipos de entrega
 	 */
-	public function ListarTipoEntrega(TeListarRequest $teListarRequest): TeListarResponse{
-		return $this->_Call('ListarTipoEntrega',Array(
+	public function ListarTipoEntrega(TeListarRequest $teListarRequest): ?TeListarResponse {
+		$res = $this->_Call('ListarTipoEntrega',Array(
 			$teListarRequest
 		));
+		return $this->_Cast($res, TeListarResponse::class);
 	}
 }

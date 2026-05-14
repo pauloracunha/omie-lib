@@ -39,30 +39,33 @@ class ContatosJsonClient extends AbstractOmieJsonClient {
 	 * @param Cadastros $cadastros Lista os cadastros encontrados.
 	 * @return CRM_CONTATOS_RESPOSTA Status da Comunicação
 	 */
-	public function IncluirContato(Cadastros $cadastros): CRM_CONTATOS_RESPOSTA{
-		return $this->_Call('IncluirContato',Array(
+	public function IncluirContato(Cadastros $cadastros): ?CRM_CONTATOS_RESPOSTA {
+		$res = $this->_Call('IncluirContato',Array(
 			$cadastros
 		));
+		return $this->_Cast($res, CRM_CONTATOS_RESPOSTA::class);
 	}
 
 	/**
 	 * @param Cadastros $cadastros Lista os cadastros encontrados.
 	 * @return CRM_CONTATOS_RESPOSTA Status da Comunicação
 	 */
-	public function AlterarContato(Cadastros $cadastros): CRM_CONTATOS_RESPOSTA{
-		return $this->_Call('AlterarContato',Array(
+	public function AlterarContato(Cadastros $cadastros): ?CRM_CONTATOS_RESPOSTA {
+		$res = $this->_Call('AlterarContato',Array(
 			$cadastros
 		));
+		return $this->_Cast($res, CRM_CONTATOS_RESPOSTA::class);
 	}
 
 	/**
 	 * @param CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA Pesquisa do Contato
 	 * @return CRM_CONTATOS_RESPOSTA Status da Comunicação
 	 */
-	public function ExcluirContato(CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA): CRM_CONTATOS_RESPOSTA{
-		return $this->_Call('ExcluirContato',Array(
+	public function ExcluirContato(CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA): ?CRM_CONTATOS_RESPOSTA {
+		$res = $this->_Call('ExcluirContato',Array(
 			$CRM_CONTATOS_PESQUISA
 		));
+		return $this->_Cast($res, CRM_CONTATOS_RESPOSTA::class);
 	}
 
 	/**
@@ -71,10 +74,11 @@ class ContatosJsonClient extends AbstractOmieJsonClient {
 	 * @param CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA Pesquisa do Contato
 	 * @return Cadastros Lista os cadastros encontrados.
 	 */
-	public function ConsultarContato(CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA): Cadastros{
-		return $this->_Call('ConsultarContato',Array(
+	public function ConsultarContato(CRM_CONTATOS_PESQUISA $CRM_CONTATOS_PESQUISA): ?Cadastros {
+		$res = $this->_Call('ConsultarContato',Array(
 			$CRM_CONTATOS_PESQUISA
 		));
+		return $this->_Cast($res, Cadastros::class);
 	}
 
 	/**
@@ -83,10 +87,11 @@ class ContatosJsonClient extends AbstractOmieJsonClient {
 	 * @param ContatoListarRequest $contatoListarRequest Solicitação da listagem de contatos.
 	 * @return ContatoListarResponse Resposta da solicitação da listagem de contatos.
 	 */
-	public function ListarContatos(ContatoListarRequest $contatoListarRequest): ContatoListarResponse{
-		return $this->_Call('ListarContatos',Array(
+	public function ListarContatos(ContatoListarRequest $contatoListarRequest): ?ContatoListarResponse {
+		$res = $this->_Call('ListarContatos',Array(
 			$contatoListarRequest
 		));
+		return $this->_Cast($res, ContatoListarResponse::class);
 	}
 
 	/**
@@ -95,10 +100,11 @@ class ContatosJsonClient extends AbstractOmieJsonClient {
 	 * @param Cadastros $cadastros Lista os cadastros encontrados.
 	 * @return CRM_CONTATOS_RESPOSTA Status da Comunicação
 	 */
-	public function UpsertContato(Cadastros $cadastros): CRM_CONTATOS_RESPOSTA{
-		return $this->_Call('UpsertContato',Array(
+	public function UpsertContato(Cadastros $cadastros): ?CRM_CONTATOS_RESPOSTA {
+		$res = $this->_Call('UpsertContato',Array(
 			$cadastros
 		));
+		return $this->_Cast($res, CRM_CONTATOS_RESPOSTA::class);
 	}
 
 	/**
@@ -107,9 +113,10 @@ class ContatosJsonClient extends AbstractOmieJsonClient {
 	 * @param ContatoVerificarRequest $contatoVerificarRequest Verifica se um contato existe a partir do nome e e-mail.
 	 * @return ContatoVerificarResponse Resposta da verificação se um contato existe a partir do nome e e-mail.
 	 */
-	public function VerificarContato(ContatoVerificarRequest $contatoVerificarRequest): ContatoVerificarResponse{
-		return $this->_Call('VerificarContato',Array(
+	public function VerificarContato(ContatoVerificarRequest $contatoVerificarRequest): ?ContatoVerificarResponse {
+		$res = $this->_Call('VerificarContato',Array(
 			$contatoVerificarRequest
 		));
+		return $this->_Cast($res, ContatoVerificarResponse::class);
 	}
 }

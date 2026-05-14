@@ -37,9 +37,10 @@ class MotivosJsonClient extends AbstractOmieJsonClient {
 	 * @param MotivoListarRequest $motivoListarRequest Solicitação da listagem de motivos da oportunidade.
 	 * @return MotivoListarResponse Resposta da solicitação da listagem de motivos da oportunidade.
 	 */
-	public function ListarMotivos(MotivoListarRequest $motivoListarRequest): MotivoListarResponse{
-		return $this->_Call('ListarMotivos',Array(
+	public function ListarMotivos(MotivoListarRequest $motivoListarRequest): ?MotivoListarResponse {
+		$res = $this->_Call('ListarMotivos',Array(
 			$motivoListarRequest
 		));
+		return $this->_Cast($res, MotivoListarResponse::class);
 	}
 }

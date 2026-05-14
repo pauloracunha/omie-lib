@@ -41,10 +41,11 @@ class ContratoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param FaturarLoteContratoRequest $FaturarLoteContratoRequest Faturar Contrato de Serviço em lote
 	 * @return FaturarLoteContratoResponse Response de notas de serviço faturadas em Lote
 	 */
-	public function FaturarLoteContrato(FaturarLoteContratoRequest $FaturarLoteContratoRequest): FaturarLoteContratoResponse{
-		return $this->_Call('FaturarLoteContrato',Array(
+	public function FaturarLoteContrato(FaturarLoteContratoRequest $FaturarLoteContratoRequest): ?FaturarLoteContratoResponse {
+		$res = $this->_Call('FaturarLoteContrato',Array(
 			$FaturarLoteContratoRequest
 		));
+		return $this->_Cast($res, FaturarLoteContratoResponse::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class ContratoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarLotesContratoRequest $ListarLotesContratoRequest Listar status de faturamento dos Contratos de Serviço a partir das datas de processamento.
 	 * @return ListarLotesContratoResponse Response do método que lista Contratos de Serviço.
 	 */
-	public function ListarLotesContrato(ListarLotesContratoRequest $ListarLotesContratoRequest): ListarLotesContratoResponse{
-		return $this->_Call('ListarLotesContrato',Array(
+	public function ListarLotesContrato(ListarLotesContratoRequest $ListarLotesContratoRequest): ?ListarLotesContratoResponse {
+		$res = $this->_Call('ListarLotesContrato',Array(
 			$ListarLotesContratoRequest
 		));
+		return $this->_Cast($res, ListarLotesContratoResponse::class);
 	}
 
 	/**
@@ -65,9 +67,10 @@ class ContratoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param StatusLoteContratoRequest $StatusLoteContratoRequest Obtém o status do Lote do Contrato de Serviço
 	 * @return StatusLoteContratoResponse Retorna informações do Lote do Contrato de Serviço
 	 */
-	public function StatusLoteContrato(StatusLoteContratoRequest $StatusLoteContratoRequest): StatusLoteContratoResponse{
-		return $this->_Call('StatusLoteContrato',Array(
+	public function StatusLoteContrato(StatusLoteContratoRequest $StatusLoteContratoRequest): ?StatusLoteContratoResponse {
+		$res = $this->_Call('StatusLoteContrato',Array(
 			$StatusLoteContratoRequest
 		));
+		return $this->_Cast($res, StatusLoteContratoResponse::class);
 	}
 }

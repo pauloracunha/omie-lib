@@ -37,9 +37,10 @@ class ProdutosPorFornecedorJsonClient extends AbstractOmieJsonClient {
 	 * @param PfListarRequest $pfListarRequest Solicitação da listagem de produtos por fornecedor.
 	 * @return PfListarResponse Resposta da solicitação da listagem de produtos por fornecedor.
 	 */
-	public function ListarProdutoFornecedor(PfListarRequest $pfListarRequest): PfListarResponse{
-		return $this->_Call('ListarProdutoFornecedor',Array(
+	public function ListarProdutoFornecedor(PfListarRequest $pfListarRequest): ?PfListarResponse {
+		$res = $this->_Call('ListarProdutoFornecedor',Array(
 			$pfListarRequest
 		));
+		return $this->_Cast($res, PfListarResponse::class);
 	}
 }

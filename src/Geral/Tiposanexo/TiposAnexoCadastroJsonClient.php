@@ -37,9 +37,10 @@ class TiposAnexoCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarTipoAnexoRequest $ListarTipoAnexoRequest Listar Tipos de Anexos
 	 * @return ListarTipoAnexoResponse Listar de tipos de documentos anexos.
 	 */
-	public function ListarTiposAnexos(ListarTipoAnexoRequest $ListarTipoAnexoRequest): ListarTipoAnexoResponse{
-		return $this->_Call('ListarTiposAnexos',Array(
+	public function ListarTiposAnexos(ListarTipoAnexoRequest $ListarTipoAnexoRequest): ?ListarTipoAnexoResponse {
+		$res = $this->_Call('ListarTiposAnexos',Array(
 			$ListarTipoAnexoRequest
 		));
+		return $this->_Cast($res, ListarTipoAnexoResponse::class);
 	}
 }

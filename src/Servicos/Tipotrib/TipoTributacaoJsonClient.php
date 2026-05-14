@@ -37,9 +37,10 @@ class TipoTributacaoJsonClient extends AbstractOmieJsonClient {
 	 * @param TribListarRequest $tribListarRequest Solicitação da Lista de Tipos de Tributação no Município.
 	 * @return TribListarResponse Resposta da solicitação da Lista de Tipos de Tributação no Município.
 	 */
-	public function ListarTiposTrib(TribListarRequest $tribListarRequest): TribListarResponse{
-		return $this->_Call('ListarTiposTrib',Array(
+	public function ListarTiposTrib(TribListarRequest $tribListarRequest): ?TribListarResponse {
+		$res = $this->_Call('ListarTiposTrib',Array(
 			$tribListarRequest
 		));
+		return $this->_Cast($res, TribListarResponse::class);
 	}
 }

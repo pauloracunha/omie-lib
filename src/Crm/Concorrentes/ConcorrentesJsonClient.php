@@ -37,9 +37,10 @@ class ConcorrentesJsonClient extends AbstractOmieJsonClient {
 	 * @param ConcorrenteListarRequest $concorrenteListarRequest Solicitação da listagem de concorrentes da oportunidade.
 	 * @return ConcorrenteListarResponse Resposta da solicitação da listagem de concorrentes da oportunidade.
 	 */
-	public function ListarConcorrentes(ConcorrenteListarRequest $concorrenteListarRequest): ConcorrenteListarResponse{
-		return $this->_Call('ListarConcorrentes',Array(
+	public function ListarConcorrentes(ConcorrenteListarRequest $concorrenteListarRequest): ?ConcorrenteListarResponse {
+		$res = $this->_Call('ListarConcorrentes',Array(
 			$concorrenteListarRequest
 		));
+		return $this->_Cast($res, ConcorrenteListarResponse::class);
 	}
 }

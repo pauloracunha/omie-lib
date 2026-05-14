@@ -51,10 +51,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopIncluirRequest $copIncluirRequest Solicitação de Inclusão da ordem de produção.
 	 * @return CopIncluirResponse Resposta da solicitação da inclusão de ordem de produção.
 	 */
-	public function IncluirOrdemProducao(CopIncluirRequest $copIncluirRequest): CopIncluirResponse{
-		return $this->_Call('IncluirOrdemProducao',Array(
+	public function IncluirOrdemProducao(CopIncluirRequest $copIncluirRequest): ?CopIncluirResponse {
+		$res = $this->_Call('IncluirOrdemProducao',Array(
 			$copIncluirRequest
 		));
+		return $this->_Cast($res, CopIncluirResponse::class);
 	}
 
 	/**
@@ -63,10 +64,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopAlterarRequest $copAlterarRequest Solicitação de alteração da ordem de produção.
 	 * @return CopAlterarResponse Resposta da solicitalção da alteração da ordem de produção.
 	 */
-	public function AlterarOrdemProducao(CopAlterarRequest $copAlterarRequest): CopAlterarResponse{
-		return $this->_Call('AlterarOrdemProducao',Array(
+	public function AlterarOrdemProducao(CopAlterarRequest $copAlterarRequest): ?CopAlterarResponse {
+		$res = $this->_Call('AlterarOrdemProducao',Array(
 			$copAlterarRequest
 		));
+		return $this->_Cast($res, CopAlterarResponse::class);
 	}
 
 	/**
@@ -75,10 +77,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopUpsertRequest $copUpsertRequest Solicitação de upsert de ordem de produção.
 	 * @return CopUpsertResponse Resposta da solicitação de upsert de ordem de produção.
 	 */
-	public function UpsertOrdemProducao(CopUpsertRequest $copUpsertRequest): CopUpsertResponse{
-		return $this->_Call('UpsertOrdemProducao',Array(
+	public function UpsertOrdemProducao(CopUpsertRequest $copUpsertRequest): ?CopUpsertResponse {
+		$res = $this->_Call('UpsertOrdemProducao',Array(
 			$copUpsertRequest
 		));
+		return $this->_Cast($res, CopUpsertResponse::class);
 	}
 
 	/**
@@ -87,10 +90,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopExcluirRequest $copExcluirRequest Solicitação de exclusão da ordem de produção.
 	 * @return CopExcluirResponse Resposta da solicitação de exclusão da ordem de produção.
 	 */
-	public function ExcluirOrdemProducao(CopExcluirRequest $copExcluirRequest): CopExcluirResponse{
-		return $this->_Call('ExcluirOrdemProducao',Array(
+	public function ExcluirOrdemProducao(CopExcluirRequest $copExcluirRequest): ?CopExcluirResponse {
+		$res = $this->_Call('ExcluirOrdemProducao',Array(
 			$copExcluirRequest
 		));
+		return $this->_Cast($res, CopExcluirResponse::class);
 	}
 
 	/**
@@ -99,10 +103,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopConsultarRequest $copConsultarRequest Solicitação da consulta da ordem de produção.
 	 * @return CopConsultarResponse Resposta da solicitação de consulta de ordem de produção.
 	 */
-	public function ConsultarOrdemProducao(CopConsultarRequest $copConsultarRequest): CopConsultarResponse{
-		return $this->_Call('ConsultarOrdemProducao',Array(
+	public function ConsultarOrdemProducao(CopConsultarRequest $copConsultarRequest): ?CopConsultarResponse {
+		$res = $this->_Call('ConsultarOrdemProducao',Array(
 			$copConsultarRequest
 		));
+		return $this->_Cast($res, CopConsultarResponse::class);
 	}
 
 	/**
@@ -111,10 +116,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopListarRequest $copListarRequest Solicitação da listagem de ordens de produção.
 	 * @return CopListarResponse Resposta da solicitação da listagem de ordens de produção.
 	 */
-	public function ListarOrdemProducao(CopListarRequest $copListarRequest): CopListarResponse{
-		return $this->_Call('ListarOrdemProducao',Array(
+	public function ListarOrdemProducao(CopListarRequest $copListarRequest): ?CopListarResponse {
+		$res = $this->_Call('ListarOrdemProducao',Array(
 			$copListarRequest
 		));
+		return $this->_Cast($res, CopListarResponse::class);
 	}
 
 	/**
@@ -123,10 +129,11 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopConcluirRequest $copConcluirRequest Solicitação de conclusão da ordem de produção.
 	 * @return CopConcluirResponse Resposta da solicitação de conclusão da ordem de produção.
 	 */
-	public function ConcluirOrdemProducao(CopConcluirRequest $copConcluirRequest): CopConcluirResponse{
-		return $this->_Call('ConcluirOrdemProducao',Array(
+	public function ConcluirOrdemProducao(CopConcluirRequest $copConcluirRequest): ?CopConcluirResponse {
+		$res = $this->_Call('ConcluirOrdemProducao',Array(
 			$copConcluirRequest
 		));
+		return $this->_Cast($res, CopConcluirResponse::class);
 	}
 
 	/**
@@ -135,9 +142,10 @@ class OrdemProducaoJsonClient extends AbstractOmieJsonClient {
 	 * @param CopReverterRequest $copReverterRequest Solicitação de reversão da conclusão da ordem de produção.
 	 * @return CopReverterResponse Resposta da solicitação de reversão da conclusão da ordem de produção.
 	 */
-	public function ReverterOrdemProducao(CopReverterRequest $copReverterRequest): CopReverterResponse{
-		return $this->_Call('ReverterOrdemProducao',Array(
+	public function ReverterOrdemProducao(CopReverterRequest $copReverterRequest): ?CopReverterResponse {
+		$res = $this->_Call('ReverterOrdemProducao',Array(
 			$copReverterRequest
 		));
+		return $this->_Cast($res, CopReverterResponse::class);
 	}
 }

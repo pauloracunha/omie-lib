@@ -48,10 +48,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaIncluirRequest $tarefaIncluirRequest Solicitação de inclusão de tarefa de uma oportunidade.
 	 * @return TarefaIncluirResponse Resposta da inclusão da tarefa de uma oportunidade.
 	 */
-	public function IncluirTarefa(TarefaIncluirRequest $tarefaIncluirRequest): TarefaIncluirResponse{
-		return $this->_Call('IncluirTarefa',Array(
+	public function IncluirTarefa(TarefaIncluirRequest $tarefaIncluirRequest): ?TarefaIncluirResponse {
+		$res = $this->_Call('IncluirTarefa',Array(
 			$tarefaIncluirRequest
 		));
+		return $this->_Cast($res, TarefaIncluirResponse::class);
 	}
 
 	/**
@@ -60,10 +61,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaAlterarRequest $tarefaAlterarRequest Solicitação de alteração de tarefa de uma oportunidade.
 	 * @return TarefaAlterarResponse Resposta da alteração da tarefa de uma oportunidade.
 	 */
-	public function AlterarTarefa(TarefaAlterarRequest $tarefaAlterarRequest): TarefaAlterarResponse{
-		return $this->_Call('AlterarTarefa',Array(
+	public function AlterarTarefa(TarefaAlterarRequest $tarefaAlterarRequest): ?TarefaAlterarResponse {
+		$res = $this->_Call('AlterarTarefa',Array(
 			$tarefaAlterarRequest
 		));
+		return $this->_Cast($res, TarefaAlterarResponse::class);
 	}
 
 	/**
@@ -72,10 +74,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaConsultarRequest $tarefaConsultarRequest Solicitação da consulta da tarefa de uma oportunidade.
 	 * @return TarefaExcluirResponse Resposta da exclusão da tarefa de uma oportunidade.
 	 */
-	public function ExcluirTarefa(TarefaConsultarRequest $tarefaConsultarRequest): TarefaExcluirResponse{
-		return $this->_Call('ExcluirTarefa',Array(
+	public function ExcluirTarefa(TarefaConsultarRequest $tarefaConsultarRequest): ?TarefaExcluirResponse {
+		$res = $this->_Call('ExcluirTarefa',Array(
 			$tarefaConsultarRequest
 		));
+		return $this->_Cast($res, TarefaExcluirResponse::class);
 	}
 
 	/**
@@ -84,10 +87,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaUpsertRequest $tarefaUpsertRequest Solicitação de inclusão/alteração de tarefa de uma oportunidade.
 	 * @return TarefaUpsertResponse Resposta da inclusão/alteração da tarefa de uma oportunidade.
 	 */
-	public function UpsertTarefa(TarefaUpsertRequest $tarefaUpsertRequest): TarefaUpsertResponse{
-		return $this->_Call('UpsertTarefa',Array(
+	public function UpsertTarefa(TarefaUpsertRequest $tarefaUpsertRequest): ?TarefaUpsertResponse {
+		$res = $this->_Call('UpsertTarefa',Array(
 			$tarefaUpsertRequest
 		));
+		return $this->_Cast($res, TarefaUpsertResponse::class);
 	}
 
 	/**
@@ -96,10 +100,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaConsultarRequest $tarefaConsultarRequest Solicitação da consulta da tarefa de uma oportunidade.
 	 * @return TarefaConsultarResponse Resposta da solicitação de consulta de tarefa de uma oportunidade.
 	 */
-	public function ConsultarTarefa(TarefaConsultarRequest $tarefaConsultarRequest): TarefaConsultarResponse{
-		return $this->_Call('ConsultarTarefa',Array(
+	public function ConsultarTarefa(TarefaConsultarRequest $tarefaConsultarRequest): ?TarefaConsultarResponse {
+		$res = $this->_Call('ConsultarTarefa',Array(
 			$tarefaConsultarRequest
 		));
+		return $this->_Cast($res, TarefaConsultarResponse::class);
 	}
 
 	/**
@@ -108,10 +113,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaListarRequest $tarefaListarRequest Solicitação da listagem de tarefas da oportunidade.
 	 * @return TarefaListarResponse Resposta da solicitação da listagem de tarefas da oportunidade.
 	 */
-	public function ListarTarefas(TarefaListarRequest $tarefaListarRequest): TarefaListarResponse{
-		return $this->_Call('ListarTarefas',Array(
+	public function ListarTarefas(TarefaListarRequest $tarefaListarRequest): ?TarefaListarResponse {
+		$res = $this->_Call('ListarTarefas',Array(
 			$tarefaListarRequest
 		));
+		return $this->_Cast($res, TarefaListarResponse::class);
 	}
 
 	/**
@@ -120,10 +126,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param TarefaEmailListarRequest $tarefaEmailListarRequest Solicitação da listagem de emails "tarefas" da oportunidade.
 	 * @return TarefaEmailListarResponse Resposta da solicitação da listagem de emails "tarefas" da oportunidade.
 	 */
-	public function ListarEmailsTarefas(TarefaEmailListarRequest $tarefaEmailListarRequest): TarefaEmailListarResponse{
-		return $this->_Call('ListarEmailsTarefas',Array(
+	public function ListarEmailsTarefas(TarefaEmailListarRequest $tarefaEmailListarRequest): ?TarefaEmailListarResponse {
+		$res = $this->_Call('ListarEmailsTarefas',Array(
 			$tarefaEmailListarRequest
 		));
+		return $this->_Cast($res, TarefaEmailListarResponse::class);
 	}
 
 	/**
@@ -132,9 +139,10 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param Tarefa_ics_request $tarefa_ics_request Request Calendar Events (ICS)
 	 * @return Tarefa_ics_response Response Calendar Events (ICS)
 	 */
-	public function CalendarioTarefas(Tarefa_ics_request $tarefa_ics_request): Tarefa_ics_response{
-		return $this->_Call('CalendarioTarefas',Array(
+	public function CalendarioTarefas(Tarefa_ics_request $tarefa_ics_request): ?Tarefa_ics_response {
+		$res = $this->_Call('CalendarioTarefas',Array(
 			$tarefa_ics_request
 		));
+		return $this->_Cast($res, Tarefa_ics_response::class);
 	}
 }

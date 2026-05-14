@@ -39,10 +39,11 @@ class CenariosImpostosJsonClient extends AbstractOmieJsonClient {
 	 * @param CenariosListarRequest $cenariosListarRequest Solicitação de listagem de Cenários de Impostos.
 	 * @return CenariosListarResponse Resposta da solicitação de listagem de Cenários de Impostos.
 	 */
-	public function ListarCenarios(CenariosListarRequest $cenariosListarRequest): CenariosListarResponse{
-		return $this->_Call('ListarCenarios',Array(
+	public function ListarCenarios(CenariosListarRequest $cenariosListarRequest): ?CenariosListarResponse {
+		$res = $this->_Call('ListarCenarios',Array(
 			$cenariosListarRequest
 		));
+		return $this->_Cast($res, CenariosListarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class CenariosImpostosJsonClient extends AbstractOmieJsonClient {
 	 * @param CenariosImpostosListarRequest $cenariosImpostosListarRequest Solicitação de listagem dos Impostos do Cenário para o produto e cliente.
 	 * @return CenariosImpostosListarResponse Resposta da solicitação de listagem dos impostos do Cenários de Impostos para o produto e cliente.
 	 */
-	public function ListarImpostosCenario(CenariosImpostosListarRequest $cenariosImpostosListarRequest): CenariosImpostosListarResponse{
-		return $this->_Call('ListarImpostosCenario',Array(
+	public function ListarImpostosCenario(CenariosImpostosListarRequest $cenariosImpostosListarRequest): ?CenariosImpostosListarResponse {
+		$res = $this->_Call('ListarImpostosCenario',Array(
 			$cenariosImpostosListarRequest
 		));
+		return $this->_Cast($res, CenariosImpostosListarResponse::class);
 	}
 }

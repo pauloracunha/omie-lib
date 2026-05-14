@@ -35,10 +35,11 @@ class FinalTransfCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Final_transf_list_request_consulta $final_transf_list_request_consulta Requisição para consulta de finalidades de transferências cadastradas
 	 * @return Cadastros Cadastro de finalidades de transferências
 	 */
-	public function ConsultarFinalTransf(Final_transf_list_request_consulta $final_transf_list_request_consulta): Cadastros{
-		return $this->_Call('ConsultarFinalTransf',Array(
+	public function ConsultarFinalTransf(Final_transf_list_request_consulta $final_transf_list_request_consulta): ?Cadastros {
+		$res = $this->_Call('ConsultarFinalTransf',Array(
 			$final_transf_list_request_consulta
 		));
+		return $this->_Cast($res, Cadastros::class);
 	}
 
 	/**
@@ -47,9 +48,10 @@ class FinalTransfCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Final_transf_list_request $final_transf_list_request Requisição para listagem as finalidades de transferências cadastradas
 	 * @return Final_transf_list_response Resposta da requisição de listagem de finalidades de transferência encontradas no omie.
 	 */
-	public function ListarFinalTransf(Final_transf_list_request $final_transf_list_request): Final_transf_list_response{
-		return $this->_Call('ListarFinalTransf',Array(
+	public function ListarFinalTransf(Final_transf_list_request $final_transf_list_request): ?Final_transf_list_response {
+		$res = $this->_Call('ListarFinalTransf',Array(
 			$final_transf_list_request
 		));
+		return $this->_Cast($res, Final_transf_list_response::class);
 	}
 }

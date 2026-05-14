@@ -47,10 +47,11 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjIncluirRequest $projIncluirRequest Solicitação de Inclusão de um projeto
 	 * @return ProjIncluirResponse Resposta da Solicitação de inclusão de um projeto.
 	 */
-	public function IncluirProjeto(ProjIncluirRequest $projIncluirRequest): ProjIncluirResponse{
-		return $this->_Call('IncluirProjeto',Array(
+	public function IncluirProjeto(ProjIncluirRequest $projIncluirRequest): ?ProjIncluirResponse {
+		$res = $this->_Call('IncluirProjeto',Array(
 			$projIncluirRequest
 		));
+		return $this->_Cast($res, ProjIncluirResponse::class);
 	}
 
 	/**
@@ -59,10 +60,11 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjAlterarRequest $projAlterarRequest Solicitação de Alteração de um projeto
 	 * @return ProjAlterarResponse Resposta da Solicitação de alteração de um projeto.
 	 */
-	public function AlterarProjeto(ProjAlterarRequest $projAlterarRequest): ProjAlterarResponse{
-		return $this->_Call('AlterarProjeto',Array(
+	public function AlterarProjeto(ProjAlterarRequest $projAlterarRequest): ?ProjAlterarResponse {
+		$res = $this->_Call('AlterarProjeto',Array(
 			$projAlterarRequest
 		));
+		return $this->_Cast($res, ProjAlterarResponse::class);
 	}
 
 	/**
@@ -71,10 +73,11 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjUpsertRequest $projUpsertRequest Solicitação de Inclusão/Alteração de um projeto
 	 * @return ProjUpsertResponse Resposta da Solicitação de inclusão/alteração de um projeto.
 	 */
-	public function UpsertProjeto(ProjUpsertRequest $projUpsertRequest): ProjUpsertResponse{
-		return $this->_Call('UpsertProjeto',Array(
+	public function UpsertProjeto(ProjUpsertRequest $projUpsertRequest): ?ProjUpsertResponse {
+		$res = $this->_Call('UpsertProjeto',Array(
 			$projUpsertRequest
 		));
+		return $this->_Cast($res, ProjUpsertResponse::class);
 	}
 
 	/**
@@ -83,10 +86,11 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjExcluirRequest $projExcluirRequest Solicitação de Exclusão de um projeto.
 	 * @return ProjExcluirResponse Resposta da Solicitação de exclusão de um projeto.
 	 */
-	public function ExcluirProjeto(ProjExcluirRequest $projExcluirRequest): ProjExcluirResponse{
-		return $this->_Call('ExcluirProjeto',Array(
+	public function ExcluirProjeto(ProjExcluirRequest $projExcluirRequest): ?ProjExcluirResponse {
+		$res = $this->_Call('ExcluirProjeto',Array(
 			$projExcluirRequest
 		));
+		return $this->_Cast($res, ProjExcluirResponse::class);
 	}
 
 	/**
@@ -95,10 +99,11 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjConsultarRequest $projConsultarRequest Solicitação da Consulta de projeto
 	 * @return ProjConsultarResponse Resposta da Consulta de Projeto
 	 */
-	public function ConsultarProjeto(ProjConsultarRequest $projConsultarRequest): ProjConsultarResponse{
-		return $this->_Call('ConsultarProjeto',Array(
+	public function ConsultarProjeto(ProjConsultarRequest $projConsultarRequest): ?ProjConsultarResponse {
+		$res = $this->_Call('ConsultarProjeto',Array(
 			$projConsultarRequest
 		));
+		return $this->_Cast($res, ProjConsultarResponse::class);
 	}
 
 	/**
@@ -107,9 +112,10 @@ class ProjetosCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param ProjListarRequest $projListarRequest Solicitação de Listagem de Projetos
 	 * @return ProjListarResponse Resposta da listagem de Projetos
 	 */
-	public function ListarProjetos(ProjListarRequest $projListarRequest): ProjListarResponse{
-		return $this->_Call('ListarProjetos',Array(
+	public function ListarProjetos(ProjListarRequest $projListarRequest): ?ProjListarResponse {
+		$res = $this->_Call('ListarProjetos',Array(
 			$projListarRequest
 		));
+		return $this->_Cast($res, ProjListarResponse::class);
 	}
 }

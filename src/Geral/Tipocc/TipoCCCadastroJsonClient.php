@@ -37,9 +37,10 @@ class TipoCCCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param TipoCCListarRequest $tipoCCListarRequest Solicitação da listagem de tipos de conta corrente.
 	 * @return TipoCCListarResponse Resposta da solicitação da listagem de tipos de conta corrente.
 	 */
-	public function ListarTiposCC(TipoCCListarRequest $tipoCCListarRequest): TipoCCListarResponse{
-		return $this->_Call('ListarTiposCC',Array(
+	public function ListarTiposCC(TipoCCListarRequest $tipoCCListarRequest): ?TipoCCListarResponse {
+		$res = $this->_Call('ListarTiposCC',Array(
 			$tipoCCListarRequest
 		));
+		return $this->_Cast($res, TipoCCListarResponse::class);
 	}
 }

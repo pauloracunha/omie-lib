@@ -37,9 +37,10 @@ class CFOPJsonClient extends AbstractOmieJsonClient {
 	 * @param CfopListarRequest $cfopListarRequest Solicitação da listagem de CFOPs.
 	 * @return CfopListarResponse Resposta da solicitação da listagem de CFOPs.
 	 */
-	public function ListarCFOP(CfopListarRequest $cfopListarRequest): CfopListarResponse{
-		return $this->_Call('ListarCFOP',Array(
+	public function ListarCFOP(CfopListarRequest $cfopListarRequest): ?CfopListarResponse {
+		$res = $this->_Call('ListarCFOP',Array(
 			$cfopListarRequest
 		));
+		return $this->_Cast($res, CfopListarResponse::class);
 	}
 }

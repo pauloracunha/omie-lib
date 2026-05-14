@@ -37,9 +37,10 @@ class MeiosPagamentoCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param MeiosPagamentoPesquisarRequest $MeiosPagamentoPesquisarRequest Listagem de meios de pagamentos
 	 * @return MeiosPagamentoPesquisarResponse Resposta da listagem de meios de pagamentos
 	 */
-	public function ListarMeiosPagamento(MeiosPagamentoPesquisarRequest $MeiosPagamentoPesquisarRequest): MeiosPagamentoPesquisarResponse{
-		return $this->_Call('ListarMeiosPagamento',Array(
+	public function ListarMeiosPagamento(MeiosPagamentoPesquisarRequest $MeiosPagamentoPesquisarRequest): ?MeiosPagamentoPesquisarResponse {
+		$res = $this->_Call('ListarMeiosPagamento',Array(
 			$MeiosPagamentoPesquisarRequest
 		));
+		return $this->_Cast($res, MeiosPagamentoPesquisarResponse::class);
 	}
 }

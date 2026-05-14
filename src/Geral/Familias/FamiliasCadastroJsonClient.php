@@ -39,10 +39,11 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamCadastro $famCadastro Cadastro de Familias de Produtos
 	 * @return FamStatus Status da Familia de Produtos
 	 */
-	public function IncluirFamilia(FamCadastro $famCadastro): FamStatus{
-		return $this->_Call('IncluirFamilia',Array(
+	public function IncluirFamilia(FamCadastro $famCadastro): ?FamStatus {
+		$res = $this->_Call('IncluirFamilia',Array(
 			$famCadastro
 		));
+		return $this->_Cast($res, FamStatus::class);
 	}
 
 	/**
@@ -51,10 +52,11 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamCadastro $famCadastro Cadastro de Familias de Produtos
 	 * @return FamStatus Status da Familia de Produtos
 	 */
-	public function AlterarFamilia(FamCadastro $famCadastro): FamStatus{
-		return $this->_Call('AlterarFamilia',Array(
+	public function AlterarFamilia(FamCadastro $famCadastro): ?FamStatus {
+		$res = $this->_Call('AlterarFamilia',Array(
 			$famCadastro
 		));
+		return $this->_Cast($res, FamStatus::class);
 	}
 
 	/**
@@ -63,10 +65,11 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamCadastro $famCadastro Cadastro de Familias de Produtos
 	 * @return FamStatus Status da Familia de Produtos
 	 */
-	public function UpsertFamilia(FamCadastro $famCadastro): FamStatus{
-		return $this->_Call('UpsertFamilia',Array(
+	public function UpsertFamilia(FamCadastro $famCadastro): ?FamStatus {
+		$res = $this->_Call('UpsertFamilia',Array(
 			$famCadastro
 		));
+		return $this->_Cast($res, FamStatus::class);
 	}
 
 	/**
@@ -75,10 +78,11 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamChave $famChave chave de pesquisa do Cadastro de Familias de produtos
 	 * @return FamStatus Status da Familia de Produtos
 	 */
-	public function ExcluirFamilia(FamChave $famChave): FamStatus{
-		return $this->_Call('ExcluirFamilia',Array(
+	public function ExcluirFamilia(FamChave $famChave): ?FamStatus {
+		$res = $this->_Call('ExcluirFamilia',Array(
 			$famChave
 		));
+		return $this->_Cast($res, FamStatus::class);
 	}
 
 	/**
@@ -87,10 +91,11 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamConsultarRequest $famConsultarRequest Solicitação de Consulta de uma Familia de Produtos
 	 * @return FamConsultarResponse Resposta do consulta de Familias de Produtos
 	 */
-	public function ConsultarFamilia(FamConsultarRequest $famConsultarRequest): FamConsultarResponse{
-		return $this->_Call('ConsultarFamilia',Array(
+	public function ConsultarFamilia(FamConsultarRequest $famConsultarRequest): ?FamConsultarResponse {
+		$res = $this->_Call('ConsultarFamilia',Array(
 			$famConsultarRequest
 		));
+		return $this->_Cast($res, FamConsultarResponse::class);
 	}
 
 	/**
@@ -99,9 +104,10 @@ class FamiliasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param FamListarRequest $famListarRequest Solicitação de Listagem de Familias de Produtos
 	 * @return FamListarResponse Resposta da listagem de Familias de Produtos
 	 */
-	public function PesquisarFamilias(FamListarRequest $famListarRequest): FamListarResponse{
-		return $this->_Call('PesquisarFamilias',Array(
+	public function PesquisarFamilias(FamListarRequest $famListarRequest): ?FamListarResponse {
+		$res = $this->_Call('PesquisarFamilias',Array(
 			$famListarRequest
 		));
+		return $this->_Cast($res, FamListarResponse::class);
 	}
 }

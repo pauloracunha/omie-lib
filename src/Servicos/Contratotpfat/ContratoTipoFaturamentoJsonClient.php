@@ -37,9 +37,10 @@ class ContratoTipoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param TfCtrListarRequest $tfCtrListarRequest Solicitação da listagem de tipo de faturamento de contrato.
 	 * @return TfCtrListarResponse Resposta da solicitação de tipo de faturamento de contrato.
 	 */
-	public function ListarTipoFatContrato(TfCtrListarRequest $tfCtrListarRequest): TfCtrListarResponse{
-		return $this->_Call('ListarTipoFatContrato',Array(
+	public function ListarTipoFatContrato(TfCtrListarRequest $tfCtrListarRequest): ?TfCtrListarResponse {
+		$res = $this->_Call('ListarTipoFatContrato',Array(
 			$tfCtrListarRequest
 		));
+		return $this->_Cast($res, TfCtrListarResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class ResumoEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterEstoqueProdRequest $ObterEstoqueProdRequest Solicitação da posição de estoque do produto.
 	 * @return ObterEstoqueProdResponse Resposta da solicitação da posição de estoque do produto.
 	 */
-	public function ObterEstoqueProduto(ObterEstoqueProdRequest $ObterEstoqueProdRequest): ObterEstoqueProdResponse{
-		return $this->_Call('ObterEstoqueProduto',Array(
+	public function ObterEstoqueProduto(ObterEstoqueProdRequest $ObterEstoqueProdRequest): ?ObterEstoqueProdResponse {
+		$res = $this->_Call('ObterEstoqueProduto',Array(
 			$ObterEstoqueProdRequest
 		));
+		return $this->_Cast($res, ObterEstoqueProdResponse::class);
 	}
 }

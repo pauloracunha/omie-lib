@@ -51,10 +51,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoConcluirRequest $rcbtoConcluirRequest Solicitação de conclusão de recebimento de NFe
 	 * @return RcbtoConcluirResponse Resposta da conclusão do recebimento da NFe
 	 */
-	public function ConcluirRecebimento(RcbtoConcluirRequest $rcbtoConcluirRequest): RcbtoConcluirResponse{
-		return $this->_Call('ConcluirRecebimento',Array(
+	public function ConcluirRecebimento(RcbtoConcluirRequest $rcbtoConcluirRequest): ?RcbtoConcluirResponse {
+		$res = $this->_Call('ConcluirRecebimento',Array(
 			$rcbtoConcluirRequest
 		));
+		return $this->_Cast($res, RcbtoConcluirResponse::class);
 	}
 
 	/**
@@ -63,10 +64,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoAlterarEtapaRequest $rcbtoAlterarEtapaRequest Solicitação da alteração de etapa do recebimento da NFe
 	 * @return RcbtoAlterarEtapaResponse Resposta da alteração de etapa do recebimento da NFe
 	 */
-	public function AlterarEtapaRecebimento(RcbtoAlterarEtapaRequest $rcbtoAlterarEtapaRequest): RcbtoAlterarEtapaResponse{
-		return $this->_Call('AlterarEtapaRecebimento',Array(
+	public function AlterarEtapaRecebimento(RcbtoAlterarEtapaRequest $rcbtoAlterarEtapaRequest): ?RcbtoAlterarEtapaResponse {
+		$res = $this->_Call('AlterarEtapaRecebimento',Array(
 			$rcbtoAlterarEtapaRequest
 		));
+		return $this->_Cast($res, RcbtoAlterarEtapaResponse::class);
 	}
 
 	/**
@@ -75,10 +77,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoConsultarRequest $rcbtoConsultarRequest Solicitação de consulta de recebimento de NFe
 	 * @return RcbtoConsultarResponse Resposta de consulta de recebimento de NFe
 	 */
-	public function ConsultarRecebimento(RcbtoConsultarRequest $rcbtoConsultarRequest): RcbtoConsultarResponse{
-		return $this->_Call('ConsultarRecebimento',Array(
+	public function ConsultarRecebimento(RcbtoConsultarRequest $rcbtoConsultarRequest): ?RcbtoConsultarResponse {
+		$res = $this->_Call('ConsultarRecebimento',Array(
 			$rcbtoConsultarRequest
 		));
+		return $this->_Cast($res, RcbtoConsultarResponse::class);
 	}
 
 	/**
@@ -87,10 +90,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoListarRequest $rcbtoListarRequest Solicitação de listagem da nota de recebimento
 	 * @return RcbtoListarResponse Resposta da solicitação de listagem de nota de recebimento
 	 */
-	public function ListarRecebimentos(RcbtoListarRequest $rcbtoListarRequest): RcbtoListarResponse{
-		return $this->_Call('ListarRecebimentos',Array(
+	public function ListarRecebimentos(RcbtoListarRequest $rcbtoListarRequest): ?RcbtoListarResponse {
+		$res = $this->_Call('ListarRecebimentos',Array(
 			$rcbtoListarRequest
 		));
+		return $this->_Cast($res, RcbtoListarResponse::class);
 	}
 
 	/**
@@ -99,10 +103,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoReverterRequest $rcbtoReverterRequest Solicitação de reversão de recebimento de NFe
 	 * @return RcbtoReverterResponse Resposta da reversão do recebimento da NFe
 	 */
-	public function ReverterRecebimento(RcbtoReverterRequest $rcbtoReverterRequest): RcbtoReverterResponse{
-		return $this->_Call('ReverterRecebimento',Array(
+	public function ReverterRecebimento(RcbtoReverterRequest $rcbtoReverterRequest): ?RcbtoReverterResponse {
+		$res = $this->_Call('ReverterRecebimento',Array(
 			$rcbtoReverterRequest
 		));
+		return $this->_Cast($res, RcbtoReverterResponse::class);
 	}
 
 	/**
@@ -111,10 +116,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoAlterarRequest $rcbtoAlterarRequest Solicitação da alteração do recebimento da NFe
 	 * @return RcbtoAlterarResponse Resposta da alteração do recebimento da NFe
 	 */
-	public function AlterarRecebimento(RcbtoAlterarRequest $rcbtoAlterarRequest): RcbtoAlterarResponse{
-		return $this->_Call('AlterarRecebimento',Array(
+	public function AlterarRecebimento(RcbtoAlterarRequest $rcbtoAlterarRequest): ?RcbtoAlterarResponse {
+		$res = $this->_Call('AlterarRecebimento',Array(
 			$rcbtoAlterarRequest
 		));
+		return $this->_Cast($res, RcbtoAlterarResponse::class);
 	}
 
 	/**
@@ -123,10 +129,11 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoExcluirRequest $rcbtoExcluirRequest Solicitação da exclusão do recebimento da NFe
 	 * @return RcbtoExcluirResponse Resposta da exclusão do recebimento da NFe.
 	 */
-	public function ExcluirRecebimento(RcbtoExcluirRequest $rcbtoExcluirRequest): RcbtoExcluirResponse{
-		return $this->_Call('ExcluirRecebimento',Array(
+	public function ExcluirRecebimento(RcbtoExcluirRequest $rcbtoExcluirRequest): ?RcbtoExcluirResponse {
+		$res = $this->_Call('ExcluirRecebimento',Array(
 			$rcbtoExcluirRequest
 		));
+		return $this->_Cast($res, RcbtoExcluirResponse::class);
 	}
 
 	/**
@@ -135,9 +142,10 @@ class RecebimentoNFeJsonClient extends AbstractOmieJsonClient {
 	 * @param RcbtoConcAlterarRequest $rcbtoConcAlterarRequest Solicitação da alteração do recebimento da NFe
 	 * @return RcbtoConcAlterarResponse Resposta da alteração do recebimento da NFe
 	 */
-	public function AlterarRecebimentoConcluido(RcbtoConcAlterarRequest $rcbtoConcAlterarRequest): RcbtoConcAlterarResponse{
-		return $this->_Call('AlterarRecebimentoConcluido',Array(
+	public function AlterarRecebimentoConcluido(RcbtoConcAlterarRequest $rcbtoConcAlterarRequest): ?RcbtoConcAlterarResponse {
+		$res = $this->_Call('AlterarRecebimentoConcluido',Array(
 			$rcbtoConcAlterarRequest
 		));
+		return $this->_Cast($res, RcbtoConcAlterarResponse::class);
 	}
 }

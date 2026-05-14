@@ -39,10 +39,11 @@ class TabelaIBPTJsonClient extends AbstractOmieJsonClient {
 	 * @param IbptListarServRequest $ibptListarServRequest Solicitação da Tabela IBPT da Empresa.
 	 * @return IbptListarServResponse Resposta da solicitação da Tabela IBPT da Empresa.
 	 */
-	public function ListarServicosIBPT(IbptListarServRequest $ibptListarServRequest): IbptListarServResponse{
-		return $this->_Call('ListarServicosIBPT',Array(
+	public function ListarServicosIBPT(IbptListarServRequest $ibptListarServRequest): ?IbptListarServResponse {
+		$res = $this->_Call('ListarServicosIBPT',Array(
 			$ibptListarServRequest
 		));
+		return $this->_Cast($res, IbptListarServResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class TabelaIBPTJsonClient extends AbstractOmieJsonClient {
 	 * @param IbptListarProdRequest $ibptListarProdRequest Solicitação da Tabela IBPT da Empresa.
 	 * @return IbptListarProdResponse Resposta da solicitação da Tabela IBPT da Empresa.
 	 */
-	public function ListarProdutosIBPT(IbptListarProdRequest $ibptListarProdRequest): IbptListarProdResponse{
-		return $this->_Call('ListarProdutosIBPT',Array(
+	public function ListarProdutosIBPT(IbptListarProdRequest $ibptListarProdRequest): ?IbptListarProdResponse {
+		$res = $this->_Call('ListarProdutosIBPT',Array(
 			$ibptListarProdRequest
 		));
+		return $this->_Cast($res, IbptListarProdResponse::class);
 	}
 }

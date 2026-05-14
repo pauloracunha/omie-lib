@@ -45,10 +45,11 @@ class ContasCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarCaractCRMContaRequest $AlterarCaractCRMContaRequest Altera uma característica de uma conta
 	 * @return AlterarCaractCRMContaResponse Resposta da alteração de uma característica de uma conta.
 	 */
-	public function AlterarCaractConta(AlterarCaractCRMContaRequest $AlterarCaractCRMContaRequest): AlterarCaractCRMContaResponse{
-		return $this->_Call('AlterarCaractConta',Array(
+	public function AlterarCaractConta(AlterarCaractCRMContaRequest $AlterarCaractCRMContaRequest): ?AlterarCaractCRMContaResponse {
+		$res = $this->_Call('AlterarCaractConta',Array(
 			$AlterarCaractCRMContaRequest
 		));
+		return $this->_Cast($res, AlterarCaractCRMContaResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class ContasCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param IncluirCaractCRMContaRequest $IncluirCaractCRMContaRequest Inclui uma característica para uma conta
 	 * @return IncluirCaractCRMContaResponse Resposta da inclusão de uma característica de uma conta.
 	 */
-	public function IncluirCaractConta(IncluirCaractCRMContaRequest $IncluirCaractCRMContaRequest): IncluirCaractCRMContaResponse{
-		return $this->_Call('IncluirCaractConta',Array(
+	public function IncluirCaractConta(IncluirCaractCRMContaRequest $IncluirCaractCRMContaRequest): ?IncluirCaractCRMContaResponse {
+		$res = $this->_Call('IncluirCaractConta',Array(
 			$IncluirCaractCRMContaRequest
 		));
+		return $this->_Cast($res, IncluirCaractCRMContaResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class ContasCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirCaractCRMContaRequest $ExcluirCaractCRMContaRequest Exclui uma característica de uma contar.
 	 * @return ExcluirCaractCRMContaResponse Resposta da exclusão de uma característica de uma conta.
 	 */
-	public function ExcluirCaractConta(ExcluirCaractCRMContaRequest $ExcluirCaractCRMContaRequest): ExcluirCaractCRMContaResponse{
-		return $this->_Call('ExcluirCaractConta',Array(
+	public function ExcluirCaractConta(ExcluirCaractCRMContaRequest $ExcluirCaractCRMContaRequest): ?ExcluirCaractCRMContaResponse {
+		$res = $this->_Call('ExcluirCaractConta',Array(
 			$ExcluirCaractCRMContaRequest
 		));
+		return $this->_Cast($res, ExcluirCaractCRMContaResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class ContasCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirTodasCaractCRMContaRequest $ExcluirTodasCaractCRMContaRequest Exclui todas as características de uma conta.
 	 * @return ExcluirTodasCaractCRMContaResponse Resposta da exclusão de todas as características de uma conta.
 	 */
-	public function ExcluirTodasCaractConta(ExcluirTodasCaractCRMContaRequest $ExcluirTodasCaractCRMContaRequest): ExcluirTodasCaractCRMContaResponse{
-		return $this->_Call('ExcluirTodasCaractConta',Array(
+	public function ExcluirTodasCaractConta(ExcluirTodasCaractCRMContaRequest $ExcluirTodasCaractCRMContaRequest): ?ExcluirTodasCaractCRMContaResponse {
+		$res = $this->_Call('ExcluirTodasCaractConta',Array(
 			$ExcluirTodasCaractCRMContaRequest
 		));
+		return $this->_Cast($res, ExcluirTodasCaractCRMContaResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class ContasCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ConsultarCaractCRMContaRequest $ConsultarCaractCRMContaRequest Consulta todas as características de uma conta.
 	 * @return ConsultarCaractCRMContaResponse Resposta da consulta de todas as características de uma conta.
 	 */
-	public function ConsultarCaractConta(ConsultarCaractCRMContaRequest $ConsultarCaractCRMContaRequest): ConsultarCaractCRMContaResponse{
-		return $this->_Call('ConsultarCaractConta',Array(
+	public function ConsultarCaractConta(ConsultarCaractCRMContaRequest $ConsultarCaractCRMContaRequest): ?ConsultarCaractCRMContaResponse {
+		$res = $this->_Call('ConsultarCaractConta',Array(
 			$ConsultarCaractCRMContaRequest
 		));
+		return $this->_Cast($res, ConsultarCaractCRMContaResponse::class);
 	}
 }

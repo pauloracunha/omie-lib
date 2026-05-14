@@ -37,9 +37,10 @@ class CidadesCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param CidListarRequest $cidListarRequest Solicitação de Listagem de Cidades
 	 * @return CidListarResponse Resposta da listagem de Cidades
 	 */
-	public function PesquisarCidades(CidListarRequest $cidListarRequest): CidListarResponse{
-		return $this->_Call('PesquisarCidades',Array(
+	public function PesquisarCidades(CidListarRequest $cidListarRequest): ?CidListarResponse {
+		$res = $this->_Call('PesquisarCidades',Array(
 			$cidListarRequest
 		));
+		return $this->_Cast($res, CidListarResponse::class);
 	}
 }

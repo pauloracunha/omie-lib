@@ -37,9 +37,10 @@ class IpiEncJsonClient extends AbstractOmieJsonClient {
 	 * @param IpiEnqListarRequest $ipiEnqListarRequest Solicitação da listagem de Enquadramento do IPI.
 	 * @return IpiEnqListarResponse Resposta da solicitação da listagem do Enquadramento do IPI.
 	 */
-	public function ListarEnqIpi(IpiEnqListarRequest $ipiEnqListarRequest): IpiEnqListarResponse{
-		return $this->_Call('ListarEnqIpi',Array(
+	public function ListarEnqIpi(IpiEnqListarRequest $ipiEnqListarRequest): ?IpiEnqListarResponse {
+		$res = $this->_Call('ListarEnqIpi',Array(
 			$ipiEnqListarRequest
 		));
+		return $this->_Cast($res, IpiEnqListarResponse::class);
 	}
 }

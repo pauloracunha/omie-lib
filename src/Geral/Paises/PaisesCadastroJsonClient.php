@@ -37,9 +37,10 @@ class PaisesCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param PaisListarRequest $paisListarRequest Solicitação de Listagem de Paises.
 	 * @return PaisListarResponse Resposta da listagem de Paises.
 	 */
-	public function ListarPaises(PaisListarRequest $paisListarRequest): PaisListarResponse{
-		return $this->_Call('ListarPaises',Array(
+	public function ListarPaises(PaisListarRequest $paisListarRequest): ?PaisListarResponse {
+		$res = $this->_Call('ListarPaises',Array(
 			$paisListarRequest
 		));
+		return $this->_Cast($res, PaisListarResponse::class);
 	}
 }

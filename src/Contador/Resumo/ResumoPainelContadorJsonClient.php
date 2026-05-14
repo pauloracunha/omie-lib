@@ -37,9 +37,10 @@ class ResumoPainelContadorJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoContadorRequest $ObterResumoContadorRequest Solicitação do resumo do painel do contador.
 	 * @return ObterResumoContadorResponse Resposta da solicitação do resumo do painel do contador.
 	 */
-	public function ObterResumoContador(ObterResumoContadorRequest $ObterResumoContadorRequest): ObterResumoContadorResponse{
-		return $this->_Call('ObterResumoContador',Array(
+	public function ObterResumoContador(ObterResumoContadorRequest $ObterResumoContadorRequest): ?ObterResumoContadorResponse {
+		$res = $this->_Call('ObterResumoContador',Array(
 			$ObterResumoContadorRequest
 		));
+		return $this->_Cast($res, ObterResumoContadorResponse::class);
 	}
 }

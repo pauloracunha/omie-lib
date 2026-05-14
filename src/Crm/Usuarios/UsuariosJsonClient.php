@@ -39,10 +39,11 @@ class UsuariosJsonClient extends AbstractOmieJsonClient {
 	 * @param UscrmListarRequest $uscrmListarRequest Solicitação da listagem de usuários / vendedores / prevendas.
 	 * @return UscrmListarResponse Resposta da solicitação da listagem de usuários / vendedores / prevendas.
 	 */
-	public function ListarUsuarios(UscrmListarRequest $uscrmListarRequest): UscrmListarResponse{
-		return $this->_Call('ListarUsuarios',Array(
+	public function ListarUsuarios(UscrmListarRequest $uscrmListarRequest): ?UscrmListarResponse {
+		$res = $this->_Call('ListarUsuarios',Array(
 			$uscrmListarRequest
 		));
+		return $this->_Cast($res, UscrmListarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class UsuariosJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterUsuariosRequest $obterUsuariosRequest Solicitação do cadastro de usuários / vendedores / prevendas.
 	 * @return ObterUsuariosResponse Resposta da solicitação do cadastro de usuários / vendedores / prevendas.
 	 */
-	public function ObterUsuarios(ObterUsuariosRequest $obterUsuariosRequest): ObterUsuariosResponse{
-		return $this->_Call('ObterUsuarios',Array(
+	public function ObterUsuarios(ObterUsuariosRequest $obterUsuariosRequest): ?ObterUsuariosResponse {
+		$res = $this->_Call('ObterUsuarios',Array(
 			$obterUsuariosRequest
 		));
+		return $this->_Cast($res, ObterUsuariosResponse::class);
 	}
 }

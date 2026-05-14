@@ -51,10 +51,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarTarefasRequest $ListarTarefasRequest Solicitação da listagem de tarefas cadastradas.
 	 * @return ListarTarefasResponse Resposta da solicitação da listagem de tarefas cadastradas.
 	 */
-	public function ListarTarefas(ListarTarefasRequest $ListarTarefasRequest): ListarTarefasResponse{
-		return $this->_Call('ListarTarefas',Array(
+	public function ListarTarefas(ListarTarefasRequest $ListarTarefasRequest): ?ListarTarefasResponse {
+		$res = $this->_Call('ListarTarefas',Array(
 			$ListarTarefasRequest
 		));
+		return $this->_Cast($res, ListarTarefasResponse::class);
 	}
 
 	/**
@@ -63,10 +64,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param IncluirTarefaRequest $IncluirTarefaRequest Solicitação de cadastro de tarefa.
 	 * @return IncluirTarefaResponse Resposta da solicitação de cadastro de tarefas.
 	 */
-	public function IncluirTarefa(IncluirTarefaRequest $IncluirTarefaRequest): IncluirTarefaResponse{
-		return $this->_Call('IncluirTarefa',Array(
+	public function IncluirTarefa(IncluirTarefaRequest $IncluirTarefaRequest): ?IncluirTarefaResponse {
+		$res = $this->_Call('IncluirTarefa',Array(
 			$IncluirTarefaRequest
 		));
+		return $this->_Cast($res, IncluirTarefaResponse::class);
 	}
 
 	/**
@@ -75,10 +77,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarTarefaRequest $AlterarTarefaRequest Solicitação de alteração de uma tarefa.
 	 * @return AlterarTarefaResponse Resposta da solicitação de alteração de uma tarefa.
 	 */
-	public function AlterarTarefa(AlterarTarefaRequest $AlterarTarefaRequest): AlterarTarefaResponse{
-		return $this->_Call('AlterarTarefa',Array(
+	public function AlterarTarefa(AlterarTarefaRequest $AlterarTarefaRequest): ?AlterarTarefaResponse {
+		$res = $this->_Call('AlterarTarefa',Array(
 			$AlterarTarefaRequest
 		));
+		return $this->_Cast($res, AlterarTarefaResponse::class);
 	}
 
 	/**
@@ -87,10 +90,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirTarefaRequest $ExcluirTarefaRequest Solicitação de exclusão de uma tarefa.
 	 * @return ExcluirTarefaResponse Resposta da solicitação de exclusão de uma tarefa.
 	 */
-	public function ExcluirTarefa(ExcluirTarefaRequest $ExcluirTarefaRequest): ExcluirTarefaResponse{
-		return $this->_Call('ExcluirTarefa',Array(
+	public function ExcluirTarefa(ExcluirTarefaRequest $ExcluirTarefaRequest): ?ExcluirTarefaResponse {
+		$res = $this->_Call('ExcluirTarefa',Array(
 			$ExcluirTarefaRequest
 		));
+		return $this->_Cast($res, ExcluirTarefaResponse::class);
 	}
 
 	/**
@@ -99,10 +103,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ConsultarTarefaRequest $ConsultarTarefaRequest Solicitação da consulta de uma tarefa.
 	 * @return ConsultarTarefaResponse Resposta da solicitação de consulta de uma tarefa.
 	 */
-	public function ConsultarTarefa(ConsultarTarefaRequest $ConsultarTarefaRequest): ConsultarTarefaResponse{
-		return $this->_Call('ConsultarTarefa',Array(
+	public function ConsultarTarefa(ConsultarTarefaRequest $ConsultarTarefaRequest): ?ConsultarTarefaResponse {
+		$res = $this->_Call('ConsultarTarefa',Array(
 			$ConsultarTarefaRequest
 		));
+		return $this->_Cast($res, ConsultarTarefaResponse::class);
 	}
 
 	/**
@@ -111,10 +116,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoTarefasRequest $ObterResumoTarefasRequest Solicitação para obter o resumo das tarefas.
 	 * @return ObterResumoTarefasResponse Resposta da solicitação do resumo de tarefas.
 	 */
-	public function ObterResumoTarefas(ObterResumoTarefasRequest $ObterResumoTarefasRequest): ObterResumoTarefasResponse{
-		return $this->_Call('ObterResumoTarefas',Array(
+	public function ObterResumoTarefas(ObterResumoTarefasRequest $ObterResumoTarefasRequest): ?ObterResumoTarefasResponse {
+		$res = $this->_Call('ObterResumoTarefas',Array(
 			$ObterResumoTarefasRequest
 		));
+		return $this->_Cast($res, ObterResumoTarefasResponse::class);
 	}
 
 	/**
@@ -123,10 +129,11 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterCalendarioTarefasRequest $ObterCalendarioTarefasRequest Solicitação para obter informações do calendário das tarefas.
 	 * @return ObterCalendarioTarefasResponse Resposta da solicitação do calendário de tarefas.
 	 */
-	public function ObterCalendarioTarefas(ObterCalendarioTarefasRequest $ObterCalendarioTarefasRequest): ObterCalendarioTarefasResponse{
-		return $this->_Call('ObterCalendarioTarefas',Array(
+	public function ObterCalendarioTarefas(ObterCalendarioTarefasRequest $ObterCalendarioTarefasRequest): ?ObterCalendarioTarefasResponse {
+		$res = $this->_Call('ObterCalendarioTarefas',Array(
 			$ObterCalendarioTarefasRequest
 		));
+		return $this->_Cast($res, ObterCalendarioTarefasResponse::class);
 	}
 
 	/**
@@ -135,9 +142,10 @@ class TarefasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterTotalTarefasRequest $ObterTotalTarefasRequest Solicitação para obter o número de tarefas por documento e origem.
 	 * @return ObterTotalTarefasResponse Resposta da solicitação para obter o número de tarefas por documento e origem.
 	 */
-	public function ObterTotalTarefas(ObterTotalTarefasRequest $ObterTotalTarefasRequest): ObterTotalTarefasResponse{
-		return $this->_Call('ObterTotalTarefas',Array(
+	public function ObterTotalTarefas(ObterTotalTarefasRequest $ObterTotalTarefasRequest): ?ObterTotalTarefasResponse {
+		$res = $this->_Call('ObterTotalTarefas',Array(
 			$ObterTotalTarefasRequest
 		));
+		return $this->_Cast($res, ObterTotalTarefasResponse::class);
 	}
 }

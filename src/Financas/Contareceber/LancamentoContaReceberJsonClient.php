@@ -37,10 +37,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro $conta_receber_cadastro Cadastro de contas a receber.
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function IncluirContaReceber(Conta_receber_cadastro $conta_receber_cadastro): Conta_receber_cadastro_response{
-		return $this->_Call('IncluirContaReceber',Array(
+	public function IncluirContaReceber(Conta_receber_cadastro $conta_receber_cadastro): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('IncluirContaReceber',Array(
 			$conta_receber_cadastro
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 
 	/**
@@ -49,10 +50,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro $conta_receber_cadastro Cadastro de contas a receber.
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function AlterarContaReceber(Conta_receber_cadastro $conta_receber_cadastro): Conta_receber_cadastro_response{
-		return $this->_Call('AlterarContaReceber',Array(
+	public function AlterarContaReceber(Conta_receber_cadastro $conta_receber_cadastro): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('AlterarContaReceber',Array(
 			$conta_receber_cadastro
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 
 	/**
@@ -61,10 +63,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro_chave $conta_receber_cadastro_chave Chave da conta a a receber
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function ExcluirContaReceber(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): Conta_receber_cadastro_response{
-		return $this->_Call('ExcluirContaReceber',Array(
+	public function ExcluirContaReceber(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('ExcluirContaReceber',Array(
 			$conta_receber_cadastro_chave
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 
 	/**
@@ -73,10 +76,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Rateio_cadastro $rateio_cadastro Cadastro de Distribuição por Departamento
 	 * @return Conta_receber_cadastro_chave Chave da conta a a receber
 	 */
-	public function IncluirDistribuicaoDepartamento(Rateio_cadastro $rateio_cadastro): Conta_receber_cadastro_chave{
-		return $this->_Call('IncluirDistribuicaoDepartamento',Array(
+	public function IncluirDistribuicaoDepartamento(Rateio_cadastro $rateio_cadastro): ?Conta_receber_cadastro_chave {
+		$res = $this->_Call('IncluirDistribuicaoDepartamento',Array(
 			$rateio_cadastro
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_chave::class);
 	}
 
 	/**
@@ -85,10 +89,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Rateio_cadastro $rateio_cadastro Cadastro de Distribuição por Departamento
 	 * @return Conta_receber_cadastro_chave Chave da conta a a receber
 	 */
-	public function AlterarDistribuicaoDepartamento(Rateio_cadastro $rateio_cadastro): Conta_receber_cadastro_chave{
-		return $this->_Call('AlterarDistribuicaoDepartamento',Array(
+	public function AlterarDistribuicaoDepartamento(Rateio_cadastro $rateio_cadastro): ?Conta_receber_cadastro_chave {
+		$res = $this->_Call('AlterarDistribuicaoDepartamento',Array(
 			$rateio_cadastro
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_chave::class);
 	}
 
 	/**
@@ -97,10 +102,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro_chave $conta_receber_cadastro_chave Chave da conta a a receber
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function ExcluirDistribuicaoDepartamento(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): Conta_receber_cadastro_response{
-		return $this->_Call('ExcluirDistribuicaoDepartamento',Array(
+	public function ExcluirDistribuicaoDepartamento(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('ExcluirDistribuicaoDepartamento',Array(
 			$conta_receber_cadastro_chave
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 
 	/**
@@ -109,10 +115,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_lancar_recebimento $conta_receber_lancar_recebimento Informações para realizada a Baixa do Contas a Receber.
 	 * @return Conta_receber_lancar_recebimento_resposta Resultado da baixa realizada para um lançamento do conta a receber.
 	 */
-	public function LancarRecebimento(Conta_receber_lancar_recebimento $conta_receber_lancar_recebimento): Conta_receber_lancar_recebimento_resposta{
-		return $this->_Call('LancarRecebimento',Array(
+	public function LancarRecebimento(Conta_receber_lancar_recebimento $conta_receber_lancar_recebimento): ?Conta_receber_lancar_recebimento_resposta {
+		$res = $this->_Call('LancarRecebimento',Array(
 			$conta_receber_lancar_recebimento
 		));
+		return $this->_Cast($res, Conta_receber_lancar_recebimento_resposta::class);
 	}
 
 	/**
@@ -121,10 +128,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cancelar_recebimento $conta_receber_cancelar_recebimento Requisição de cancelamento de lançamento de baixa do recebimento.
 	 * @return Conta_receber_cancelar_recebimento_resposta Resposta do cancelamento da baixa.&nbsp;
 	 */
-	public function CancelarRecebimento(Conta_receber_cancelar_recebimento $conta_receber_cancelar_recebimento): Conta_receber_cancelar_recebimento_resposta{
-		return $this->_Call('CancelarRecebimento',Array(
+	public function CancelarRecebimento(Conta_receber_cancelar_recebimento $conta_receber_cancelar_recebimento): ?Conta_receber_cancelar_recebimento_resposta {
+		$res = $this->_Call('CancelarRecebimento',Array(
 			$conta_receber_cancelar_recebimento
 		));
+		return $this->_Cast($res, Conta_receber_cancelar_recebimento_resposta::class);
 	}
 
 	/**
@@ -133,10 +141,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_conciliar_request $conta_receber_conciliar_request Realiza a conciliação do documento
 	 * @return Conta_receber_conciliar_response Response da conciliação da Conta a Pagar
 	 */
-	public function ConciliarRecebimento(Conta_receber_conciliar_request $conta_receber_conciliar_request): Conta_receber_conciliar_response{
-		return $this->_Call('ConciliarRecebimento',Array(
+	public function ConciliarRecebimento(Conta_receber_conciliar_request $conta_receber_conciliar_request): ?Conta_receber_conciliar_response {
+		$res = $this->_Call('ConciliarRecebimento',Array(
 			$conta_receber_conciliar_request
 		));
+		return $this->_Cast($res, Conta_receber_conciliar_response::class);
 	}
 
 	/**
@@ -145,10 +154,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_conciliar_request $conta_receber_conciliar_request Realiza a conciliação do documento
 	 * @return Conta_receber_conciliar_response Response da conciliação da Conta a Pagar
 	 */
-	public function DesconciliarRecebimento(Conta_receber_conciliar_request $conta_receber_conciliar_request): Conta_receber_conciliar_response{
-		return $this->_Call('DesconciliarRecebimento',Array(
+	public function DesconciliarRecebimento(Conta_receber_conciliar_request $conta_receber_conciliar_request): ?Conta_receber_conciliar_response {
+		$res = $this->_Call('DesconciliarRecebimento',Array(
 			$conta_receber_conciliar_request
 		));
+		return $this->_Cast($res, Conta_receber_conciliar_response::class);
 	}
 
 	/**
@@ -157,10 +167,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_lote $conta_receber_lote Inclusão de Contas a Receber por Lote
 	 * @return Conta_receber_lote_response Resposta do Lançamento de contas a receber por lote&nbsp;
 	 */
-	public function IncluirContaReceberPorLote(Conta_receber_lote $conta_receber_lote): Conta_receber_lote_response{
-		return $this->_Call('IncluirContaReceberPorLote',Array(
+	public function IncluirContaReceberPorLote(Conta_receber_lote $conta_receber_lote): ?Conta_receber_lote_response {
+		$res = $this->_Call('IncluirContaReceberPorLote',Array(
 			$conta_receber_lote
 		));
+		return $this->_Cast($res, Conta_receber_lote_response::class);
 	}
 
 	/**
@@ -169,10 +180,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro $conta_receber_cadastro Cadastro de contas a receber.
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function UpsertContaReceber(Conta_receber_cadastro $conta_receber_cadastro): Conta_receber_cadastro_response{
-		return $this->_Call('UpsertContaReceber',Array(
+	public function UpsertContaReceber(Conta_receber_cadastro $conta_receber_cadastro): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('UpsertContaReceber',Array(
 			$conta_receber_cadastro
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 
 	/**
@@ -181,10 +193,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_lote $conta_receber_lote Inclusão de Contas a Receber por Lote
 	 * @return Conta_receber_lote_response Resposta do Lançamento de contas a receber por lote&nbsp;
 	 */
-	public function UpsertContaReceberPorLote(Conta_receber_lote $conta_receber_lote): Conta_receber_lote_response{
-		return $this->_Call('UpsertContaReceberPorLote',Array(
+	public function UpsertContaReceberPorLote(Conta_receber_lote $conta_receber_lote): ?Conta_receber_lote_response {
+		$res = $this->_Call('UpsertContaReceberPorLote',Array(
 			$conta_receber_lote
 		));
+		return $this->_Cast($res, Conta_receber_lote_response::class);
 	}
 
 	/**
@@ -193,10 +206,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param LcrChave $lcrChave Chave de pesquisa do Lançamento de Contas a Receber
 	 * @return Conta_receber_cadastro Cadastro de contas a receber.
 	 */
-	public function ConsultarContaReceber(LcrChave $lcrChave): Conta_receber_cadastro{
-		return $this->_Call('ConsultarContaReceber',Array(
+	public function ConsultarContaReceber(LcrChave $lcrChave): ?Conta_receber_cadastro {
+		$res = $this->_Call('ConsultarContaReceber',Array(
 			$lcrChave
 		));
+		return $this->_Cast($res, Conta_receber_cadastro::class);
 	}
 
 	/**
@@ -205,10 +219,11 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param LcrListarRequest $lcrListarRequest Solicitação de Listagem de Contas a Receber
 	 * @return LcrListarResponse Resposta da listagem de Contas a Receber
 	 */
-	public function ListarContasReceber(LcrListarRequest $lcrListarRequest): LcrListarResponse{
-		return $this->_Call('ListarContasReceber',Array(
+	public function ListarContasReceber(LcrListarRequest $lcrListarRequest): ?LcrListarResponse {
+		$res = $this->_Call('ListarContasReceber',Array(
 			$lcrListarRequest
 		));
+		return $this->_Cast($res, LcrListarResponse::class);
 	}
 
 	/**
@@ -217,9 +232,10 @@ class LancamentoContaReceberJsonClient extends AbstractOmieJsonClient {
 	 * @param Conta_receber_cadastro_chave $conta_receber_cadastro_chave Chave da conta a a receber
 	 * @return Conta_receber_cadastro_response Resposta do Cadastro de Contas a Receber
 	 */
-	public function CancelarContaReceber(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): Conta_receber_cadastro_response{
-		return $this->_Call('CancelarContaReceber',Array(
+	public function CancelarContaReceber(Conta_receber_cadastro_chave $conta_receber_cadastro_chave): ?Conta_receber_cadastro_response {
+		$res = $this->_Call('CancelarContaReceber',Array(
 			$conta_receber_cadastro_chave
 		));
+		return $this->_Cast($res, Conta_receber_cadastro_response::class);
 	}
 }

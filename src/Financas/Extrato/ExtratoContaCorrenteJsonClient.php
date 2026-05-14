@@ -37,9 +37,10 @@ class ExtratoContaCorrenteJsonClient extends AbstractOmieJsonClient {
 	 * @param EccListarExtratoRequest $eccListarExtratoRequest Solicitação de consulta do Extrato de Conta Corrente.
 	 * @return EccListarExtratoResponse Resposta da solicitação de consulta do Extrato de Conta Corrente.
 	 */
-	public function ListarExtrato(EccListarExtratoRequest $eccListarExtratoRequest): EccListarExtratoResponse{
-		return $this->_Call('ListarExtrato',Array(
+	public function ListarExtrato(EccListarExtratoRequest $eccListarExtratoRequest): ?EccListarExtratoResponse {
+		$res = $this->_Call('ListarExtrato',Array(
 			$eccListarExtratoRequest
 		));
+		return $this->_Cast($res, EccListarExtratoResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class OrcamentoCaixaJsonClient extends AbstractOmieJsonClient {
 	 * @param OcprListarRequest $ocprListarRequest Solicitação de listagem de Orçamento de Caixa - Previsto x Realizado.
 	 * @return OcprListarResponse Resposta da solicitação de listagem de Orçamento de Caixa - Previsto x Realizado.
 	 */
-	public function ListarOrcamentos(OcprListarRequest $ocprListarRequest): OcprListarResponse{
-		return $this->_Call('ListarOrcamentos',Array(
+	public function ListarOrcamentos(OcprListarRequest $ocprListarRequest): ?OcprListarResponse {
+		$res = $this->_Call('ListarOrcamentos',Array(
 			$ocprListarRequest
 		));
+		return $this->_Cast($res, OcprListarResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class ResumoServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoServRequest $ObterResumoServRequest Solicitação do resumo de vendas de serviços.
 	 * @return ObterResumoServResponse Resposta da solicitação do resumos de serviços.
 	 */
-	public function ObterResumoServicos(ObterResumoServRequest $ObterResumoServRequest): ObterResumoServResponse{
-		return $this->_Call('ObterResumoServicos',Array(
+	public function ObterResumoServicos(ObterResumoServRequest $ObterResumoServRequest): ?ObterResumoServResponse {
+		$res = $this->_Call('ObterResumoServicos',Array(
 			$ObterResumoServRequest
 		));
+		return $this->_Cast($res, ObterResumoServResponse::class);
 	}
 }

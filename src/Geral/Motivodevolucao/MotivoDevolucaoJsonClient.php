@@ -37,9 +37,10 @@ class MotivoDevolucaoJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarMotivoDevolRequest $ListarMotivoDevolRequest Solicitação da listagem de motivos de devolução.
 	 * @return ListarMotivoDevolResponse Resposta da solicitação da listagem de motivos de devolução.
 	 */
-	public function ListarMotivosDevol(ListarMotivoDevolRequest $ListarMotivoDevolRequest): ListarMotivoDevolResponse{
-		return $this->_Call('ListarMotivosDevol',Array(
+	public function ListarMotivosDevol(ListarMotivoDevolRequest $ListarMotivoDevolRequest): ?ListarMotivoDevolResponse {
+		$res = $this->_Call('ListarMotivosDevol',Array(
 			$ListarMotivoDevolRequest
 		));
+		return $this->_Cast($res, ListarMotivoDevolResponse::class);
 	}
 }

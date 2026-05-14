@@ -37,9 +37,10 @@ class NFSeJsonClient extends AbstractOmieJsonClient {
 	 * @param NfseListarRequest $nfseListarRequest Solicitação de listagem de NFS-es emitidas.
 	 * @return NfseListarResponse Resposta da solicitação de listagem de NFS-es emitidas.
 	 */
-	public function ListarNFSEs(NfseListarRequest $nfseListarRequest): NfseListarResponse{
-		return $this->_Call('ListarNFSEs',Array(
+	public function ListarNFSEs(NfseListarRequest $nfseListarRequest): ?NfseListarResponse {
+		$res = $this->_Call('ListarNFSEs',Array(
 			$nfseListarRequest
 		));
+		return $this->_Cast($res, NfseListarResponse::class);
 	}
 }

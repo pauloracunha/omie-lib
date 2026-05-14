@@ -49,10 +49,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param GerarPixRequest $GerarPixRequest Gera um QrCode para pagamento PIX.
 	 * @return GerarPixResponse Resposta da geração do QrCode PIX.
 	 */
-	public function GerarPix(GerarPixRequest $GerarPixRequest): GerarPixResponse{
-		return $this->_Call('GerarPix',Array(
+	public function GerarPix(GerarPixRequest $GerarPixRequest): ?GerarPixResponse {
+		$res = $this->_Call('GerarPix',Array(
 			$GerarPixRequest
 		));
+		return $this->_Cast($res, GerarPixResponse::class);
 	}
 
 	/**
@@ -61,10 +62,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterStatusPixRequest $ObterStatusPixRequest Solicitação de Status do PIX.
 	 * @return ObterStatusPixResponse Resposta da solicitação de Status do PIX.
 	 */
-	public function ObterStatusPix(ObterStatusPixRequest $ObterStatusPixRequest): ObterStatusPixResponse{
-		return $this->_Call('ObterStatusPix',Array(
+	public function ObterStatusPix(ObterStatusPixRequest $ObterStatusPixRequest): ?ObterStatusPixResponse {
+		$res = $this->_Call('ObterStatusPix',Array(
 			$ObterStatusPixRequest
 		));
+		return $this->_Cast($res, ObterStatusPixResponse::class);
 	}
 
 	/**
@@ -73,10 +75,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarStatusPixRequest $ListarStatusPixRequest Solicitação da listagem de status do PIX.
 	 * @return ListarStatusPixResponse Resposta da solicitação de listagem de Status do PIX.
 	 */
-	public function ListarStatusPix(ListarStatusPixRequest $ListarStatusPixRequest): ListarStatusPixResponse{
-		return $this->_Call('ListarStatusPix',Array(
+	public function ListarStatusPix(ListarStatusPixRequest $ListarStatusPixRequest): ?ListarStatusPixResponse {
+		$res = $this->_Call('ListarStatusPix',Array(
 			$ListarStatusPixRequest
 		));
+		return $this->_Cast($res, ListarStatusPixResponse::class);
 	}
 
 	/**
@@ -85,10 +88,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarPixRequest $ListarPixRequest Solicitação da listagem de detalhes do PIX.
 	 * @return ListarPixResponse Resposta da solicitação de listagem de detalhes do PIX.
 	 */
-	public function ListarPix(ListarPixRequest $ListarPixRequest): ListarPixResponse{
-		return $this->_Call('ListarPix',Array(
+	public function ListarPix(ListarPixRequest $ListarPixRequest): ?ListarPixResponse {
+		$res = $this->_Call('ListarPix',Array(
 			$ListarPixRequest
 		));
+		return $this->_Cast($res, ListarPixResponse::class);
 	}
 
 	/**
@@ -97,10 +101,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterPixRequest $ObterPixRequest Solicitação dados do PIX.
 	 * @return ObterPixResponse Detalhes do PIX.
 	 */
-	public function ObterPix(ObterPixRequest $ObterPixRequest): ObterPixResponse{
-		return $this->_Call('ObterPix',Array(
+	public function ObterPix(ObterPixRequest $ObterPixRequest): ?ObterPixResponse {
+		$res = $this->_Call('ObterPix',Array(
 			$ObterPixRequest
 		));
+		return $this->_Cast($res, ObterPixResponse::class);
 	}
 
 	/**
@@ -109,10 +114,11 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param CancelarPixRequest $CancelarPixRequest Solicitação do cancelamento do PIX.
 	 * @return CancelarPixResponse Resposta da solicitação de cancelamento do PIX.
 	 */
-	public function CancelarPix(CancelarPixRequest $CancelarPixRequest): CancelarPixResponse{
-		return $this->_Call('CancelarPix',Array(
+	public function CancelarPix(CancelarPixRequest $CancelarPixRequest): ?CancelarPixResponse {
+		$res = $this->_Call('CancelarPix',Array(
 			$CancelarPixRequest
 		));
+		return $this->_Cast($res, CancelarPixResponse::class);
 	}
 
 	/**
@@ -121,9 +127,10 @@ class PIXJsonClient extends AbstractOmieJsonClient {
 	 * @param GerarQrCodePixRequest $GerarQrCodePixRequest Gera um QrCode estático para pagamentos PIX.
 	 * @return GerarQrCodePixResponse Resposta da geração do QrCode estático para pagamentos,
 	 */
-	public function GerarQrCodePix(GerarQrCodePixRequest $GerarQrCodePixRequest): GerarQrCodePixResponse{
-		return $this->_Call('GerarQrCodePix',Array(
+	public function GerarQrCodePix(GerarQrCodePixRequest $GerarQrCodePixRequest): ?GerarQrCodePixResponse {
+		$res = $this->_Call('GerarQrCodePix',Array(
 			$GerarQrCodePixRequest
 		));
+		return $this->_Cast($res, GerarQrCodePixResponse::class);
 	}
 }

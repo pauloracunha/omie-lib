@@ -37,9 +37,10 @@ class ServicoTipoUtilizacaoJsonClient extends AbstractOmieJsonClient {
 	 * @param TipoUtilizacaoRequest $tipoUtilizacaoRequest Solicitação da listagem de tipo de utilização do serviço (NF modelo 21 e 22).
 	 * @return TipoUtilizacaoResponse Resposta da solicitação de tipo de utilização do serviço (NF modelo 21 e 22).
 	 */
-	public function ListarTipoUtilizacao(TipoUtilizacaoRequest $tipoUtilizacaoRequest): TipoUtilizacaoResponse{
-		return $this->_Call('ListarTipoUtilizacao',Array(
+	public function ListarTipoUtilizacao(TipoUtilizacaoRequest $tipoUtilizacaoRequest): ?TipoUtilizacaoResponse {
+		$res = $this->_Call('ListarTipoUtilizacao',Array(
 			$tipoUtilizacaoRequest
 		));
+		return $this->_Cast($res, TipoUtilizacaoResponse::class);
 	}
 }

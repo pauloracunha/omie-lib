@@ -41,10 +41,11 @@ class LocalEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param LocaisListarRequest $locaisListarRequest Solicitação de listagem de Locais de Estoque.
 	 * @return LocaisListarResponse Resposta da solicitação de listagem de Locais de Estoque.
 	 */
-	public function ListarLocaisEstoque(LocaisListarRequest $locaisListarRequest): LocaisListarResponse{
-		return $this->_Call('ListarLocaisEstoque',Array(
+	public function ListarLocaisEstoque(LocaisListarRequest $locaisListarRequest): ?LocaisListarResponse {
+		$res = $this->_Call('ListarLocaisEstoque',Array(
 			$locaisListarRequest
 		));
+		return $this->_Cast($res, LocaisListarResponse::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class LocalEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param IncluirLocalRequest $IncluirLocalRequest Solicitação de inclusão de Local de Estoque.
 	 * @return IncluirLocalResponse Resposta da inclusão de Local de Estoque
 	 */
-	public function IncluirLocalEstoque(IncluirLocalRequest $IncluirLocalRequest): IncluirLocalResponse{
-		return $this->_Call('IncluirLocalEstoque',Array(
+	public function IncluirLocalEstoque(IncluirLocalRequest $IncluirLocalRequest): ?IncluirLocalResponse {
+		$res = $this->_Call('IncluirLocalEstoque',Array(
 			$IncluirLocalRequest
 		));
+		return $this->_Cast($res, IncluirLocalResponse::class);
 	}
 
 	/**
@@ -65,9 +67,10 @@ class LocalEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarLocalRequest $alterarLocalRequest Requisição para alteração do Local de Estoque cadastrado.
 	 * @return AlterarLocalResponse Campos para Resposta na Alteração do Response
 	 */
-	public function AlterarLocalEstoque(AlterarLocalRequest $alterarLocalRequest): AlterarLocalResponse{
-		return $this->_Call('AlterarLocalEstoque',Array(
+	public function AlterarLocalEstoque(AlterarLocalRequest $alterarLocalRequest): ?AlterarLocalResponse {
+		$res = $this->_Call('AlterarLocalEstoque',Array(
 			$alterarLocalRequest
 		));
+		return $this->_Cast($res, AlterarLocalResponse::class);
 	}
 }

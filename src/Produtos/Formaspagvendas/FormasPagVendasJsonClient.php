@@ -37,9 +37,10 @@ class FormasPagVendasJsonClient extends AbstractOmieJsonClient {
 	 * @param VenparListarRequest $venparListarRequest Solicitação da listagem de formas de pagamento de vendas.
 	 * @return VenparListarResponse Resposta da solicitação de formas de pagamento de vendas.
 	 */
-	public function ListarFormasPagVendas(VenparListarRequest $venparListarRequest): VenparListarResponse{
-		return $this->_Call('ListarFormasPagVendas',Array(
+	public function ListarFormasPagVendas(VenparListarRequest $venparListarRequest): ?VenparListarResponse {
+		$res = $this->_Call('ListarFormasPagVendas',Array(
 			$venparListarRequest
 		));
+		return $this->_Cast($res, VenparListarResponse::class);
 	}
 }

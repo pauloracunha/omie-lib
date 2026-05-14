@@ -53,10 +53,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfObterProxLoteRequest $cfObterProxLoteRequest Resposta da solicitação de listagem de cupons fiscais.
 	 * @return CfObterProxLoteResponse Resposta da solicitação do próximo número do lote disponível.
 	 */
-	public function ObterProximoLote(CfObterProxLoteRequest $cfObterProxLoteRequest): CfObterProxLoteResponse{
-		return $this->_Call('ObterProximoLote',Array(
+	public function ObterProximoLote(CfObterProxLoteRequest $cfObterProxLoteRequest): ?CfObterProxLoteResponse {
+		$res = $this->_Call('ObterProximoLote',Array(
 			$cfObterProxLoteRequest
 		));
+		return $this->_Cast($res, CfObterProxLoteResponse::class);
 	}
 
 	/**
@@ -65,10 +66,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfCancelarRequest $cfCancelarRequest Solicitação de cancelamento do Cupom Fiscal.
 	 * @return CfCancelarResponse Resposta da solicitação da cancelar de Cupom Fiscal.
 	 */
-	public function CancelarCupom(CfCancelarRequest $cfCancelarRequest): CfCancelarResponse{
-		return $this->_Call('CancelarCupom',Array(
+	public function CancelarCupom(CfCancelarRequest $cfCancelarRequest): ?CfCancelarResponse {
+		$res = $this->_Call('CancelarCupom',Array(
 			$cfCancelarRequest
 		));
+		return $this->_Cast($res, CfCancelarResponse::class);
 	}
 
 	/**
@@ -77,10 +79,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfCancelarNfceRequest $cfCancelarNfceRequest Solicitação de cancelamento de NFC-e.
 	 * @return CfCancelarNfceResponse Resposta da solicitação da cancelar da NFC-e.
 	 */
-	public function CancelarNFCE(CfCancelarNfceRequest $cfCancelarNfceRequest): CfCancelarNfceResponse{
-		return $this->_Call('CancelarNFCE',Array(
+	public function CancelarNFCE(CfCancelarNfceRequest $cfCancelarNfceRequest): ?CfCancelarNfceResponse {
+		$res = $this->_Call('CancelarNFCE',Array(
 			$cfCancelarNfceRequest
 		));
+		return $this->_Cast($res, CfCancelarNfceResponse::class);
 	}
 
 	/**
@@ -89,10 +92,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfCancelarSatRequest $cfCancelarSatRequest Solicitação de cancelamento de SAT.
 	 * @return CfCancelarSatResponse Resposta da solicitação da cancelar do CF-e-SAT.
 	 */
-	public function CancelarSAT(CfCancelarSatRequest $cfCancelarSatRequest): CfCancelarSatResponse{
-		return $this->_Call('CancelarSAT',Array(
+	public function CancelarSAT(CfCancelarSatRequest $cfCancelarSatRequest): ?CfCancelarSatResponse {
+		$res = $this->_Call('CancelarSAT',Array(
 			$cfCancelarSatRequest
 		));
+		return $this->_Cast($res, CfCancelarSatResponse::class);
 	}
 
 	/**
@@ -101,10 +105,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfExcluirPorNumRequest $cfExcluirPorNumRequest Solicitação de exclusão de Cupom Fiscal por Número.
 	 * @return CfExcluirPorNumResponse Resposta da solicitação da exclusão de Cupom Fiscal por número.
 	 */
-	public function ExcluirCuponsPorNumero(CfExcluirPorNumRequest $cfExcluirPorNumRequest): CfExcluirPorNumResponse{
-		return $this->_Call('ExcluirCuponsPorNumero',Array(
+	public function ExcluirCuponsPorNumero(CfExcluirPorNumRequest $cfExcluirPorNumRequest): ?CfExcluirPorNumResponse {
+		$res = $this->_Call('ExcluirCuponsPorNumero',Array(
 			$cfExcluirPorNumRequest
 		));
+		return $this->_Cast($res, CfExcluirPorNumResponse::class);
 	}
 
 	/**
@@ -113,10 +118,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfExcluirRequest $cfExcluirRequest Solicitação de exclusão de Cupom Fiscal.
 	 * @return CfExcluirResponse Resposta da solicitação da exclusão de Cupom Fiscal.
 	 */
-	public function ExcluirCupom(CfExcluirRequest $cfExcluirRequest): CfExcluirResponse{
-		return $this->_Call('ExcluirCupom',Array(
+	public function ExcluirCupom(CfExcluirRequest $cfExcluirRequest): ?CfExcluirResponse {
+		$res = $this->_Call('ExcluirCupom',Array(
 			$cfExcluirRequest
 		));
+		return $this->_Cast($res, CfExcluirResponse::class);
 	}
 
 	/**
@@ -125,10 +131,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfExcluirLoteRequest $cfExcluirLoteRequest Solicitação de exclusão de Lote de Cupom Fiscal.
 	 * @return CfExcluirLoteResponse Resposta da solicitação de exclusão de Lote de Cupom Fiscal.
 	 */
-	public function ExcluirLote(CfExcluirLoteRequest $cfExcluirLoteRequest): CfExcluirLoteResponse{
-		return $this->_Call('ExcluirLote',Array(
+	public function ExcluirLote(CfExcluirLoteRequest $cfExcluirLoteRequest): ?CfExcluirLoteResponse {
+		$res = $this->_Call('ExcluirLote',Array(
 			$cfExcluirLoteRequest
 		));
+		return $this->_Cast($res, CfExcluirLoteResponse::class);
 	}
 
 	/**
@@ -137,10 +144,11 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfListarRequest $cfListarRequest Listagem de cupons fiscais.
 	 * @return CfListarResponse Resposta da solicitação de listagem de cupons fiscais.
 	 */
-	public function ListarCupons(CfListarRequest $cfListarRequest): CfListarResponse{
-		return $this->_Call('ListarCupons',Array(
+	public function ListarCupons(CfListarRequest $cfListarRequest): ?CfListarResponse {
+		$res = $this->_Call('ListarCupons',Array(
 			$cfListarRequest
 		));
+		return $this->_Cast($res, CfListarResponse::class);
 	}
 
 	/**
@@ -149,9 +157,10 @@ class CupomFiscalJsonClient extends AbstractOmieJsonClient {
 	 * @param CfDevolverCupomRequest $cfDevolverCupomRequest Solicitação da inclusão da devolução do Cupom Fiscal.
 	 * @return CfDevolverCupomResponse Resposta da solicitação da inclusão da devolução do Cupom Fiscal.
 	 */
-	public function DevolverCupom(CfDevolverCupomRequest $cfDevolverCupomRequest): CfDevolverCupomResponse{
-		return $this->_Call('DevolverCupom',Array(
+	public function DevolverCupom(CfDevolverCupomRequest $cfDevolverCupomRequest): ?CfDevolverCupomResponse {
+		$res = $this->_Call('DevolverCupom',Array(
 			$cfDevolverCupomRequest
 		));
+		return $this->_Cast($res, CfDevolverCupomResponse::class);
 	}
 }

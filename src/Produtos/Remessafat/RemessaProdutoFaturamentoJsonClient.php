@@ -43,10 +43,11 @@ class RemessaProdutoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaFatConcluirRequest $remessaFatConcluirRequest Requisição para conclusão de remessa de produto
 	 * @return RemessaFatConcluirResponse Resposta da conclusão de remessa de produto
 	 */
-	public function ConcluirRemessa(RemessaFatConcluirRequest $remessaFatConcluirRequest): RemessaFatConcluirResponse{
-		return $this->_Call('ConcluirRemessa',Array(
+	public function ConcluirRemessa(RemessaFatConcluirRequest $remessaFatConcluirRequest): ?RemessaFatConcluirResponse {
+		$res = $this->_Call('ConcluirRemessa',Array(
 			$remessaFatConcluirRequest
 		));
+		return $this->_Cast($res, RemessaFatConcluirResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class RemessaProdutoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaFatConferirRequest $remessaFatConferirRequest Requisição para conferência de remessa de produto
 	 * @return RemessaFatConferirResponse Resposta da conferência de remessa de produto
 	 */
-	public function ConferirRemessa(RemessaFatConferirRequest $remessaFatConferirRequest): RemessaFatConferirResponse{
-		return $this->_Call('ConferirRemessa',Array(
+	public function ConferirRemessa(RemessaFatConferirRequest $remessaFatConferirRequest): ?RemessaFatConferirResponse {
+		$res = $this->_Call('ConferirRemessa',Array(
 			$remessaFatConferirRequest
 		));
+		return $this->_Cast($res, RemessaFatConferirResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class RemessaProdutoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaFatCancelarRequest $remessaFatCancelarRequest Requisição para cancelamento de remessa de produto
 	 * @return RemessaFatCancelarResponse Resposta do cancelamento de remessa de produto
 	 */
-	public function CancelarRemessa(RemessaFatCancelarRequest $remessaFatCancelarRequest): RemessaFatCancelarResponse{
-		return $this->_Call('CancelarRemessa',Array(
+	public function CancelarRemessa(RemessaFatCancelarRequest $remessaFatCancelarRequest): ?RemessaFatCancelarResponse {
+		$res = $this->_Call('CancelarRemessa',Array(
 			$remessaFatCancelarRequest
 		));
+		return $this->_Cast($res, RemessaFatCancelarResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class RemessaProdutoFaturamentoJsonClient extends AbstractOmieJsonClient {
 	 * @param RemessaFatDuplicarRequest $remessaFatDuplicarRequest Requisição para duplicação de remessa de produto
 	 * @return RemessaFatDuplicarResponse Resposta da duplicidade de remessa de produto
 	 */
-	public function DuplicarRemessa(RemessaFatDuplicarRequest $remessaFatDuplicarRequest): RemessaFatDuplicarResponse{
-		return $this->_Call('DuplicarRemessa',Array(
+	public function DuplicarRemessa(RemessaFatDuplicarRequest $remessaFatDuplicarRequest): ?RemessaFatDuplicarResponse {
+		$res = $this->_Call('DuplicarRemessa',Array(
 			$remessaFatDuplicarRequest
 		));
+		return $this->_Cast($res, RemessaFatDuplicarResponse::class);
 	}
 }

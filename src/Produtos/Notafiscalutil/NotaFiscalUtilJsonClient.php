@@ -35,10 +35,11 @@ class NotaFiscalUtilJsonClient extends AbstractOmieJsonClient {
 	 * @param NfUtil_GetUrlNF_request $nfUtil_GetUrlNF_request Request da URL da Nota Fiscal.
 	 * @return NfUtil_GetUrlNF_response Response da URL da Nota Fiscal
 	 */
-	public function GetUrlNotaFiscal(NfUtil_GetUrlNF_request $nfUtil_GetUrlNF_request): NfUtil_GetUrlNF_response{
-		return $this->_Call('GetUrlNotaFiscal',Array(
+	public function GetUrlNotaFiscal(NfUtil_GetUrlNF_request $nfUtil_GetUrlNF_request): ?NfUtil_GetUrlNF_response {
+		$res = $this->_Call('GetUrlNotaFiscal',Array(
 			$nfUtil_GetUrlNF_request
 		));
+		return $this->_Cast($res, NfUtil_GetUrlNF_response::class);
 	}
 
 	/**
@@ -47,10 +48,11 @@ class NotaFiscalUtilJsonClient extends AbstractOmieJsonClient {
 	 * @param NfUtil_GetUrlDanfe_request $nfUtil_GetUrlDanfe_request Request da URL do DANFE da NFe
 	 * @return NfUtil_GetUrlDanfe_response Response da URL do DANFE da NF
 	 */
-	public function GetUrlDanfe(NfUtil_GetUrlDanfe_request $nfUtil_GetUrlDanfe_request): NfUtil_GetUrlDanfe_response{
-		return $this->_Call('GetUrlDanfe',Array(
+	public function GetUrlDanfe(NfUtil_GetUrlDanfe_request $nfUtil_GetUrlDanfe_request): ?NfUtil_GetUrlDanfe_response {
+		$res = $this->_Call('GetUrlDanfe',Array(
 			$nfUtil_GetUrlDanfe_request
 		));
+		return $this->_Cast($res, NfUtil_GetUrlDanfe_response::class);
 	}
 
 	/**
@@ -59,9 +61,10 @@ class NotaFiscalUtilJsonClient extends AbstractOmieJsonClient {
 	 * @param NfUtil_GetUrlLogo_request $nfUtil_GetUrlLogo_request Request para obter a URL do Logotipo
 	 * @return NfUtil_GetUrlLogo_response RESPONSE para obter o Logotipo da Empresa
 	 */
-	public function GetUrlLogo(NfUtil_GetUrlLogo_request $nfUtil_GetUrlLogo_request): NfUtil_GetUrlLogo_response{
-		return $this->_Call('GetUrlLogo',Array(
+	public function GetUrlLogo(NfUtil_GetUrlLogo_request $nfUtil_GetUrlLogo_request): ?NfUtil_GetUrlLogo_response {
+		$res = $this->_Call('GetUrlLogo',Array(
 			$nfUtil_GetUrlLogo_request
 		));
+		return $this->_Cast($res, NfUtil_GetUrlLogo_response::class);
 	}
 }

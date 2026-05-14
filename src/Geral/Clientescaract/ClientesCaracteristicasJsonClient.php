@@ -45,10 +45,11 @@ class ClientesCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarCaractClienteRequest $AlterarCaractClienteRequest Altera uma característica de um cliente/fornecedor.
 	 * @return AlterarCaractClienteResponse Resposta da alteração de uma característica de um cliente/fornecedor.
 	 */
-	public function AlterarCaractCliente(AlterarCaractClienteRequest $AlterarCaractClienteRequest): AlterarCaractClienteResponse{
-		return $this->_Call('AlterarCaractCliente',Array(
+	public function AlterarCaractCliente(AlterarCaractClienteRequest $AlterarCaractClienteRequest): ?AlterarCaractClienteResponse {
+		$res = $this->_Call('AlterarCaractCliente',Array(
 			$AlterarCaractClienteRequest
 		));
+		return $this->_Cast($res, AlterarCaractClienteResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class ClientesCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param IncluirCaractClienteRequest $IncluirCaractClienteRequest Inclui uma característica de um cliente/fornecedor.
 	 * @return IncluirCaractClienteResponse Resposta da inclusão de uma característica de um cliente/fornecedor.
 	 */
-	public function IncluirCaractCliente(IncluirCaractClienteRequest $IncluirCaractClienteRequest): IncluirCaractClienteResponse{
-		return $this->_Call('IncluirCaractCliente',Array(
+	public function IncluirCaractCliente(IncluirCaractClienteRequest $IncluirCaractClienteRequest): ?IncluirCaractClienteResponse {
+		$res = $this->_Call('IncluirCaractCliente',Array(
 			$IncluirCaractClienteRequest
 		));
+		return $this->_Cast($res, IncluirCaractClienteResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class ClientesCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirCaractClienteRequest $ExcluirCaractClienteRequest Exclui uma característica de um cliente/fornecedor.
 	 * @return ExcluirCaractClienteResponse Resposta da exclusão de uma característica de um cliente/fornecedor.
 	 */
-	public function ExcluirCaractCliente(ExcluirCaractClienteRequest $ExcluirCaractClienteRequest): ExcluirCaractClienteResponse{
-		return $this->_Call('ExcluirCaractCliente',Array(
+	public function ExcluirCaractCliente(ExcluirCaractClienteRequest $ExcluirCaractClienteRequest): ?ExcluirCaractClienteResponse {
+		$res = $this->_Call('ExcluirCaractCliente',Array(
 			$ExcluirCaractClienteRequest
 		));
+		return $this->_Cast($res, ExcluirCaractClienteResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class ClientesCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ExcluirTodasCaractClienteRequest $ExcluirTodasCaractClienteRequest Exclui todas as características de um cliente/fornecedor.
 	 * @return ExcluirTodasCaractClienteResponse Resposta da exclusão de todas as características de um cliente/fornecedor.
 	 */
-	public function ExcluirTodasCaractCliente(ExcluirTodasCaractClienteRequest $ExcluirTodasCaractClienteRequest): ExcluirTodasCaractClienteResponse{
-		return $this->_Call('ExcluirTodasCaractCliente',Array(
+	public function ExcluirTodasCaractCliente(ExcluirTodasCaractClienteRequest $ExcluirTodasCaractClienteRequest): ?ExcluirTodasCaractClienteResponse {
+		$res = $this->_Call('ExcluirTodasCaractCliente',Array(
 			$ExcluirTodasCaractClienteRequest
 		));
+		return $this->_Cast($res, ExcluirTodasCaractClienteResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class ClientesCaracteristicasJsonClient extends AbstractOmieJsonClient {
 	 * @param ConsultarCaractClienteRequest $ConsultarCaractClienteRequest Consulta todas as características de um cliente/fornecedor.
 	 * @return ConsultarCaractClienteResponse Resposta da consulta de todas as características de um cliente/fornecedor.
 	 */
-	public function ConsultarCaractCliente(ConsultarCaractClienteRequest $ConsultarCaractClienteRequest): ConsultarCaractClienteResponse{
-		return $this->_Call('ConsultarCaractCliente',Array(
+	public function ConsultarCaractCliente(ConsultarCaractClienteRequest $ConsultarCaractClienteRequest): ?ConsultarCaractClienteResponse {
+		$res = $this->_Call('ConsultarCaractCliente',Array(
 			$ConsultarCaractClienteRequest
 		));
+		return $this->_Cast($res, ConsultarCaractClienteResponse::class);
 	}
 }

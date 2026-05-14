@@ -37,9 +37,10 @@ class IcmsCSOSNJsonClient extends AbstractOmieJsonClient {
 	 * @param CsosnListarRequest $csosnListarRequest Solicitação da listagem de CSOSN do ICMS.
 	 * @return CsosnListarResponse Resposta da solicitação da listagem de CSOSN do ICMS.
 	 */
-	public function ListarCSOSN(CsosnListarRequest $csosnListarRequest): CsosnListarResponse{
-		return $this->_Call('ListarCSOSN',Array(
+	public function ListarCSOSN(CsosnListarRequest $csosnListarRequest): ?CsosnListarResponse {
+		$res = $this->_Call('ListarCSOSN',Array(
 			$csosnListarRequest
 		));
+		return $this->_Cast($res, CsosnListarResponse::class);
 	}
 }

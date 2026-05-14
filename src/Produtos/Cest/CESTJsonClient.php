@@ -37,9 +37,10 @@ class CESTJsonClient extends AbstractOmieJsonClient {
 	 * @param CestListarRequest $cestListarRequest Solicitação da listagem de CEST.
 	 * @return CestListarResponse Resposta da solicitação da listagem do CEST.
 	 */
-	public function ListarCEST(CestListarRequest $cestListarRequest): CestListarResponse{
-		return $this->_Call('ListarCEST',Array(
+	public function ListarCEST(CestListarRequest $cestListarRequest): ?CestListarResponse {
+		$res = $this->_Call('ListarCEST',Array(
 			$cestListarRequest
 		));
+		return $this->_Cast($res, CestListarResponse::class);
 	}
 }

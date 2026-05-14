@@ -37,9 +37,10 @@ class BandeiraCartaoJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarBandeirasRequest $ListarBandeirasRequest Solicita a listagem das bandeiras de cartões.
 	 * @return ListarBandeirasResponse Retorno da solicitação da listagem das bandeiras de cartões.
 	 */
-	public function ListarBandeiras(ListarBandeirasRequest $ListarBandeirasRequest): ListarBandeirasResponse{
-		return $this->_Call('ListarBandeiras',Array(
+	public function ListarBandeiras(ListarBandeirasRequest $ListarBandeirasRequest): ?ListarBandeirasResponse {
+		$res = $this->_Call('ListarBandeiras',Array(
 			$ListarBandeirasRequest
 		));
+		return $this->_Cast($res, ListarBandeirasResponse::class);
 	}
 }

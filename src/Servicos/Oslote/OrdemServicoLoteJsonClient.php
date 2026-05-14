@@ -43,10 +43,11 @@ class OrdemServicoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param FaturarLoteOSRequest $FaturarLoteOSRequest Faturar Ordens de serviço em lote a partir da etapa informada.
 	 * @return FaturarLoteOSResponse Response de notas de serviço faturadas em Lote
 	 */
-	public function FaturarLoteOS(FaturarLoteOSRequest $FaturarLoteOSRequest): FaturarLoteOSResponse{
-		return $this->_Call('FaturarLoteOS',Array(
+	public function FaturarLoteOS(FaturarLoteOSRequest $FaturarLoteOSRequest): ?FaturarLoteOSResponse {
+		$res = $this->_Call('FaturarLoteOS',Array(
 			$FaturarLoteOSRequest
 		));
+		return $this->_Cast($res, FaturarLoteOSResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class OrdemServicoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarLoteNfseRequest $ListarLoteNfseRequest Listar Ordens de serviço faturadas a partir do status informado.
 	 * @return ListarLoteNfseResponse Response do método que lista notas de Serviço
 	 */
-	public function ListarLoteNfse(ListarLoteNfseRequest $ListarLoteNfseRequest): ListarLoteNfseResponse{
-		return $this->_Call('ListarLoteNfse',Array(
+	public function ListarLoteNfse(ListarLoteNfseRequest $ListarLoteNfseRequest): ?ListarLoteNfseResponse {
+		$res = $this->_Call('ListarLoteNfse',Array(
 			$ListarLoteNfseRequest
 		));
+		return $this->_Cast($res, ListarLoteNfseResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class OrdemServicoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param StatusLoteOsRequest $StatusLoteOsRequest Obtém o status do Lote da Ordem de Serviço
 	 * @return StatusLoteOsResponse Retorna informações do Lote da Ordem de Serviço
 	 */
-	public function StatusLoteOS(StatusLoteOsRequest $StatusLoteOsRequest): StatusLoteOsResponse{
-		return $this->_Call('StatusLoteOS',Array(
+	public function StatusLoteOS(StatusLoteOsRequest $StatusLoteOsRequest): ?StatusLoteOsResponse {
+		$res = $this->_Call('StatusLoteOS',Array(
 			$StatusLoteOsRequest
 		));
+		return $this->_Cast($res, StatusLoteOsResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class OrdemServicoLoteJsonClient extends AbstractOmieJsonClient {
 	 * @param ListarLotesOSRequest $ListarLotesOSRequest Listar status de faturamento das Ordens de serviço a partir das datas de processamento.
 	 * @return ListarLotesOSResponse Response do método que lista Ordens de Serviços
 	 */
-	public function ListarLotesOS(ListarLotesOSRequest $ListarLotesOSRequest): ListarLotesOSResponse{
-		return $this->_Call('ListarLotesOS',Array(
+	public function ListarLotesOS(ListarLotesOSRequest $ListarLotesOSRequest): ?ListarLotesOSResponse {
+		$res = $this->_Call('ListarLotesOS',Array(
 			$ListarLotesOSRequest
 		));
+		return $this->_Cast($res, ListarLotesOSResponse::class);
 	}
 }

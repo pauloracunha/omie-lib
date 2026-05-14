@@ -43,10 +43,11 @@ class ContaReceberBoletoJsonClient extends AbstractOmieJsonClient {
 	 * @param BoletoGerarRequest $boletoGerarRequest Gera um Boleto a partir de um Contas a Receber.<BR>ATENÇÃO: Os boletos gerados e já enviados ao banco estão sujeitos a tarifação (de emissão, cancelamento ou de alteração da data de vencimento do boleto).
 	 * @return BoletoGerarResponse Resposta da solicitação de geração de um boleto.
 	 */
-	public function GerarBoleto(BoletoGerarRequest $boletoGerarRequest): BoletoGerarResponse{
-		return $this->_Call('GerarBoleto',Array(
+	public function GerarBoleto(BoletoGerarRequest $boletoGerarRequest): ?BoletoGerarResponse {
+		$res = $this->_Call('GerarBoleto',Array(
 			$boletoGerarRequest
 		));
+		return $this->_Cast($res, BoletoGerarResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class ContaReceberBoletoJsonClient extends AbstractOmieJsonClient {
 	 * @param BoletoObterRequest $boletoObterRequest Solicitação do link do boleto de um título.<BR>ATENÇÃO: Os boletos gerados e já enviados ao banco estão sujeitos a tarifação (de emissão, cancelamento ou de alteração da data de vencimento do boleto).
 	 * @return BoletoObterResponse Resposta da solicitação link do boleto de um título.
 	 */
-	public function ObterBoleto(BoletoObterRequest $boletoObterRequest): BoletoObterResponse{
-		return $this->_Call('ObterBoleto',Array(
+	public function ObterBoleto(BoletoObterRequest $boletoObterRequest): ?BoletoObterResponse {
+		$res = $this->_Call('ObterBoleto',Array(
 			$boletoObterRequest
 		));
+		return $this->_Cast($res, BoletoObterResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class ContaReceberBoletoJsonClient extends AbstractOmieJsonClient {
 	 * @param BoletoProrrogarRequest $boletoProrrogarRequest Prorroga o vencimento de um Boleto.<BR>ATENÇÃO: Os boletos gerados e já enviados ao banco estão sujeitos a tarifação (de emissão, cancelamento ou de alteração da data de vencimento do boleto).
 	 * @return BoletoProrrogarResponse Resposta da solicitação para Prorrogar o vencimento de um Boleto.
 	 */
-	public function ProrrogarBoleto(BoletoProrrogarRequest $boletoProrrogarRequest): BoletoProrrogarResponse{
-		return $this->_Call('ProrrogarBoleto',Array(
+	public function ProrrogarBoleto(BoletoProrrogarRequest $boletoProrrogarRequest): ?BoletoProrrogarResponse {
+		$res = $this->_Call('ProrrogarBoleto',Array(
 			$boletoProrrogarRequest
 		));
+		return $this->_Cast($res, BoletoProrrogarResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class ContaReceberBoletoJsonClient extends AbstractOmieJsonClient {
 	 * @param BoletoCancelarRequest $boletoCancelarRequest Cancela o Boleto.<BR>ATENÇÃO: Os boletos gerados e já enviados ao banco estão sujeitos a tarifação (de emissão, cancelamento ou de alteração da data de vencimento do boleto).
 	 * @return BoletoCancelarResponse Resposta da solicitação do Cancelamento de um Boleto.
 	 */
-	public function CancelarBoleto(BoletoCancelarRequest $boletoCancelarRequest): BoletoCancelarResponse{
-		return $this->_Call('CancelarBoleto',Array(
+	public function CancelarBoleto(BoletoCancelarRequest $boletoCancelarRequest): ?BoletoCancelarResponse {
+		$res = $this->_Call('CancelarBoleto',Array(
 			$boletoCancelarRequest
 		));
+		return $this->_Cast($res, BoletoCancelarResponse::class);
 	}
 }

@@ -43,10 +43,11 @@ class NfeJsonClient extends AbstractOmieJsonClient {
 	 * @param NfeImportarRequest $nfeImportarRequest Solicitação do Importação de NF-e.
 	 * @return NfeImportarResponse Resposta da solicitação da Importação de NF-e.
 	 */
-	public function ImportarNFe(NfeImportarRequest $nfeImportarRequest): NfeImportarResponse{
-		return $this->_Call('ImportarNFe',Array(
+	public function ImportarNFe(NfeImportarRequest $nfeImportarRequest): ?NfeImportarResponse {
+		$res = $this->_Call('ImportarNFe',Array(
 			$nfeImportarRequest
 		));
+		return $this->_Cast($res, NfeImportarResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class NfeJsonClient extends AbstractOmieJsonClient {
 	 * @param NfeExcluirRequest $nfeExcluirRequest Solicitação da Exclusão de NF-e.
 	 * @return NfeExcluirResponse Resposta da solicitação da Exclusão de NF-e.
 	 */
-	public function ExcluirNFe(NfeExcluirRequest $nfeExcluirRequest): NfeExcluirResponse{
-		return $this->_Call('ExcluirNFe',Array(
+	public function ExcluirNFe(NfeExcluirRequest $nfeExcluirRequest): ?NfeExcluirResponse {
+		$res = $this->_Call('ExcluirNFe',Array(
 			$nfeExcluirRequest
 		));
+		return $this->_Cast($res, NfeExcluirResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class NfeJsonClient extends AbstractOmieJsonClient {
 	 * @param NfeListarRequest $nfeListarRequest Listagem de NF-es importadas.
 	 * @return NfeListarResponse Resposta da solicitação de listagem de NFes importadas.
 	 */
-	public function ListarNFe(NfeListarRequest $nfeListarRequest): NfeListarResponse{
-		return $this->_Call('ListarNFe',Array(
+	public function ListarNFe(NfeListarRequest $nfeListarRequest): ?NfeListarResponse {
+		$res = $this->_Call('ListarNFe',Array(
 			$nfeListarRequest
 		));
+		return $this->_Cast($res, NfeListarResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class NfeJsonClient extends AbstractOmieJsonClient {
 	 * @param NfeCancelarRequest $nfeCancelarRequest Solicitação de Cancelamento da NF-e.
 	 * @return NfeCancelarResponse Resposta da solicitação de cancelamento da NF-e.
 	 */
-	public function ImportarCancNFe(NfeCancelarRequest $nfeCancelarRequest): NfeCancelarResponse{
-		return $this->_Call('ImportarCancNFe',Array(
+	public function ImportarCancNFe(NfeCancelarRequest $nfeCancelarRequest): ?NfeCancelarResponse {
+		$res = $this->_Call('ImportarCancNFe',Array(
 			$nfeCancelarRequest
 		));
+		return $this->_Cast($res, NfeCancelarResponse::class);
 	}
 }

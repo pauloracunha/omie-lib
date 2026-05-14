@@ -37,9 +37,10 @@ class PedidoVendaEtapaJsonClient extends AbstractOmieJsonClient {
 	 * @param PEtapaListarRequest $pEtapaListarRequest Solicitação de listagem de mudanças de etapa do pedido de vendas.
 	 * @return PEtapaListarResponse Resposta da listagem de Status do Pedido de Vendas.
 	 */
-	public function ListarEtapasPedido(PEtapaListarRequest $pEtapaListarRequest): PEtapaListarResponse{
-		return $this->_Call('ListarEtapasPedido',Array(
+	public function ListarEtapasPedido(PEtapaListarRequest $pEtapaListarRequest): ?PEtapaListarResponse {
+		$res = $this->_Call('ListarEtapasPedido',Array(
 			$pEtapaListarRequest
 		));
+		return $this->_Cast($res, PEtapaListarResponse::class);
 	}
 }

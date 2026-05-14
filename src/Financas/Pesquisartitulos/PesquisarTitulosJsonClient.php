@@ -41,10 +41,11 @@ class PesquisarTitulosJsonClient extends AbstractOmieJsonClient {
 	 * @param LtPesquisarRequest $ltPesquisarRequest Solicitação de Listagem de Contas a Receber
 	 * @return LtPesquisarResponse Resultado da pesquisa de títulos
 	 */
-	public function PesquisarLancamentos(LtPesquisarRequest $ltPesquisarRequest): LtPesquisarResponse{
-		return $this->_Call('PesquisarLancamentos',Array(
+	public function PesquisarLancamentos(LtPesquisarRequest $ltPesquisarRequest): ?LtPesquisarResponse {
+		$res = $this->_Call('PesquisarLancamentos',Array(
 			$ltPesquisarRequest
 		));
+		return $this->_Cast($res, LtPesquisarResponse::class);
 	}
 
 	/**
@@ -53,10 +54,11 @@ class PesquisarTitulosJsonClient extends AbstractOmieJsonClient {
 	 * @param LtListarExcluidosRequest $ltListarExcluidosRequest Solicitação da listagem de contas a pagar e receber excluídas.&nbsp;
 	 * @return LtListarExcluidosResponse Resposta da solicitação da listagem de contas a pagar/receber excluídos.
 	 */
-	public function PesquisarExcluidos(LtListarExcluidosRequest $ltListarExcluidosRequest): LtListarExcluidosResponse{
-		return $this->_Call('PesquisarExcluidos',Array(
+	public function PesquisarExcluidos(LtListarExcluidosRequest $ltListarExcluidosRequest): ?LtListarExcluidosResponse {
+		$res = $this->_Call('PesquisarExcluidos',Array(
 			$ltListarExcluidosRequest
 		));
+		return $this->_Cast($res, LtListarExcluidosResponse::class);
 	}
 
 	/**
@@ -65,9 +67,10 @@ class PesquisarTitulosJsonClient extends AbstractOmieJsonClient {
 	 * @param LtLinkBoletoRequest $ltLinkBoletoRequest Solicitação do link do boleto de um título.
 	 * @return LtLinkBoletoResponse Resposta da solicitação do link do boleto de um título.
 	 */
-	public function ObterURLBoleto(LtLinkBoletoRequest $ltLinkBoletoRequest): LtLinkBoletoResponse{
-		return $this->_Call('ObterURLBoleto',Array(
+	public function ObterURLBoleto(LtLinkBoletoRequest $ltLinkBoletoRequest): ?LtLinkBoletoResponse {
+		$res = $this->_Call('ObterURLBoleto',Array(
 			$ltLinkBoletoRequest
 		));
+		return $this->_Cast($res, LtLinkBoletoResponse::class);
 	}
 }

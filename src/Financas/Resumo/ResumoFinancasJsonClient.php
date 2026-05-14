@@ -43,10 +43,11 @@ class ResumoFinancasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterResumoFinRequest $ObterResumoFinRequest Solicitação do resumo de finanças
 	 * @return ObterResumoFinResponse Resposta da solicitação do resumo de finanças.
 	 */
-	public function ObterResumoFinancas(ObterResumoFinRequest $ObterResumoFinRequest): ObterResumoFinResponse{
-		return $this->_Call('ObterResumoFinancas',Array(
+	public function ObterResumoFinancas(ObterResumoFinRequest $ObterResumoFinRequest): ?ObterResumoFinResponse {
+		$res = $this->_Call('ObterResumoFinancas',Array(
 			$ObterResumoFinRequest
 		));
+		return $this->_Cast($res, ObterResumoFinResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class ResumoFinancasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterListaFinancasRequest $ObterListaFinancasRequest Solicitação da listagem de lançamentos.
 	 * @return ObterListaFinancasResponse Resposta da solicitação da listagem de Lançamentos.
 	 */
-	public function ObterListaFinancas(ObterListaFinancasRequest $ObterListaFinancasRequest): ObterListaFinancasResponse{
-		return $this->_Call('ObterListaFinancas',Array(
+	public function ObterListaFinancas(ObterListaFinancasRequest $ObterListaFinancasRequest): ?ObterListaFinancasResponse {
+		$res = $this->_Call('ObterListaFinancas',Array(
 			$ObterListaFinancasRequest
 		));
+		return $this->_Cast($res, ObterListaFinancasResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class ResumoFinancasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterListaEmAbertoRequest $ObterListaEmAbertoRequest Solicitação da listagem de lançamentos em aberto.
 	 * @return ObterListaEmAbertoResponse Resposta da solicitação da listagem de lançamentos em aberto.
 	 */
-	public function ObterListaEmAberto(ObterListaEmAbertoRequest $ObterListaEmAbertoRequest): ObterListaEmAbertoResponse{
-		return $this->_Call('ObterListaEmAberto',Array(
+	public function ObterListaEmAberto(ObterListaEmAbertoRequest $ObterListaEmAbertoRequest): ?ObterListaEmAbertoResponse {
+		$res = $this->_Call('ObterListaEmAberto',Array(
 			$ObterListaEmAbertoRequest
 		));
+		return $this->_Cast($res, ObterListaEmAbertoResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class ResumoFinancasJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterDetalhesLancamentoRequest $ObterDetalhesLancamentoRequest Solicitação dos detalhes de um lançamento em aberto.
 	 * @return ObterDetalhesLancamentoResponse Resposta da solicitação dos detalhes de um lançamento em aberto.
 	 */
-	public function ObterDetalhesLancamento(ObterDetalhesLancamentoRequest $ObterDetalhesLancamentoRequest): ObterDetalhesLancamentoResponse{
-		return $this->_Call('ObterDetalhesLancamento',Array(
+	public function ObterDetalhesLancamento(ObterDetalhesLancamentoRequest $ObterDetalhesLancamentoRequest): ?ObterDetalhesLancamentoResponse {
+		$res = $this->_Call('ObterDetalhesLancamento',Array(
 			$ObterDetalhesLancamentoRequest
 		));
+		return $this->_Cast($res, ObterDetalhesLancamentoResponse::class);
 	}
 }

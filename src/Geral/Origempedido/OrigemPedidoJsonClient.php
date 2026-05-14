@@ -35,9 +35,10 @@ class OrigemPedidoJsonClient extends AbstractOmieJsonClient {
 	 * @param Origem_ped_listar_request $origem_ped_listar_request Solicitação da listagem de origens de pedido.
 	 * @return Origem_ped_listar_response Resposta da solicitação da listagem de origens de pedido.
 	 */
-	public function ListarOrigem(Origem_ped_listar_request $origem_ped_listar_request): Origem_ped_listar_response{
-		return $this->_Call('ListarOrigem',Array(
+	public function ListarOrigem(Origem_ped_listar_request $origem_ped_listar_request): ?Origem_ped_listar_response {
+		$res = $this->_Call('ListarOrigem',Array(
 			$origem_ped_listar_request
 		));
+		return $this->_Cast($res, Origem_ped_listar_response::class);
 	}
 }

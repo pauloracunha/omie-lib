@@ -37,9 +37,10 @@ class VerticaisJsonClient extends AbstractOmieJsonClient {
 	 * @param VerticalListarRequest $verticalListarRequest Solicitação da listagem de verticais da conta/oportunidade.
 	 * @return VerticalListarResponse Resposta da solicitação da listagem de verticais da conta/oportunidade.
 	 */
-	public function ListarVerticais(VerticalListarRequest $verticalListarRequest): VerticalListarResponse{
-		return $this->_Call('ListarVerticais',Array(
+	public function ListarVerticais(VerticalListarRequest $verticalListarRequest): ?VerticalListarResponse {
+		$res = $this->_Call('ListarVerticais',Array(
 			$verticalListarRequest
 		));
+		return $this->_Cast($res, VerticalListarResponse::class);
 	}
 }

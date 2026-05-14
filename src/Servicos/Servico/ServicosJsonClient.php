@@ -49,10 +49,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvIncluirRequest $srvIncluirRequest Requisição de inclusão do cadastro do serviço.
 	 * @return SrvIncluirResponse Resposta da solicitação de inclusão do cadastro do serviço.
 	 */
-	public function IncluirCadastroServico(SrvIncluirRequest $srvIncluirRequest): SrvIncluirResponse{
-		return $this->_Call('IncluirCadastroServico',Array(
+	public function IncluirCadastroServico(SrvIncluirRequest $srvIncluirRequest): ?SrvIncluirResponse {
+		$res = $this->_Call('IncluirCadastroServico',Array(
 			$srvIncluirRequest
 		));
+		return $this->_Cast($res, SrvIncluirResponse::class);
 	}
 
 	/**
@@ -61,10 +62,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvEditarRequest $srvEditarRequest Requisição de alteração do cadastro do serviço.
 	 * @return SrvEditarResponse Resposta da solicitação de alteração do cadastro do serviço.
 	 */
-	public function AlterarCadastroServico(SrvEditarRequest $srvEditarRequest): SrvEditarResponse{
-		return $this->_Call('AlterarCadastroServico',Array(
+	public function AlterarCadastroServico(SrvEditarRequest $srvEditarRequest): ?SrvEditarResponse {
+		$res = $this->_Call('AlterarCadastroServico',Array(
 			$srvEditarRequest
 		));
+		return $this->_Cast($res, SrvEditarResponse::class);
 	}
 
 	/**
@@ -73,10 +75,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvUpsertRequest $srvUpsertRequest Requisição de upsert do cadastro do serviço.
 	 * @return SrvUpsertResponse Resposta da solicitação de upsert do cadastro do serviço.
 	 */
-	public function UpsertCadastroServico(SrvUpsertRequest $srvUpsertRequest): SrvUpsertResponse{
-		return $this->_Call('UpsertCadastroServico',Array(
+	public function UpsertCadastroServico(SrvUpsertRequest $srvUpsertRequest): ?SrvUpsertResponse {
+		$res = $this->_Call('UpsertCadastroServico',Array(
 			$srvUpsertRequest
 		));
+		return $this->_Cast($res, SrvUpsertResponse::class);
 	}
 
 	/**
@@ -85,10 +88,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvExcluirRequest $srvExcluirRequest Requisição da exclusão do Serviço.
 	 * @return SrvExcluirResponse Resposta da solicitação de exclusão do cadastro do serviço.
 	 */
-	public function ExcluirCadastroServico(SrvExcluirRequest $srvExcluirRequest): SrvExcluirResponse{
-		return $this->_Call('ExcluirCadastroServico',Array(
+	public function ExcluirCadastroServico(SrvExcluirRequest $srvExcluirRequest): ?SrvExcluirResponse {
+		$res = $this->_Call('ExcluirCadastroServico',Array(
 			$srvExcluirRequest
 		));
+		return $this->_Cast($res, SrvExcluirResponse::class);
 	}
 
 	/**
@@ -97,10 +101,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvConsultarRequest $srvConsultarRequest Requisição da consulta do serviço.
 	 * @return SrvConsultarResponse Resposta da requisição de consulta de serviços.
 	 */
-	public function ConsultarCadastroServico(SrvConsultarRequest $srvConsultarRequest): SrvConsultarResponse{
-		return $this->_Call('ConsultarCadastroServico',Array(
+	public function ConsultarCadastroServico(SrvConsultarRequest $srvConsultarRequest): ?SrvConsultarResponse {
+		$res = $this->_Call('ConsultarCadastroServico',Array(
 			$srvConsultarRequest
 		));
+		return $this->_Cast($res, SrvConsultarResponse::class);
 	}
 
 	/**
@@ -109,10 +114,11 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvListarRequest $srvListarRequest Solicitação da listagem de serviços.
 	 * @return SrvListarResponse Resposta da solicitação da listagem de serviços.
 	 */
-	public function ListarCadastroServico(SrvListarRequest $srvListarRequest): SrvListarResponse{
-		return $this->_Call('ListarCadastroServico',Array(
+	public function ListarCadastroServico(SrvListarRequest $srvListarRequest): ?SrvListarResponse {
+		$res = $this->_Call('ListarCadastroServico',Array(
 			$srvListarRequest
 		));
+		return $this->_Cast($res, SrvListarResponse::class);
 	}
 
 	/**
@@ -121,9 +127,10 @@ class ServicosJsonClient extends AbstractOmieJsonClient {
 	 * @param SrvAssociarRequest $srvAssociarRequest Requisição da associação do código de integração do cadastro do serviço.
 	 * @return SrvAssociarResponse Resposta da solicitação de associação do código de integração do cadastro do serviço.
 	 */
-	public function AssociarCodIntServico(SrvAssociarRequest $srvAssociarRequest): SrvAssociarResponse{
-		return $this->_Call('AssociarCodIntServico',Array(
+	public function AssociarCodIntServico(SrvAssociarRequest $srvAssociarRequest): ?SrvAssociarResponse {
+		$res = $this->_Call('AssociarCodIntServico',Array(
 			$srvAssociarRequest
 		));
+		return $this->_Cast($res, SrvAssociarResponse::class);
 	}
 }

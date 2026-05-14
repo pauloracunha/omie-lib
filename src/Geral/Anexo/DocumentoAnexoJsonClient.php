@@ -45,49 +45,54 @@ class DocumentoAnexoJsonClient extends AbstractOmieJsonClient {
 	 * @param DocIncluirAnexoRequest $docIncluirAnexoRequest Inclui um anexo de um Documento.
 	 * @return DocIncluirAnexoResponse Resposta da solicitação de inclusão de um anexo de um Documento.
 	 */
-	public function IncluirAnexo(DocIncluirAnexoRequest $docIncluirAnexoRequest): DocIncluirAnexoResponse{
-		return $this->_Call('IncluirAnexo',Array(
+	public function IncluirAnexo(DocIncluirAnexoRequest $docIncluirAnexoRequest): ?DocIncluirAnexoResponse {
+		$res = $this->_Call('IncluirAnexo',Array(
 			$docIncluirAnexoRequest
 		));
+		return $this->_Cast($res, DocIncluirAnexoResponse::class);
 	}
 
 	/**
 	 * @param DocConsultarAnexoRequest $docConsultarAnexoRequest Consulta o anexo de um documento.
 	 * @return DocConsultarAnexoResponse Resposta da solicitação de consulta de um anexo referente a um documento.
 	 */
-	public function ConsultarAnexo(DocConsultarAnexoRequest $docConsultarAnexoRequest): DocConsultarAnexoResponse{
-		return $this->_Call('ConsultarAnexo',Array(
+	public function ConsultarAnexo(DocConsultarAnexoRequest $docConsultarAnexoRequest): ?DocConsultarAnexoResponse {
+		$res = $this->_Call('ConsultarAnexo',Array(
 			$docConsultarAnexoRequest
 		));
+		return $this->_Cast($res, DocConsultarAnexoResponse::class);
 	}
 
 	/**
 	 * @param DocExcluirAnexoRequest $docExcluirAnexoRequest Exclui um anexo de um Documento.
 	 * @return DocExcluirAnexoResponse Resposta da solicitação de exclusão de um anexo referente a um documento.
 	 */
-	public function ExcluirAnexo(DocExcluirAnexoRequest $docExcluirAnexoRequest): DocExcluirAnexoResponse{
-		return $this->_Call('ExcluirAnexo',Array(
+	public function ExcluirAnexo(DocExcluirAnexoRequest $docExcluirAnexoRequest): ?DocExcluirAnexoResponse {
+		$res = $this->_Call('ExcluirAnexo',Array(
 			$docExcluirAnexoRequest
 		));
+		return $this->_Cast($res, DocExcluirAnexoResponse::class);
 	}
 
 	/**
 	 * @param DocListarAnexosRequest $docListarAnexosRequest Solicitação de listagem de anexos de um Documento.
 	 * @return DocListarAnexosResponse Resposta da listagem de anexos de um título do Contas a Receber.
 	 */
-	public function ListarAnexo(DocListarAnexosRequest $docListarAnexosRequest): DocListarAnexosResponse{
-		return $this->_Call('ListarAnexo',Array(
+	public function ListarAnexo(DocListarAnexosRequest $docListarAnexosRequest): ?DocListarAnexosResponse {
+		$res = $this->_Call('ListarAnexo',Array(
 			$docListarAnexosRequest
 		));
+		return $this->_Cast($res, DocListarAnexosResponse::class);
 	}
 
 	/**
 	 * @param DocObterAnexoRequest $docObterAnexoRequest Obtém um anexo de um documento.
 	 * @return DocObterAnexoResponse Resposta da solicitação de consulta de um anexo referente a um documento.
 	 */
-	public function ObterAnexo(DocObterAnexoRequest $docObterAnexoRequest): DocObterAnexoResponse{
-		return $this->_Call('ObterAnexo',Array(
+	public function ObterAnexo(DocObterAnexoRequest $docObterAnexoRequest): ?DocObterAnexoResponse {
+		$res = $this->_Call('ObterAnexo',Array(
 			$docObterAnexoRequest
 		));
+		return $this->_Cast($res, DocObterAnexoResponse::class);
 	}
 }

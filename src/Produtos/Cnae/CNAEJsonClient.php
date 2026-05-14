@@ -37,9 +37,10 @@ class CNAEJsonClient extends AbstractOmieJsonClient {
 	 * @param CnaeListarRequest $cnaeListarRequest Solicitação da listagem de CNAEs.
 	 * @return CnaeListarResponse Resposta da solicitação da listagem de CNAEs.
 	 */
-	public function ListarCNAE(CnaeListarRequest $cnaeListarRequest): CnaeListarResponse{
-		return $this->_Call('ListarCNAE',Array(
+	public function ListarCNAE(CnaeListarRequest $cnaeListarRequest): ?CnaeListarResponse {
+		$res = $this->_Call('ListarCNAE',Array(
 			$cnaeListarRequest
 		));
+		return $this->_Cast($res, CnaeListarResponse::class);
 	}
 }

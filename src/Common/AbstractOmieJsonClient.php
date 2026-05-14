@@ -53,9 +53,37 @@ abstract class AbstractOmieJsonClient {
         
         $decoded = json_decode($res);
         
-        // Se houver erro no decode ou se a resposta indicar falha (se o Omie retornar erro no JSON)
-        // Note: Omie geralmente retorna 200 mesmo em erros, o erro vem no JSON ou via OmieFail.
+        // Se o Omie retornar um erro (geralmente tem a propriedade "faultstring" ou "faultcode")
+        if (isset($decoded->faultstring) || isset($decoded->faultcode)) {
+            throw new \Exception("Erro Omie: " . ($decoded->faultstring ?? "Erro desconhecido") . " (" . ($decoded->faultcode ?? "999") . ")", 1);
+        }
         
         return $decoded;
+    }
+
+    /**
+     * Converte um objeto genérico (stdClass) para a classe DTO específica.
+     * 
+     * @param mixed $data Dados retornados pelo _Call
+     * @param string $className Nome da classe de destino
+     * @return mixed Instância da classe de destino
+     */
+    protected function _Cast($data, string $className) {
+        if (!$data) return null;
+        
+        $response = new $className();
+        foreach ($data as $key => $value) {
+            // Se for uma propriedade que existe na classe, atribui
+            // Caso contrário, o PHP permitirá se for public ou dará erro se for typed
+            // No nosso caso, as classes DTO têm propriedades public typed.
+            try {
+                $response->$key = $value;
+            } catch (\TypeError $e) {
+                // Se houver erro de tipo (ex: esperando array mas veio null), podemos tratar aqui ou deixar passar
+                // Por enquanto vamos apenas atribuir.
+                @$response->$key = $value;
+            }
+        }
+        return $response;
     }
 }

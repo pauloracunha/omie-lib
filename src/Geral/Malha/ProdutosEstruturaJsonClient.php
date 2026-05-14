@@ -45,10 +45,11 @@ class ProdutosEstruturaJsonClient extends AbstractOmieJsonClient {
 	 * @param MalhaIncluirRequest $malhaIncluirRequest Inclusão de item da estrutura do produto.
 	 * @return MalhaIncluirResponse Inclusão de item da estrutura do produto.
 	 */
-	public function IncluirEstrutura(MalhaIncluirRequest $malhaIncluirRequest): MalhaIncluirResponse{
-		return $this->_Call('IncluirEstrutura',Array(
+	public function IncluirEstrutura(MalhaIncluirRequest $malhaIncluirRequest): ?MalhaIncluirResponse {
+		$res = $this->_Call('IncluirEstrutura',Array(
 			$malhaIncluirRequest
 		));
+		return $this->_Cast($res, MalhaIncluirResponse::class);
 	}
 
 	/**
@@ -57,10 +58,11 @@ class ProdutosEstruturaJsonClient extends AbstractOmieJsonClient {
 	 * @param MalhaAlterarRequest $malhaAlterarRequest Alteração de item da estrutura do produto.
 	 * @return MalhaAlterarResponse Alteração de item da estrutura do produto.
 	 */
-	public function AlterarEstrutura(MalhaAlterarRequest $malhaAlterarRequest): MalhaAlterarResponse{
-		return $this->_Call('AlterarEstrutura',Array(
+	public function AlterarEstrutura(MalhaAlterarRequest $malhaAlterarRequest): ?MalhaAlterarResponse {
+		$res = $this->_Call('AlterarEstrutura',Array(
 			$malhaAlterarRequest
 		));
+		return $this->_Cast($res, MalhaAlterarResponse::class);
 	}
 
 	/**
@@ -69,10 +71,11 @@ class ProdutosEstruturaJsonClient extends AbstractOmieJsonClient {
 	 * @param MalhaExcluirRequest $malhaExcluirRequest Exclusão de um item da estrutura de um produto.
 	 * @return MalhaExcluirResponse Exclusão de um item da estrutura do produto.
 	 */
-	public function ExcluirEstrutura(MalhaExcluirRequest $malhaExcluirRequest): MalhaExcluirResponse{
-		return $this->_Call('ExcluirEstrutura',Array(
+	public function ExcluirEstrutura(MalhaExcluirRequest $malhaExcluirRequest): ?MalhaExcluirResponse {
+		$res = $this->_Call('ExcluirEstrutura',Array(
 			$malhaExcluirRequest
 		));
+		return $this->_Cast($res, MalhaExcluirResponse::class);
 	}
 
 	/**
@@ -81,10 +84,11 @@ class ProdutosEstruturaJsonClient extends AbstractOmieJsonClient {
 	 * @param MalhaConsultarRequest $malhaConsultarRequest Consulta uma malha/estrutura de um produto.
 	 * @return MalhaConsultarResponse Resposta da solicitação de consulta da malha/estrutura de um produto.
 	 */
-	public function ConsultarEstrutura(MalhaConsultarRequest $malhaConsultarRequest): MalhaConsultarResponse{
-		return $this->_Call('ConsultarEstrutura',Array(
+	public function ConsultarEstrutura(MalhaConsultarRequest $malhaConsultarRequest): ?MalhaConsultarResponse {
+		$res = $this->_Call('ConsultarEstrutura',Array(
 			$malhaConsultarRequest
 		));
+		return $this->_Cast($res, MalhaConsultarResponse::class);
 	}
 
 	/**
@@ -93,9 +97,10 @@ class ProdutosEstruturaJsonClient extends AbstractOmieJsonClient {
 	 * @param MalhaPesquisarRequest $malhaPesquisarRequest Solicitação de Listagem de estruturas de produtos.
 	 * @return MalhaPesquisarResponse Resultado da pesquisa de estrutura de produtos.
 	 */
-	public function ListarEstruturas(MalhaPesquisarRequest $malhaPesquisarRequest): MalhaPesquisarResponse{
-		return $this->_Call('ListarEstruturas',Array(
+	public function ListarEstruturas(MalhaPesquisarRequest $malhaPesquisarRequest): ?MalhaPesquisarResponse {
+		$res = $this->_Call('ListarEstruturas',Array(
 			$malhaPesquisarRequest
 		));
+		return $this->_Cast($res, MalhaPesquisarResponse::class);
 	}
 }

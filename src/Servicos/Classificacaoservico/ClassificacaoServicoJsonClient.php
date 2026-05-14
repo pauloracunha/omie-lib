@@ -37,9 +37,10 @@ class ClassificacaoServicoJsonClient extends AbstractOmieJsonClient {
 	 * @param ClassificaServicoRequest $classificaServicoRequest Solicitação da listagem de classificações do serviço (NF modelo 21 e 22).
 	 * @return ClassificaServicoResponse Resposta da solicitação de classificações do serviço (NF modelo 21 e 22).
 	 */
-	public function ListarClassificacaoServico(ClassificaServicoRequest $classificaServicoRequest): ClassificaServicoResponse{
-		return $this->_Call('ListarClassificacaoServico',Array(
+	public function ListarClassificacaoServico(ClassificaServicoRequest $classificaServicoRequest): ?ClassificaServicoResponse {
+		$res = $this->_Call('ListarClassificacaoServico',Array(
 			$classificaServicoRequest
 		));
+		return $this->_Cast($res, ClassificaServicoResponse::class);
 	}
 }

@@ -37,9 +37,10 @@ class PisCSTJsonClient extends AbstractOmieJsonClient {
 	 * @param PisCstListarRequest $pisCstListarRequest Solicitação da listagem de CST do PIS.
 	 * @return PisCstListarResponse Resposta da solicitação da listagem de CST do PIS.
 	 */
-	public function ListarCstPis(PisCstListarRequest $pisCstListarRequest): PisCstListarResponse{
-		return $this->_Call('ListarCstPis',Array(
+	public function ListarCstPis(PisCstListarRequest $pisCstListarRequest): ?PisCstListarResponse {
+		$res = $this->_Call('ListarCstPis',Array(
 			$pisCstListarRequest
 		));
+		return $this->_Cast($res, PisCstListarResponse::class);
 	}
 }

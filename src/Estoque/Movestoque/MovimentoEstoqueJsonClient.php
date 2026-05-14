@@ -39,10 +39,11 @@ class MovimentoEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param EpListarRequest $epListarRequest Solicitação da listagem movimentos de estoque de entrada/saida de um período.
 	 * @return EpListarResponse Resposta da solicitação da listagem movimentos de estoque de entrada/saida de um período.
 	 */
-	public function ListarMovimentos(EpListarRequest $epListarRequest): EpListarResponse{
-		return $this->_Call('ListarMovimentos',Array(
+	public function ListarMovimentos(EpListarRequest $epListarRequest): ?EpListarResponse {
+		$res = $this->_Call('ListarMovimentos',Array(
 			$epListarRequest
 		));
+		return $this->_Cast($res, EpListarResponse::class);
 	}
 
 	/**
@@ -51,9 +52,10 @@ class MovimentoEstoqueJsonClient extends AbstractOmieJsonClient {
 	 * @param EpPrevisaoRequest $epPrevisaoRequest Previsão de estoque do produto.
 	 * @return EpPrevisaoResponse Previsão de estoque do produto.
 	 */
-	public function ConsultarPrevisao(EpPrevisaoRequest $epPrevisaoRequest): EpPrevisaoResponse{
-		return $this->_Call('ConsultarPrevisao',Array(
+	public function ConsultarPrevisao(EpPrevisaoRequest $epPrevisaoRequest): ?EpPrevisaoResponse {
+		$res = $this->_Call('ConsultarPrevisao',Array(
 			$epPrevisaoRequest
 		));
+		return $this->_Cast($res, EpPrevisaoResponse::class);
 	}
 }

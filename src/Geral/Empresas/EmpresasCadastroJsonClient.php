@@ -35,10 +35,11 @@ class EmpresasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Empresas_consultar $empresas_consultar Consulta um código no cadastro de Empresas
 	 * @return Empresas_cadastro Cadastro de Empresas
 	 */
-	public function ConsultarEmpresa(Empresas_consultar $empresas_consultar): Empresas_cadastro{
-		return $this->_Call('ConsultarEmpresa',Array(
+	public function ConsultarEmpresa(Empresas_consultar $empresas_consultar): ?Empresas_cadastro {
+		$res = $this->_Call('ConsultarEmpresa',Array(
 			$empresas_consultar
 		));
+		return $this->_Cast($res, Empresas_cadastro::class);
 	}
 
 	/**
@@ -47,9 +48,10 @@ class EmpresasCadastroJsonClient extends AbstractOmieJsonClient {
 	 * @param Empresas_list_request $empresas_list_request Lista as empresas cadastradas
 	 * @return Empresas_list_response Lista de empresas cadastradas no omie.
 	 */
-	public function ListarEmpresas(Empresas_list_request $empresas_list_request): Empresas_list_response{
-		return $this->_Call('ListarEmpresas',Array(
+	public function ListarEmpresas(Empresas_list_request $empresas_list_request): ?Empresas_list_response {
+		$res = $this->_Call('ListarEmpresas',Array(
 			$empresas_list_request
 		));
+		return $this->_Cast($res, Empresas_list_response::class);
 	}
 }

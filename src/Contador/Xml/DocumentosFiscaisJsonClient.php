@@ -37,9 +37,10 @@ class DocumentosFiscaisJsonClient extends AbstractOmieJsonClient {
 	 * @param XmlListarDocumentosRequest $xmlListarDocumentosRequest Solicitação de listagem de XMLs de Documentos Fiscais.
 	 * @return XmlListarDocumentosResponse Resposta da solicitação de listagem de XMLs de Documentos Fiscais.
 	 */
-	public function ListarDocumentos(XmlListarDocumentosRequest $xmlListarDocumentosRequest): XmlListarDocumentosResponse{
-		return $this->_Call('ListarDocumentos',Array(
+	public function ListarDocumentos(XmlListarDocumentosRequest $xmlListarDocumentosRequest): ?XmlListarDocumentosResponse {
+		$res = $this->_Call('ListarDocumentos',Array(
 			$xmlListarDocumentosRequest
 		));
+		return $this->_Cast($res, XmlListarDocumentosResponse::class);
 	}
 }

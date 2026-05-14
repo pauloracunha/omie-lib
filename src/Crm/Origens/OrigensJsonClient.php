@@ -37,9 +37,10 @@ class OrigensJsonClient extends AbstractOmieJsonClient {
 	 * @param OrigemListarRequest $origemListarRequest Solicitação da listagem de origens da oportunidade.
 	 * @return OrigemListarResponse Resposta da solicitação da listagem de origens da oportunidade.
 	 */
-	public function ListarOrigens(OrigemListarRequest $origemListarRequest): OrigemListarResponse{
-		return $this->_Call('ListarOrigens',Array(
+	public function ListarOrigens(OrigemListarRequest $origemListarRequest): ?OrigemListarResponse {
+		$res = $this->_Call('ListarOrigens',Array(
 			$origemListarRequest
 		));
+		return $this->_Cast($res, OrigemListarResponse::class);
 	}
 }

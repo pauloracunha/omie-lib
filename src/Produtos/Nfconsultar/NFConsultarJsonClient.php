@@ -37,10 +37,11 @@ class NFConsultarJsonClient extends AbstractOmieJsonClient {
 	 * @param NfChave $nfChave Chave de pesquisa da Nota Fiscal&nbsp;
 	 * @return NfCadastro Dados da Nota Fiscal&nbsp;
 	 */
-	public function ConsultarNF(NfChave $nfChave): NfCadastro{
-		return $this->_Call('ConsultarNF',Array(
+	public function ConsultarNF(NfChave $nfChave): ?NfCadastro {
+		$res = $this->_Call('ConsultarNF',Array(
 			$nfChave
 		));
+		return $this->_Cast($res, NfCadastro::class);
 	}
 
 	/**
@@ -49,9 +50,10 @@ class NFConsultarJsonClient extends AbstractOmieJsonClient {
 	 * @param NfListarRequest $nfListarRequest Solicitação de Listagem de Notas Fiscais
 	 * @return NfListarResponse Resposta da listagem de Notas Fiscais
 	 */
-	public function ListarNF(NfListarRequest $nfListarRequest): NfListarResponse{
-		return $this->_Call('ListarNF',Array(
+	public function ListarNF(NfListarRequest $nfListarRequest): ?NfListarResponse {
+		$res = $this->_Call('ListarNF',Array(
 			$nfListarRequest
 		));
+		return $this->_Cast($res, NfListarResponse::class);
 	}
 }

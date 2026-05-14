@@ -37,9 +37,10 @@ class ProdutosKitJsonClient extends AbstractOmieJsonClient {
 	 * @param AlterarCompKitRequest $AlterarCompKitRequest Inclui/Altera/Exclui os componentes do KIT.
 	 * @return AlterarCompKitResponse Resposta da solicitação de alteração dos componentes do KIT.
 	 */
-	public function AlterarComponentesKit(AlterarCompKitRequest $AlterarCompKitRequest): AlterarCompKitResponse{
-		return $this->_Call('AlterarComponentesKit',Array(
+	public function AlterarComponentesKit(AlterarCompKitRequest $AlterarCompKitRequest): ?AlterarCompKitResponse {
+		$res = $this->_Call('AlterarComponentesKit',Array(
 			$AlterarCompKitRequest
 		));
+		return $this->_Cast($res, AlterarCompKitResponse::class);
 	}
 }

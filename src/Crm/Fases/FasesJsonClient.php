@@ -37,9 +37,10 @@ class FasesJsonClient extends AbstractOmieJsonClient {
 	 * @param FasesListarRequest $fasesListarRequest Solicitação da listagem de fases da oportunidades.
 	 * @return FasesListarResponse Resposta da solicitação da listagem de fases da oportunidade.
 	 */
-	public function ListarFases(FasesListarRequest $fasesListarRequest): FasesListarResponse{
-		return $this->_Call('ListarFases',Array(
+	public function ListarFases(FasesListarRequest $fasesListarRequest): ?FasesListarResponse {
+		$res = $this->_Call('ListarFases',Array(
 			$fasesListarRequest
 		));
+		return $this->_Cast($res, FasesListarResponse::class);
 	}
 }

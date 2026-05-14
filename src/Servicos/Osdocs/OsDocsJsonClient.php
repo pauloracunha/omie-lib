@@ -48,10 +48,11 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterNFSeRequest $ObterNFSeRequest Solicita as informações de uma NFS-e
 	 * @return ObterNFSeResponse Informações da NFS-e faturada.
 	 */
-	public function ObterNFSe(ObterNFSeRequest $ObterNFSeRequest): ObterNFSeResponse{
-		return $this->_Call('ObterNFSe',Array(
+	public function ObterNFSe(ObterNFSeRequest $ObterNFSeRequest): ?ObterNFSeResponse {
+		$res = $this->_Call('ObterNFSe',Array(
 			$ObterNFSeRequest
 		));
+		return $this->_Cast($res, ObterNFSeResponse::class);
 	}
 
 	/**
@@ -60,10 +61,11 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterViaUnicaRequest $ObterViaUnicaRequest Solicita as informações de uma nota fiscal Via Única
 	 * @return ObterViaUnicaResponse Informações da nota fiscal Via Única faturada.
 	 */
-	public function ObterViaUnica(ObterViaUnicaRequest $ObterViaUnicaRequest): ObterViaUnicaResponse{
-		return $this->_Call('ObterViaUnica',Array(
+	public function ObterViaUnica(ObterViaUnicaRequest $ObterViaUnicaRequest): ?ObterViaUnicaResponse {
+		$res = $this->_Call('ObterViaUnica',Array(
 			$ObterViaUnicaRequest
 		));
+		return $this->_Cast($res, ObterViaUnicaResponse::class);
 	}
 
 	/**
@@ -72,10 +74,11 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterRPSRequest $ObterRPSRequest Solicita as informações de um RPS.
 	 * @return ObterRPSResponse Informações de um RPS faturado.
 	 */
-	public function ObterRPS(ObterRPSRequest $ObterRPSRequest): ObterRPSResponse{
-		return $this->_Call('ObterRPS',Array(
+	public function ObterRPS(ObterRPSRequest $ObterRPSRequest): ?ObterRPSResponse {
+		$res = $this->_Call('ObterRPS',Array(
 			$ObterRPSRequest
 		));
+		return $this->_Cast($res, ObterRPSResponse::class);
 	}
 
 	/**
@@ -84,10 +87,11 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterReciboRequest $ObterReciboRequest Solicita as informaçoes de um recibo
 	 * @return ObterReciboResponse Resposta da solicitação de Informações do recibo
 	 */
-	public function ObterRecibo(ObterReciboRequest $ObterReciboRequest): ObterReciboResponse{
-		return $this->_Call('ObterRecibo',Array(
+	public function ObterRecibo(ObterReciboRequest $ObterReciboRequest): ?ObterReciboResponse {
+		$res = $this->_Call('ObterRecibo',Array(
 			$ObterReciboRequest
 		));
+		return $this->_Cast($res, ObterReciboResponse::class);
 	}
 
 	/**
@@ -96,10 +100,11 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterDemonstRequest $ObterDemonstRequest Solicita as informações de um Demonstrativo.
 	 * @return ObterDemonstResponse Informações de um Demonstrativo.
 	 */
-	public function ObterDemonst(ObterDemonstRequest $ObterDemonstRequest): ObterDemonstResponse{
-		return $this->_Call('ObterDemonst',Array(
+	public function ObterDemonst(ObterDemonstRequest $ObterDemonstRequest): ?ObterDemonstResponse {
+		$res = $this->_Call('ObterDemonst',Array(
 			$ObterDemonstRequest
 		));
+		return $this->_Cast($res, ObterDemonstResponse::class);
 	}
 
 	/**
@@ -108,9 +113,10 @@ class OsDocsJsonClient extends AbstractOmieJsonClient {
 	 * @param ObterOsRequest $ObterOsRequest Solicita as informações de uma Ordem de Serviço
 	 * @return ObterOsResponse Informações da Ordem de Serviço faturada.
 	 */
-	public function ObterOS(ObterOsRequest $ObterOsRequest): ObterOsResponse{
-		return $this->_Call('ObterOS',Array(
+	public function ObterOS(ObterOsRequest $ObterOsRequest): ?ObterOsResponse {
+		$res = $this->_Call('ObterOS',Array(
 			$ObterOsRequest
 		));
+		return $this->_Cast($res, ObterOsResponse::class);
 	}
 }

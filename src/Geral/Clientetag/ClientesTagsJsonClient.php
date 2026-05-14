@@ -43,10 +43,11 @@ class ClientesTagsJsonClient extends AbstractOmieJsonClient {
 	 * @param CTagIncluirRequest $cTagIncluirRequest Solicitação de inclusão de tags de um cliente.
 	 * @return CTagIncluirResponse Resposta da solicitação de inclusão de tags de um cliente.
 	 */
-	public function IncluirTags(CTagIncluirRequest $cTagIncluirRequest): CTagIncluirResponse{
-		return $this->_Call('IncluirTags',Array(
+	public function IncluirTags(CTagIncluirRequest $cTagIncluirRequest): ?CTagIncluirResponse {
+		$res = $this->_Call('IncluirTags',Array(
 			$cTagIncluirRequest
 		));
+		return $this->_Cast($res, CTagIncluirResponse::class);
 	}
 
 	/**
@@ -55,10 +56,11 @@ class ClientesTagsJsonClient extends AbstractOmieJsonClient {
 	 * @param CTagExcluirRequest $cTagExcluirRequest Solicitação de exclusão de tags de um cliente.
 	 * @return CTagExcluirResponse Resposta da solicitação de exclusão de tags de um cliente.
 	 */
-	public function ExcluirTags(CTagExcluirRequest $cTagExcluirRequest): CTagExcluirResponse{
-		return $this->_Call('ExcluirTags',Array(
+	public function ExcluirTags(CTagExcluirRequest $cTagExcluirRequest): ?CTagExcluirResponse {
+		$res = $this->_Call('ExcluirTags',Array(
 			$cTagExcluirRequest
 		));
+		return $this->_Cast($res, CTagExcluirResponse::class);
 	}
 
 	/**
@@ -67,10 +69,11 @@ class ClientesTagsJsonClient extends AbstractOmieJsonClient {
 	 * @param CTagExcluirTodasRequest $cTagExcluirTodasRequest Solicitação de exclusão de todas as tags de um cliente.
 	 * @return CTagExcluirTodasResponse Resposta da solicitação de exclusão de todas as  tags de um cliente.
 	 */
-	public function ExcluirTodas(CTagExcluirTodasRequest $cTagExcluirTodasRequest): CTagExcluirTodasResponse{
-		return $this->_Call('ExcluirTodas',Array(
+	public function ExcluirTodas(CTagExcluirTodasRequest $cTagExcluirTodasRequest): ?CTagExcluirTodasResponse {
+		$res = $this->_Call('ExcluirTodas',Array(
 			$cTagExcluirTodasRequest
 		));
+		return $this->_Cast($res, CTagExcluirTodasResponse::class);
 	}
 
 	/**
@@ -79,9 +82,10 @@ class ClientesTagsJsonClient extends AbstractOmieJsonClient {
 	 * @param CTagListarRequest $cTagListarRequest Solicitação da listagem de tags de um cliente.
 	 * @return CTagListarResponse Resposta da solicitação da listagem de tags de um cliente.
 	 */
-	public function ListarTags(CTagListarRequest $cTagListarRequest): CTagListarResponse{
-		return $this->_Call('ListarTags',Array(
+	public function ListarTags(CTagListarRequest $cTagListarRequest): ?CTagListarResponse {
+		$res = $this->_Call('ListarTags',Array(
 			$cTagListarRequest
 		));
+		return $this->_Cast($res, CTagListarResponse::class);
 	}
 }
