@@ -33,7 +33,7 @@ abstract class AbstractOmieJsonClient {
             "app_secret" => $this->config->appSecret
         ];
         
-        $url = rtrim($this->config->host, '/') . static::$_EndPoint;
+        $url = rtrim($this->config->host, '/') . '/' . ltrim(static::$_EndPoint, '/');
         $body = json_encode($call);
         
         $opts = stream_context_create([

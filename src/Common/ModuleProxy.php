@@ -19,16 +19,25 @@ class ModuleProxy {
     public function __get($name) {
         $newPath = $this->path;
         $newPath[] = str_replace('_', '-', strtolower($name));
-        $pathStr = implode('/', $newPath);
+        $pathString = implode('/', $newPath);
 
-        // Verifica se este path aponta diretamente para um cliente no manifesto
-        if (isset($this->manifest[$pathStr])) {
-            $info = $this->manifest[$pathStr];
-            $fullClass = "\\" . ltrim($info['namespace'] . "\\" . $info['class'], '\\');
-            return new $fullClass($this->config);
+        if (isset($this->manifest[$pathString])) {
+            $class = $this->manifest[$pathString]['namespace'] . '\\' . $this->manifest[$pathString]['class'];
+            return new $class($this->config);
         }
 
-        // Caso contrário, continua navegando (sub-módulo)
+        // Se o pathString for um prefixo de algum módulo no manifesto, retorna um Proxy
+        foreach (array_keys($this->manifest) as $m) {
+            if (str_starts_with($m, $pathString . '/')) {
+                // Tenta encontrar um Proxy tipado gerado
+                $proxyClass = 'OmieLib\\Proxies\\' . ucfirst($name) . 'Proxy';
+                if (class_exists($proxyClass)) {
+                    return new $proxyClass($this->config, $newPath, $this->manifest);
+                }
+                return new ModuleProxy($this->config, $newPath, $this->manifest);
+            }
+        }
+        
         return new self($this->config, $newPath, $this->manifest);
     }
 }

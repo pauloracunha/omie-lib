@@ -6,7 +6,13 @@ use OmieLib\Common\OmieConfig;
 use OmieLib\Common\ModuleProxy;
 
 /**
- * Ponto de entrada principal para a biblioteca Omie.
+ * @property \OmieLib\Proxies\ProdutosProxy $produtos
+ * @property \OmieLib\Proxies\CrmProxy $crm
+ * @property \OmieLib\Proxies\GeralProxy $geral
+ * @property \OmieLib\Proxies\FinancasProxy $financas
+ * @property \OmieLib\Proxies\EstoqueProxy $estoque
+ * @property \OmieLib\Proxies\ContadorProxy $contador
+ * @property \OmieLib\Proxies\ServicosProxy $servicos
  */
 class OmieAPI {
     private OmieConfig $config;
